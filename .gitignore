@@ -58,3 +58,15 @@ Thumbs.db
 *.temp
 logs/
 tmp/
+# Chặn toàn bộ thư mục chứa dữ liệu thô và dữ liệu sạch
+data/raw/
+data/processed/
+data/datalake/
+
+# Chặn các file cấu hình môi trường hoặc mật khẩu cá nhân (nếu có)
+.env
+__pycache__/
+*.pyc
+
+# Chặn file log sinh ra trong quá trình chạy
+*.log
