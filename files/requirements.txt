@@ -1,0 +1,19 @@
+# PH-04: Requirements (MariaDB version - đơn giản)
+# pip install -r requirements.txt
+
+# ETL
+pandas==2.2.2
+pyarrow==16.1.0       # đọc Parquet
+pymysql==1.1.1        # kết nối MariaDB
+sqlalchemy==2.0.30    # ORM, dùng bởi pandas + streamlit
+
+# Dashboard
+streamlit==1.35.0
+plotly==5.22.0
+
+# Airflow (cài trong WSL2 hoặc Docker)
+apache-airflow==2.9.2
+apache-airflow-providers-mysql==3.5.0
+
+# Thư viện chuẩn Python (có sẵn, không cần cài):
+# pathlib, logging, datetime, json, subprocess
