@@ -3,7 +3,7 @@ PH-03: Data Preprocessing & Feature Engineering — AirGlobal AQI Dataset
 Author: An
 
 Pipeline chính:
-1) Đọc dữ liệu từ các file country-level trong data/raw/<country>/<country>/*.csv; nếu không có thì fallback sang global CSV hoặc datalake parquet.
+1) Đọc dữ liệu từ các file country-level trong data/raw/<country>/<country>/*.csv; nếu không có thì fallback sang global CSV.
 2) Chuẩn hóa tên cột, kiểu dữ liệu, ngày tháng và target label.
 3) Xử lý duplicate, giá trị thiếu, giá trị ngoài giới hạn vật lý và outlier bằng IQR/winsorization.
 4) Feature engineering: thời gian, chu kỳ, pollutant ratios, environmental interaction,
@@ -49,8 +49,8 @@ def find_project_root() -> Path:
 BASE_DIR = find_project_root()
 RAW_ROOT = BASE_DIR / "data" / "raw"
 GLOBAL_RAW_CSV = RAW_ROOT / "global_air_quality_2014_2025.csv"
-DATALAKE_DIR = BASE_DIR / "data" / "datalake" / "aqi"
 # auto: ưu tiên country CSV nếu có; global: chỉ đọc global CSV; country: chỉ đọc country CSV.
+# PH-03 không đọc/tạo datalake. Datalake sẽ được PH-04 tạo dựa trên output đã preprocessing.
 RAW_INPUT_MODE = os.getenv("RAW_INPUT_MODE", "auto").strip().lower()
 # New DATA_FINAL structure stores phase outputs in outputs/ph03.
 # If the old folder exists and outputs/ does not, this still works safely.
@@ -275,21 +275,22 @@ def read_country_raw_files(files: List[Path]) -> pd.DataFrame:
     return out
 
 
-def read_raw_or_datalake() -> pd.DataFrame:
-    """Read AirGlobal data following the new DATA_FINAL structure.
+def read_raw_dataset() -> pd.DataFrame:
+    """Read raw AirGlobal CSV data only.
 
-    Default behavior RAW_INPUT_MODE=auto:
-    1. Use country-level CSV files from data/raw/<country>/<country>/.
-    2. If no country files exist, use data/raw/global_air_quality_2014_2025.csv.
-    3. If neither exists, fallback to data/datalake/aqi parquet.
+    PH-03 is responsible for preprocessing raw CSV into outputs/ph03/.
+    It does not create or read the datalake. The datalake/Data Warehouse phase
+    should use PH-03 outputs later.
 
-    This avoids the old behavior where PH-03 always prioritized only the single
-    global CSV and ignored country-split raw folders.
+    RAW_INPUT_MODE:
+    - auto: use country-level CSV files if found, otherwise use global CSV.
+    - country: only use country-level CSV files.
+    - global: only use data/raw/global_air_quality_2014_2025.csv.
     """
     country_files = collect_country_csv_files()
 
-    if RAW_INPUT_MODE not in {"auto", "country", "global", "datalake"}:
-        raise ValueError("RAW_INPUT_MODE must be one of: auto, country, global, datalake")
+    if RAW_INPUT_MODE not in {"auto", "country", "global"}:
+        raise ValueError("RAW_INPUT_MODE must be one of: auto, country, global")
 
     if RAW_INPUT_MODE in {"auto", "country"} and country_files:
         return read_country_raw_files(country_files)
@@ -306,29 +307,9 @@ def read_raw_or_datalake() -> pd.DataFrame:
     if RAW_INPUT_MODE == "global" and not GLOBAL_RAW_CSV.exists():
         raise FileNotFoundError(f"RAW_INPUT_MODE=global nhưng không tìm thấy {GLOBAL_RAW_CSV}")
 
-    parquet_files = list(DATALAKE_DIR.rglob("*.parquet")) if DATALAKE_DIR.exists() else []
-    if parquet_files:
-        try:
-            log(f"  -> Raw CSV not found. Found {len(parquet_files):,} parquet files in datalake. Reading...")
-            frames = []
-            for idx, fp in enumerate(parquet_files, start=1):
-                frame = pd.read_parquet(fp)
-                frame["source_file"] = str(fp.relative_to(BASE_DIR))
-                frames.append(frame)
-                if idx % 5000 == 0:
-                    log(f"    -> Read {idx:,}/{len(parquet_files):,} parquet files...")
-            df = pd.concat(frames, ignore_index=True)
-            log(f"  -> Loaded datalake parquet: {len(df):,} rows")
-            return df
-        except Exception as exc:
-            raise RuntimeError(
-                f"Không đọc được datalake parquet ({type(exc).__name__}). "
-                "Hãy cài pyarrow hoặc đặt raw CSV vào data/raw/."
-            ) from exc
-
     raise FileNotFoundError(
-        f"Không tìm thấy dữ liệu. Cần có country CSV trong {RAW_ROOT}, "
-        f"hoặc {GLOBAL_RAW_CSV}, hoặc parquet trong {DATALAKE_DIR}."
+        f"Không tìm thấy dữ liệu raw CSV. Cần có country CSV trong {RAW_ROOT} "
+        f"hoặc file {GLOBAL_RAW_CSV}. PH-03 không đọc datalake."
     )
 
 def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
@@ -636,13 +617,13 @@ def build_feature_catalog(df: pd.DataFrame) -> Tuple[pd.DataFrame, List[str], Li
 
 def main() -> None:
     print("=" * 80)
-    print("PH-03 PREPROCESSING | AirGlobal Dataset")
+    print("PH-03 PREPROCESSING — AN | AirGlobal Dataset")
     print("=" * 80)
 
     notes: List[str] = []
 
     log("\n1) Loading dataset...")
-    raw_df = read_raw_or_datalake()
+    raw_df = read_raw_dataset()
     raw_rows = len(raw_df)
 
     log("\n2) Cleaning schema, dates, duplicates, physical invalid values...")
