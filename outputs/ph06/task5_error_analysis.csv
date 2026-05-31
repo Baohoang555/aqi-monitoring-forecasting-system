@@ -1,0 +1,21 @@
+﻿index,true_label,pred_label,country,city,date,pm25,aqi,humidity,wind_speed
+137,Satisfactory,Moderate,China,Zibo,2024-03-01,114.67,150.0,54.9,12.3
+491,Very_Unhealthy,Unhealthy,Pakistan,Multan,2024-03-01,151.02,202.0,52.9,11.1
+585,Moderate,Unhealthy,Saudi Arabia,Nariyah,2024-03-01,46.57,145.0,17.99,15.01
+751,Good,Moderate,Japan,Tsuyama,2024-03-01,12.75,50.0,59.9,10.7
+766,Very_Unhealthy,Unhealthy,Pakistan,Vehari,2024-03-01,152.15,203.0,44.2,9.6
+796,Satisfactory,Moderate,Indonesia,Surabaya,2024-03-01,35.36,97.0,82.19,20.911249999999995
+826,Unhealthy,Moderate,United Kingdom,Birmingham,2024-03-01,30.64911727170407,107.0,80.56419724401921,6.933259076024731
+906,Good,Satisfactory,China,Weifang,2024-03-01,75.52,100.0,50.4,12.3
+1227,Moderate,Unhealthy,Philippines,Malolos,2024-03-01,36.7972520836071,104.0,68.29556575965819,4.841377249158591
+1231,Satisfactory,Moderate,India,Kolkata,2024-03-01,60.23,98.0,51.7,4.6
+1335,Unhealthy,Moderate,South Korea,Changwon,2024-03-01,51.79375,162.0,55.65,10.92
+1464,Moderate,Satisfactory,South Korea,Goseong,2024-03-01,35.45,145.0,64.25,5.92
+1565,Unhealthy,Moderate,United Kingdom,London,2024-03-01,30.64911727170407,103.0,78.14798913970914,8.259519241146078
+1678,Good,Moderate,Japan,Ginowan,2024-03-01,12.73,50.0,63.6,13.1
+1850,Hazardous,Very_Unhealthy,Nigeria,Wudil,2024-03-01,155.89249999999998,311.0,43.8,9.3
+1859,Satisfactory,Moderate,Philippines,Bago,2024-03-01,17.55296673494833,62.0,67.83122361697956,12.0490107562856
+1914,Satisfactory,Moderate,China,Zhengzhou,2024-03-01,115.15,150.0,42.9,8.2
+1924,Very_Unhealthy,Unhealthy,Pakistan,Sargodha,2024-03-01,151.08,202.0,66.2,11.8
+2100,Moderate,Unhealthy,Saudi Arabia,Mecca,2024-03-01,51.23625,124.0,10.0,14.91
+2160,Unhealthy,Very_Unhealthy,India,Lucknow,2024-03-01,119.78,299.0,29.2,5.5

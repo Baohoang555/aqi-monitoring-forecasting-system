@@ -1,0 +1,7 @@
+﻿true,predicted_as,count,pct
+Good,Moderate,17,0.12
+Hazardous,Very_Unhealthy,38,9.9
+Moderate,Unhealthy,53,0.29
+Satisfactory,Moderate,94,1.17
+Unhealthy,Moderate,108,1.29
+Very_Unhealthy,Unhealthy,111,9.29
