@@ -1,0 +1,26 @@
+source_file,inferred_country,rows,columns
+data\raw\australia\australia\australia_air_quality_2014_2025.csv,Australia,10512,25
+data\raw\bangladesh\bangladesh\bangladesh_air_quality_2014_2025.csv,Bangladesh,10944,25
+data\raw\brazil\brazil\brazil_air_quality_2014_2025.csv,Brazil,12528,25
+data\raw\china\china\china_air_quality_2014_2025.csv,China,22032,25
+data\raw\egypt\egypt\egypt_air_quality_2014_2025.csv,Egypt,15264,25
+data\raw\ethiopia\ethiopia\ethiopia_air_quality_2014_2025.csv,Ethiopia,10224,25
+data\raw\france\france\france_air_quality_2014_2025.csv,France,11664,25
+data\raw\germany\germany\germany_air_quality_2014_2025.csv,Germany,10512,25
+data\raw\india\india\india_air_quality_2014_2025.csv,India,20592,25
+data\raw\indonesia\indonesia\indonesia_air_quality_2014_2025.csv,Indonesia,13536,25
+data\raw\iran\iran\iran_air_quality_2014_2025.csv,Iran,10800,25
+data\raw\japan\japan\japan_air_quality_2014_2025.csv,Japan,22752,25
+data\raw\mexico\mexico\mexico_air_quality_2014_2025.csv,Mexico,12672,25
+data\raw\nigeria\nigeria\nigeria_air_quality_2014_2025.csv,Nigeria,10368,25
+data\raw\pakistan\pakistan\pakistan_air_quality_2014_2025.csv,Pakistan,11376,25
+data\raw\philippines\philippines\philippines_air_quality_2014_2025.csv,Philippines,20448,25
+data\raw\russia\russia\russia_air_quality_2014_2025.csv,Russia,12096,25
+data\raw\saudi_arabia\saudi_arabia\saudi_arabia_air_quality_2014_2025.csv,Saudi Arabia,10800,25
+data\raw\south_africa\south_africa\south_africa_air_quality_2014_2025.csv,South Africa,10800,25
+data\raw\south_korea\south_korea\south_korea_air_quality_2014_2025.csv,South Korea,12672,25
+data\raw\thailand\thailand\thailand_air_quality_2014_2025.csv,Thailand,9936,25
+data\raw\turkey\turkey\turkey_air_quality_2014_2025.csv,Turkey,10656,25
+data\raw\united_kingdom\united_kingdom\united_kingdom_air_quality_2014_2025.csv,United Kingdom,10512,25
+data\raw\usa\usa\usa_air_quality_2014_2025.csv,Usa,28080,25
+data\raw\vietnam\vietnam\vietnam_air_quality_2014_2025.csv,Vietnam,10944,25

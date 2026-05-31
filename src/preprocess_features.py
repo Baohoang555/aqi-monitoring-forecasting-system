@@ -1,569 +1,761 @@
 """
-PH-03: Data Preprocessing & Feature Engineering
-Urban Air Quality Intelligence Platform
+PH-03: Data Preprocessing & Feature Engineering — AirGlobal AQI Dataset
+Author: An
 
-Nhiệm vụ của An:
-- Xử lý missing values: phân tích pattern, interpolation cho gap < 3h, KNN cho gap dài hơn.
-- Phát hiện outlier: IQR 1.5x theo trạm/tháng, phân biệt sensor error và ngày ô nhiễm thật.
-- Feature engineering: lag, rolling, cyclical/time, spatial/rush-hour/dry-season.
-- Tạo target classification cho dự báo AQI label sau 1 giờ.
-- Chia train/val/test tránh data leakage và lưu metadata để phase PH-05 dùng lại.
+Pipeline chính:
+1) Đọc dữ liệu từ các file country-level trong data/raw/<country>/<country>/*.csv; nếu không có thì fallback sang global CSV hoặc datalake parquet.
+2) Chuẩn hóa tên cột, kiểu dữ liệu, ngày tháng và target label.
+3) Xử lý duplicate, giá trị thiếu, giá trị ngoài giới hạn vật lý và outlier bằng IQR/winsorization.
+4) Feature engineering: thời gian, chu kỳ, pollutant ratios, environmental interaction,
+   city/country frequency, lag/rolling theo chuỗi thời gian của từng city.
+5) Chia train/validation/test theo thời gian để giảm data leakage.
+6) Xuất processed dataset + reports cho PH-05.
 
-Chạy:
-    python ph03_preprocessing/scripts/preprocess_features.py
+Chạy từ thư mục gốc project mới:
+    python src/preprocess_features.py
 """
 
 from __future__ import annotations
 
 import json
 import math
+import os
+import re
 import warnings
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Tuple
+from typing import Dict, Iterable, List, Tuple
 
 import numpy as np
 import pandas as pd
-from sklearn.impute import KNNImputer
-from sklearn.model_selection import train_test_split
 
 warnings.filterwarnings("ignore")
 
-BASE_DIR = Path(__file__).resolve().parents[2]
-DATALAKE_AQI = BASE_DIR / "data" / "datalake" / "aqi"
-DATALAKE_WEATHER = BASE_DIR / "data" / "datalake" / "weather"
-RAW_AQI_DIR = BASE_DIR / "data" / "raw" / "aqi"
-RAW_WEATHER_DIR = BASE_DIR / "data" / "raw" / "weather"
-STATIONS_CSV = BASE_DIR / "config" / "stations.csv"
-OUTPUT_DIR = BASE_DIR / "ph03_preprocessing" / "outputs"
+def find_project_root() -> Path:
+    """Find project root for both old and new folder structures.
+
+    New structure: DATA_FINAL/src/preprocess_features.py -> root is DATA_FINAL.
+    Old structure: ph03_preprocessing/scripts/preprocess_airglobal.py -> root is project folder.
+    """
+    current = Path(__file__).resolve()
+    for parent in [current.parent] + list(current.parents):
+        if (parent / "data").exists() and ((parent / "src").exists() or (parent / "outputs").exists()):
+            return parent
+        if (parent / "data").exists() and (parent / "ph03_preprocessing").exists():
+            return parent
+    return current.parents[1]
+
+
+BASE_DIR = find_project_root()
+RAW_ROOT = BASE_DIR / "data" / "raw"
+GLOBAL_RAW_CSV = RAW_ROOT / "global_air_quality_2014_2025.csv"
+DATALAKE_DIR = BASE_DIR / "data" / "datalake" / "aqi"
+# auto: ưu tiên country CSV nếu có; global: chỉ đọc global CSV; country: chỉ đọc country CSV.
+RAW_INPUT_MODE = os.getenv("RAW_INPUT_MODE", "auto").strip().lower()
+# New DATA_FINAL structure stores phase outputs in outputs/ph03.
+# If the old folder exists and outputs/ does not, this still works safely.
+OUTPUT_DIR = BASE_DIR / "outputs" / "ph03"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+SAVE_FULL_CSV = os.getenv("SAVE_FULL_CSV", "0") == "1"
+SAVE_PARQUET = os.getenv("SAVE_PARQUET", "0") == "1"
 
 RANDOM_STATE = 42
-LAG_HOURS = [1, 3, 6, 12, 24]
-ROLLING_WINDOWS = [3, 6, 24]
-POLLUTANT_COLS = ["pm25", "pm10", "no2", "o3", "so2", "co", "pm1", "um003"]
-WEATHER_RENAME_MAP = {
-    "temperature": "temp",
-    "temperature_2m": "temp",
-    "relative_humidity_2m": "humidity",
-    "windspeed": "wind_speed",
-    "wind_speed_10m": "wind_speed",
+TARGET_COL = "target_aqi_bucket"
+DATE_COL = "date"
+SPLIT_COL = "split"
+
+# AQI numeric value is intentionally excluded from ML features because AQI_Bucket is derived from AQI.
+LEAKAGE_COLUMNS = {"aqi", "aqi_bucket", "aqi_bucket_clean", TARGET_COL}
+
+COLUMN_RENAME = {
+    "Country": "country",
+    "State": "state",
+    "City": "city",
+    "Date": "date",
+    "PM2.5 (ug/m3)": "pm25",
+    "PM10 (ug/m3)": "pm10",
+    "NO (ug/m3)": "no",
+    "NO2 (ug/m3)": "no2",
+    "NOx (ppb)": "nox",
+    "NH3 (ug/m3)": "nh3",
+    "CO (mg/m3)": "co",
+    "SO2 (ug/m3)": "so2",
+    "O3 (ug/m3)": "o3",
+    "Benzene (ug/m3)": "benzene",
+    "Toluene (ug/m3)": "toluene",
+    "Xylene (ug/m3)": "xylene",
+    "AQI": "aqi",
+    "AQI_Bucket": "aqi_bucket",
+    "Wind_Speed (km/h)": "wind_speed",
+    "Humidity (%)": "humidity",
+    "Deforestation_Rate_%": "deforestation_rate",
+    "Industry_Growth_%": "industry_growth",
+    "CO2_Emission_MT": "co2_emission",
+    "Population_Density_per_SqKm": "population_density",
+    "Division": "division",
+    "Province": "province",
+    "Region": "region",
+    "Prefecture": "prefecture",
+    "Federal_District": "federal_district",
+    "year": "year",
 }
 
-# PM2.5 concentration breakpoints, converted to 5 project labels.
-# Values are based on common AQI category boundaries; project labels merge the sensitive-group band into "Unhealthy".
-PM25_LABEL_THRESHOLDS = [12.0, 35.4, 55.4, 150.4]
-LABELS = ["Good", "Moderate", "Unhealthy", "Very_Unhealthy", "Hazardous"]
+POLLUTANT_COLS = [
+    "pm25", "pm10", "no", "no2", "nox", "nh3", "co", "so2", "o3",
+    "benzene", "toluene", "xylene",
+]
+ENV_COLS = [
+    "wind_speed", "humidity", "deforestation_rate", "industry_growth",
+    "co2_emission", "population_density",
+]
+NUMERIC_BASE_COLS = POLLUTANT_COLS + ENV_COLS
+CATEGORICAL_BASE_COLS = [
+    "country", "state", "city", "division", "province", "region", "prefecture", "federal_district",
+]
+
+# Conservative sanity ranges. Values outside these ranges are treated as sensor/data-entry errors.
+PHYSICAL_LIMITS = {
+    "pm25": (0, 1500),
+    "pm10": (0, 2500),
+    "no": (0, 2000),
+    "no2": (0, 2000),
+    "nox": (0, 4000),
+    "nh3": (0, 2000),
+    "co": (0, 100),
+    "so2": (0, 2000),
+    "o3": (0, 2000),
+    "benzene": (0, 500),
+    "toluene": (0, 1000),
+    "xylene": (0, 1000),
+    "aqi": (0, 1000),
+    "wind_speed": (0, 300),
+    "humidity": (0, 100),
+    "deforestation_rate": (0, 100),
+    "industry_growth": (-100, 300),
+    "co2_emission": (0, 100000),
+    "population_density": (0, 200000),
+}
+
+AQI_NUMERIC_THRESHOLDS = [50, 100, 200, 300, 400]
+AQI_NUMERIC_LABELS = ["Good", "Satisfactory", "Moderate", "Unhealthy", "Very_Unhealthy", "Hazardous"]
+
+LABEL_NORMALIZATION = {
+    "excellent": "Good",
+    "good": "Good",
+    "satisfactory": "Satisfactory",
+    "lightly polluted": "Satisfactory",
+    "moderate": "Moderate",
+    "moderately polluted": "Moderate",
+    "unhealthy for sensitive groups": "Unhealthy",
+    "unhealthy": "Unhealthy",
+    "poor": "Unhealthy",
+    "heavily polluted": "Unhealthy",
+    "very poor": "Very_Unhealthy",
+    "very unhealthy": "Very_Unhealthy",
+    "severe": "Hazardous",
+    "severely polluted": "Hazardous",
+    "hazardous": "Hazardous",
+    "unknown": np.nan,
+    "nan": np.nan,
+    "none": np.nan,
+    "": np.nan,
+}
+
 LABEL_VI = {
     "Good": "Tốt",
+    "Satisfactory": "Khá / Chấp nhận được",
     "Moderate": "Trung bình",
-    "Unhealthy": "Kém",
-    "Very_Unhealthy": "Xấu",
+    "Unhealthy": "Kém / Không lành mạnh",
+    "Very_Unhealthy": "Rất xấu",
     "Hazardous": "Nguy hại",
 }
 
-PHYSICAL_LIMITS = {
-    "pm25": (0, 1000),
-    "pm10": (0, 2000),
-    "pm1": (0, 1000),
-    "no2": (0, 5000),
-    "o3": (0, 5000),
-    "so2": (0, 5000),
-    "co": (0, 100000),
-    "um003": (0, 100000),
-    "temp": (-30, 60),
-    "humidity": (0, 100),
-    "wind_speed": (0, 80),
-    "pressure": (800, 1200),
-}
-
-# Approximate anchors for spatial features. These are not used as ground truth; they create simple numeric spatial signals.
-INDUSTRIAL_ANCHORS = [
-    ("HN_ThangLong_IP", 21.1372, 105.7740),
-    ("HN_QuangMinh_IP", 21.1730, 105.7580),
-    ("HCM_TanThuan_EPZ", 10.7480, 106.7280),
-    ("HCM_LinhTrung_EPZ", 10.8730, 106.7760),
-    ("HCM_HiepPhuoc_IP", 10.6440, 106.7400),
-]
-ROAD_ANCHORS = [
-    ("HN_NguyenVanCu", 21.0491, 105.8831),
-    ("HN_GiaiPhong", 20.9950, 105.8410),
-    ("HCM_DienBienPhu", 10.8010, 106.7130),
-    ("HCM_NguyenVanLinh", 10.7380, 106.7200),
-]
+LAG_PERIODS = [1, 3, 12]        # Dataset mới là daily/monthly-level, nên dùng lag theo period thay vì lag theo giờ.
+ROLLING_WINDOWS = [3, 12]
+ENABLE_ROLLING_FEATURES = os.getenv("ENABLE_ROLLING_FEATURES", "0") == "1"
+LAG_BASE_COLS = ["pm25", "pm10", "no2", "o3", "co", "humidity", "wind_speed"]
 
 
 @dataclass
 class PreprocessSummary:
-    aqi_rows_loaded: int
-    weather_rows_loaded: int
-    hourly_rows: int
-    rows_after_target: int
-    n_stations: int
+    raw_rows_loaded: int
+    rows_after_cleaning: int
+    duplicate_rows_removed: int
+    countries: int
+    cities: int
     date_from: str
     date_to: str
-    feature_count: int
+    numeric_features: int
+    categorical_features: int
+    total_features: int
     target_col: str
     label_distribution: Dict[str, int]
     split_distribution: Dict[str, int]
     notes: List[str]
 
 
-def _read_parquet_or_empty(path: Path) -> pd.DataFrame:
-    if not path.exists():
-        return pd.DataFrame()
-    try:
-        return pd.read_parquet(str(path))
-    except Exception as exc:
-        print(f"  ⚠️  Không đọc được Parquet {path}: {exc.__class__.__name__}. Sẽ dùng raw CSV nếu có.")
-        return pd.DataFrame()
+def log(msg: str) -> None:
+    print(msg, flush=True)
 
 
-def _read_csv_glob(paths: Iterable[Path]) -> pd.DataFrame:
-    frames: List[pd.DataFrame] = []
-    for p in paths:
-        try:
-            frames.append(pd.read_csv(p))
-        except Exception as exc:
-            print(f"  ⚠️  Bỏ qua {p.name}: {exc}")
-    return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+def normalize_column_name(col: str) -> str:
+    col = col.strip()
+    if col in COLUMN_RENAME:
+        return COLUMN_RENAME[col]
+    col = re.sub(r"[^0-9a-zA-Z]+", "_", col).strip("_").lower()
+    return col
 
 
-def load_aqi_data() -> pd.DataFrame:
-    print("\n1️⃣  Loading AQI data...")
-    df = _read_parquet_or_empty(DATALAKE_AQI)
-    if df.empty:
-        df = _read_csv_glob(sorted(RAW_AQI_DIR.glob("summary_*.csv")))
-    if df.empty:
-        raise FileNotFoundError("Không tìm thấy AQI data trong data/datalake/aqi hoặc data/raw/aqi/summary_*.csv")
+def infer_country_from_path(path: Path) -> str:
+    """Infer country name from country CSV path.
 
-    df.columns = [c.strip().lower() for c in df.columns]
-    required = {"station_id", "timestamp", "parameter", "value"}
-    missing = required - set(df.columns)
-    if missing:
-        raise ValueError(f"AQI data thiếu cột bắt buộc: {sorted(missing)}")
-
-    if "city" not in df.columns and STATIONS_CSV.exists():
-        stations = pd.read_csv(STATIONS_CSV)
-        df = df.merge(stations[["station_id", "city", "lat", "lon"]], on="station_id", how="left")
-
-    df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True, errors="coerce")
-    df["value"] = pd.to_numeric(df["value"], errors="coerce")
-    df["parameter"] = df["parameter"].astype(str).str.lower().str.replace(".", "", regex=False)
-    df = df.dropna(subset=["station_id", "timestamp", "parameter", "value"])
-    print(f"  ✅ AQI: {len(df):,} records | {df['station_id'].nunique()} stations")
-    return df
+    Expected examples:
+    data/raw/vietnam/vietnam/vietnam_air_quality_2014_2025.csv
+    data/raw/world_AQI/world_AQI/vietnam/vietnam_air_quality_2014_2025.csv
+    """
+    stem = path.name.replace("_air_quality_2014_2025.csv", "")
+    if stem and stem != "global":
+        return stem.replace("_", " ").title()
+    parts = [p for p in path.parts]
+    for part in reversed(parts):
+        if part not in {"raw", "world_AQI", "world_AQI", "data"} and part != path.name:
+            return part.replace("_", " ").title()
+    return "Unknown"
 
 
-def load_weather_data() -> pd.DataFrame:
-    print("\n2️⃣  Loading Weather data...")
-    df = _read_parquet_or_empty(DATALAKE_WEATHER)
-    if df.empty:
-        df = _read_csv_glob(sorted(RAW_WEATHER_DIR.glob("weather_summary_*.csv")))
-    if df.empty:
-        print("  ⚠️  Không có weather data. Script vẫn chạy với pollutant + time features.")
-        return pd.DataFrame()
+def collect_country_csv_files() -> List[Path]:
+    """Collect country-level raw CSV files and avoid duplicated nested world_AQI copies.
 
-    df.columns = [WEATHER_RENAME_MAP.get(c.strip().lower(), c.strip().lower()) for c in df.columns]
-    if "timestamp" not in df.columns or "station_id" not in df.columns:
-        print("  ⚠️  Weather data thiếu station_id/timestamp. Bỏ qua weather.")
-        return pd.DataFrame()
+    DATA_FINAL currently contains both:
+    - data/raw/<country>/<country>/<country>_air_quality_2014_2025.csv
+    - data/raw/world_AQI/world_AQI/<country>/<country>_air_quality_2014_2025.csv
 
-    df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True, errors="coerce")
-    for col in ["temp", "humidity", "wind_speed", "pressure", "feels_like", "clouds", "wind_deg"]:
-        if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors="coerce")
-    keep = [c for c in ["station_id", "timestamp", "temp", "humidity", "wind_speed", "pressure", "feels_like", "clouds", "wind_deg"] if c in df.columns]
-    df = df[keep].dropna(subset=["station_id", "timestamp"])
-    df = df.groupby(["station_id", "timestamp"], as_index=False).mean(numeric_only=True)
-    print(f"  ✅ Weather: {len(df):,} records | {df['station_id'].nunique()} stations")
-    return df
+    The second group is a duplicated nested copy, so this function excludes paths
+    containing world_AQI to avoid double-counting the same country data.
+    """
+    if not RAW_ROOT.exists():
+        return []
 
-
-def build_hourly_matrix(aqi_df: pd.DataFrame, weather_df: pd.DataFrame) -> pd.DataFrame:
-    print("\n3️⃣  Building hourly station matrix...")
-    static_cols = [c for c in ["station_id", "name", "city", "lat", "lon"] if c in aqi_df.columns]
-    use_params = [p for p in POLLUTANT_COLS if p in set(aqi_df["parameter"])]
-    if "pm25" not in use_params:
-        raise ValueError("Không có parameter 'pm25', không thể tạo target AQI label.")
-
-    grouped = (
-        aqi_df[aqi_df["parameter"].isin(use_params)]
-        .groupby(static_cols + ["timestamp", "parameter"], dropna=False)["value"]
-        .mean()
-        .reset_index()
-    )
-    pivot = grouped.pivot_table(index=static_cols + ["timestamp"], columns="parameter", values="value", aggfunc="mean").reset_index()
-    pivot.columns.name = None
-
-    hourly_frames: List[pd.DataFrame] = []
-    for station_id, g in pivot.groupby("station_id"):
-        g = g.sort_values("timestamp").set_index("timestamp")
-        # numeric pollution columns are resampled hourly; station metadata are restored with ffill/bfill.
-        numeric_cols = [c for c in g.columns if c not in ["station_id", "name", "city", "lat", "lon"]]
-        hr = g[numeric_cols].resample("1H").mean()
-        for col in ["station_id", "name", "city", "lat", "lon"]:
-            if col in g.columns:
-                hr[col] = g[col].dropna().iloc[0] if g[col].notna().any() else np.nan
-        hourly_frames.append(hr.reset_index())
-
-    hourly = pd.concat(hourly_frames, ignore_index=True)
-
-    if not weather_df.empty:
-        hourly = hourly.merge(weather_df, on=["station_id", "timestamp"], how="left")
-
-    hourly["timestamp"] = pd.to_datetime(hourly["timestamp"], utc=True, errors="coerce")
-    hourly = hourly.sort_values(["station_id", "timestamp"]).reset_index(drop=True)
-    print(f"  ✅ Hourly matrix: {len(hourly):,} rows | {hourly['station_id'].nunique()} stations | {len(hourly.columns)} columns")
-    return hourly
-
-
-def analyze_missing_patterns(df: pd.DataFrame, numeric_cols: List[str]) -> pd.DataFrame:
-    rows = []
-    for col in numeric_cols:
-        miss = df[col].isna()
-        miss_rate = float(miss.mean())
-        if miss_rate == 0:
-            pattern = "No missing"
-        else:
-            by_station_std = float(df.assign(_miss=miss).groupby("station_id")["_miss"].mean().std()) if "station_id" in df.columns else 0.0
-            by_hour_std = float(df.assign(_miss=miss, _hour=df["timestamp"].dt.hour).groupby("_hour")["_miss"].mean().std()) if "timestamp" in df.columns else 0.0
-            if by_station_std > 0.10:
-                pattern = "MAR/MNAR-like: phụ thuộc trạm đo"
-            elif by_hour_std > 0.10:
-                pattern = "MAR-like: phụ thuộc giờ trong ngày"
-            else:
-                pattern = "MCAR-like: phân bố khá ngẫu nhiên"
-        rows.append({
-            "feature": col,
-            "missing_count": int(miss.sum()),
-            "missing_rate": round(miss_rate, 4),
-            "suggested_pattern": pattern,
-        })
-    report = pd.DataFrame(rows).sort_values("missing_rate", ascending=False)
-    report.to_csv(OUTPUT_DIR / "missing_pattern_report.csv", index=False, encoding="utf-8-sig")
-    print("  ✅ Saved: missing_pattern_report.csv")
-    return report
-
-
-def _detect_sensor_errors(series: pd.Series, lower: float, upper: float) -> Tuple[pd.Series, pd.Series]:
-    q1 = series.quantile(0.25)
-    q3 = series.quantile(0.75)
-    iqr = q3 - q1
-    if pd.isna(iqr) or iqr == 0:
-        iqr_outlier = pd.Series(False, index=series.index)
-    else:
-        iqr_outlier = (series < q1 - 1.5 * iqr) | (series > q3 + 1.5 * iqr)
-
-    impossible = (series < lower) | (series > upper)
-    rolling_med = series.rolling(5, min_periods=3, center=True).median()
-    deviation = (series - rolling_med).abs()
-    mad = deviation.rolling(24, min_periods=6).median().replace(0, np.nan)
-    isolated_spike = iqr_outlier & (deviation > 6 * mad.fillna(deviation.median()))
-    sensor_error = impossible | isolated_spike
-    return iqr_outlier.fillna(False), sensor_error.fillna(False)
-
-
-def handle_outliers(df: pd.DataFrame, numeric_cols: List[str]) -> Tuple[pd.DataFrame, pd.DataFrame]:
-    print("\n4️⃣  Detecting outliers by station/month...")
-    out = df.copy()
-    out["year_month"] = out["timestamp"].dt.to_period("M").astype(str)
-    rows = []
-
-    for col in numeric_cols:
-        if col not in PHYSICAL_LIMITS:
+    csv_files = []
+    for fp in RAW_ROOT.rglob("*_air_quality_2014_2025.csv"):
+        rel_parts = fp.relative_to(RAW_ROOT).parts
+        name = fp.name.lower()
+        if name == "global_air_quality_2014_2025.csv":
             continue
-        lower, upper = PHYSICAL_LIMITS[col]
-        iqr_col = f"{col}_outlier_iqr"
-        err_col = f"{col}_sensor_error"
-        out[iqr_col] = False
-        out[err_col] = False
+        if any(part.lower() == "world_aqi" for part in rel_parts):
+            continue
+        csv_files.append(fp)
+    return sorted(csv_files)
 
-        for (_, _), idx in out.groupby(["station_id", "year_month"], dropna=False).groups.items():
-            s = out.loc[idx, col]
-            if s.notna().sum() < 8:
-                continue
-            iqr_mask, err_mask = _detect_sensor_errors(s, lower, upper)
-            out.loc[idx, iqr_col] = iqr_mask.values
-            out.loc[idx, err_col] = err_mask.values
 
-        # Sensor errors are treated as missing; real outliers remain as extreme pollution events.
-        out.loc[out[err_col], col] = np.nan
-        rows.append({
-            "feature": col,
-            "iqr_outliers": int(out[iqr_col].sum()),
-            "sensor_errors_set_nan": int(out[err_col].sum()),
-            "kept_as_real_pollution_events": int((out[iqr_col] & ~out[err_col]).sum()),
+def read_country_raw_files(files: List[Path]) -> pd.DataFrame:
+    frames = []
+    records = []
+    for idx, fp in enumerate(files, start=1):
+        df_part = pd.read_csv(fp)
+        inferred_country = infer_country_from_path(fp)
+        if "Country" not in df_part.columns and "country" not in df_part.columns:
+            df_part.insert(0, "Country", inferred_country)
+        df_part["source_file"] = str(fp.relative_to(BASE_DIR))
+        frames.append(df_part)
+        records.append({
+            "source_file": str(fp.relative_to(BASE_DIR)),
+            "inferred_country": inferred_country,
+            "rows": int(len(df_part)),
+            "columns": int(len(df_part.columns)),
         })
+        if idx % 10 == 0:
+            log(f"    -> Read {idx}/{len(files)} country CSV files...")
 
-    report = pd.DataFrame(rows)
-    report.to_csv(OUTPUT_DIR / "outlier_report.csv", index=False, encoding="utf-8-sig")
-    print("  ✅ Saved: outlier_report.csv")
-    return out.drop(columns=["year_month"]), report
-
-
-def impute_missing_values(df: pd.DataFrame, numeric_cols: List[str]) -> pd.DataFrame:
-    print("\n5️⃣  Imputing missing values: interpolation <3h + KNN/group fallback for longer gaps...")
-    out = df.sort_values(["station_id", "timestamp"]).copy()
-
-    # Interpolate small hourly gaps per station; limit=2 means up to two consecutive missing hours.
-    for col in numeric_cols:
-        out[col] = out.groupby("station_id")[col].transform(lambda s: s.interpolate(method="linear", limit=2, limit_direction="both"))
-
-    remaining_before = int(out[numeric_cols].isna().sum().sum())
-    method_used = "none"
-
-    if remaining_before > 0:
-        imputer_cols = [c for c in numeric_cols if out[c].notna().sum() > 0]
-        # Exact KNNImputer is O(n^2) and can be too slow for a full multi-year hourly matrix.
-        # Use it for manageable data; otherwise use station/hour/city median fallback and record the decision.
-        if imputer_cols and len(out) <= 20000:
-            imputer = KNNImputer(n_neighbors=5, weights="distance")
-            out[imputer_cols] = imputer.fit_transform(out[imputer_cols])
-            method_used = "KNNImputer(n_neighbors=5)"
-        else:
-            method_used = "grouped median fallback because dataset is too large for exact KNN in normal laptop runtime"
-            out["_hour"] = out["timestamp"].dt.hour
-            for col in imputer_cols:
-                # Prefer station-hour median, then city-hour median, then global median.
-                station_hour = out.groupby(["station_id", "_hour"])[col].transform("median")
-                out[col] = out[col].fillna(station_hour)
-                if "city" in out.columns:
-                    city_hour = out.groupby(["city", "_hour"])[col].transform("median")
-                    out[col] = out[col].fillna(city_hour)
-                out[col] = out[col].fillna(out[col].median())
-            out = out.drop(columns=["_hour"])
-
-    # If a whole column is missing (e.g., weather has no timestamp overlap), fill with neutral median/0 fallback.
-    for col in numeric_cols:
-        if out[col].isna().any():
-            fallback = out[col].median()
-            if pd.isna(fallback):
-                fallback = 0.0
-            out[col] = out[col].fillna(fallback)
-
-    remaining_after = int(out[numeric_cols].isna().sum().sum())
-    pd.DataFrame([
-        {"stage": "after_interpolation_before_long_gap_impute", "remaining_missing_cells": remaining_before, "method": "linear interpolation limit=2"},
-        {"stage": "after_long_gap_impute_and_fallback", "remaining_missing_cells": remaining_after, "method": method_used},
-    ]).to_csv(OUTPUT_DIR / "imputation_summary.csv", index=False, encoding="utf-8-sig")
-    print(f"  ✅ Missing cells: {remaining_before:,} → {remaining_after:,} | method: {method_used}")
+    source_df = pd.DataFrame(records)
+    source_df.to_csv(OUTPUT_DIR / "raw_country_source_files.csv", index=False)
+    out = pd.concat(frames, ignore_index=True)
+    log(f"  -> Loaded country-level CSV files: {len(files)} files | {len(out):,} rows")
+    log("  -> Source report saved: raw_country_source_files.csv")
     return out
 
 
-def pm25_to_label(pm25: float) -> Optional[str]:
-    if pd.isna(pm25):
-        return None
-    if pm25 <= PM25_LABEL_THRESHOLDS[0]:
-        return "Good"
-    if pm25 <= PM25_LABEL_THRESHOLDS[1]:
-        return "Moderate"
-    if pm25 <= PM25_LABEL_THRESHOLDS[2]:
-        return "Unhealthy"
-    if pm25 <= PM25_LABEL_THRESHOLDS[3]:
-        return "Very_Unhealthy"
+def read_raw_or_datalake() -> pd.DataFrame:
+    """Read AirGlobal data following the new DATA_FINAL structure.
+
+    Default behavior RAW_INPUT_MODE=auto:
+    1. Use country-level CSV files from data/raw/<country>/<country>/.
+    2. If no country files exist, use data/raw/global_air_quality_2014_2025.csv.
+    3. If neither exists, fallback to data/datalake/aqi parquet.
+
+    This avoids the old behavior where PH-03 always prioritized only the single
+    global CSV and ignored country-split raw folders.
+    """
+    country_files = collect_country_csv_files()
+
+    if RAW_INPUT_MODE not in {"auto", "country", "global", "datalake"}:
+        raise ValueError("RAW_INPUT_MODE must be one of: auto, country, global, datalake")
+
+    if RAW_INPUT_MODE in {"auto", "country"} and country_files:
+        return read_country_raw_files(country_files)
+
+    if RAW_INPUT_MODE == "country" and not country_files:
+        raise FileNotFoundError(f"RAW_INPUT_MODE=country nhưng không tìm thấy country CSV trong {RAW_ROOT}")
+
+    if RAW_INPUT_MODE in {"auto", "global"} and GLOBAL_RAW_CSV.exists():
+        df = pd.read_csv(GLOBAL_RAW_CSV)
+        df["source_file"] = str(GLOBAL_RAW_CSV.relative_to(BASE_DIR))
+        log(f"  -> Loaded global raw CSV: {len(df):,} rows from {GLOBAL_RAW_CSV.relative_to(BASE_DIR)}")
+        return df
+
+    if RAW_INPUT_MODE == "global" and not GLOBAL_RAW_CSV.exists():
+        raise FileNotFoundError(f"RAW_INPUT_MODE=global nhưng không tìm thấy {GLOBAL_RAW_CSV}")
+
+    parquet_files = list(DATALAKE_DIR.rglob("*.parquet")) if DATALAKE_DIR.exists() else []
+    if parquet_files:
+        try:
+            log(f"  -> Raw CSV not found. Found {len(parquet_files):,} parquet files in datalake. Reading...")
+            frames = []
+            for idx, fp in enumerate(parquet_files, start=1):
+                frame = pd.read_parquet(fp)
+                frame["source_file"] = str(fp.relative_to(BASE_DIR))
+                frames.append(frame)
+                if idx % 5000 == 0:
+                    log(f"    -> Read {idx:,}/{len(parquet_files):,} parquet files...")
+            df = pd.concat(frames, ignore_index=True)
+            log(f"  -> Loaded datalake parquet: {len(df):,} rows")
+            return df
+        except Exception as exc:
+            raise RuntimeError(
+                f"Không đọc được datalake parquet ({type(exc).__name__}). "
+                "Hãy cài pyarrow hoặc đặt raw CSV vào data/raw/."
+            ) from exc
+
+    raise FileNotFoundError(
+        f"Không tìm thấy dữ liệu. Cần có country CSV trong {RAW_ROOT}, "
+        f"hoặc {GLOBAL_RAW_CSV}, hoặc parquet trong {DATALAKE_DIR}."
+    )
+
+def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    df.columns = [normalize_column_name(c) for c in df.columns]
+    return df
+
+
+def normalize_label(value) -> object:
+    if pd.isna(value):
+        return np.nan
+    key = str(value).strip().lower().replace("_", " ")
+    return LABEL_NORMALIZATION.get(key, str(value).strip().replace(" ", "_"))
+
+
+def derive_label_from_aqi(aqi_value) -> object:
+    if pd.isna(aqi_value):
+        return np.nan
+    try:
+        val = float(aqi_value)
+    except Exception:
+        return np.nan
+    for threshold, label in zip(AQI_NUMERIC_THRESHOLDS, AQI_NUMERIC_LABELS):
+        if val <= threshold:
+            return label
     return "Hazardous"
 
 
-def haversine_km(lat1: pd.Series, lon1: pd.Series, lat2: float, lon2: float) -> pd.Series:
-    r = 6371.0
-    phi1 = np.radians(lat1.astype(float))
-    phi2 = math.radians(lat2)
-    dphi = np.radians(lat2 - lat1.astype(float))
-    dlambda = np.radians(lon2 - lon1.astype(float))
-    a = np.sin(dphi / 2) ** 2 + np.cos(phi1) * math.cos(phi2) * np.sin(dlambda / 2) ** 2
-    return 2 * r * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
+def add_target_label(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    if "aqi_bucket" in df.columns:
+        df["aqi_bucket_clean"] = df["aqi_bucket"].apply(normalize_label)
+    else:
+        df["aqi_bucket_clean"] = np.nan
+
+    if "aqi" in df.columns:
+        derived = df["aqi"].apply(derive_label_from_aqi)
+        df[TARGET_COL] = df["aqi_bucket_clean"].fillna(derived)
+    else:
+        df[TARGET_COL] = df["aqi_bucket_clean"]
+
+    df = df.dropna(subset=[TARGET_COL])
+    df = df[df[TARGET_COL].isin(AQI_NUMERIC_LABELS)]
+    return df
 
 
-def add_spatial_features(df: pd.DataFrame) -> pd.DataFrame:
-    out = df.copy()
-    if not {"lat", "lon"}.issubset(out.columns):
-        out["dist_to_nearest_industrial_km"] = np.nan
-        out["dist_to_nearest_major_road_km"] = np.nan
-        return out
+def clean_base_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, int, pd.DataFrame]:
+    df = standardize_columns(df)
 
-    industrial_dists = [haversine_km(out["lat"], out["lon"], lat, lon) for _, lat, lon in INDUSTRIAL_ANCHORS]
-    road_dists = [haversine_km(out["lat"], out["lon"], lat, lon) for _, lat, lon in ROAD_ANCHORS]
-    out["dist_to_nearest_industrial_km"] = np.vstack([d.values for d in industrial_dists]).min(axis=0)
-    out["dist_to_nearest_major_road_km"] = np.vstack([d.values for d in road_dists]).min(axis=0)
+    required = ["country", "city", "date"]
+    missing_required = [c for c in required if c not in df.columns]
+    if missing_required:
+        raise ValueError(f"Dataset thiếu cột bắt buộc: {missing_required}")
+
+    df[DATE_COL] = pd.to_datetime(df[DATE_COL], errors="coerce")
+    df = df.dropna(subset=[DATE_COL, "country", "city"])
+
+    # Normalize categorical text values.
+    for col in CATEGORICAL_BASE_COLS:
+        if col in df.columns:
+            df[col] = df[col].astype("string").str.strip().replace({"": pd.NA}).fillna("Unknown")
+
+    # Convert numeric columns.
+    for col in set(NUMERIC_BASE_COLS + ["aqi"]):
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    before_dups = len(df)
+    subset = [c for c in ["country", "state", "city", "date"] if c in df.columns]
+    df = df.drop_duplicates(subset=subset, keep="first")
+    duplicate_rows_removed = before_dups - len(df)
+
+    # Physical validity check.
+    invalid_records = []
+    for col, (lo, hi) in PHYSICAL_LIMITS.items():
+        if col not in df.columns:
+            continue
+        mask = df[col].notna() & ((df[col] < lo) | (df[col] > hi))
+        invalid_count = int(mask.sum())
+        if invalid_count > 0:
+            invalid_records.append({"column": col, "invalid_count": invalid_count, "min_allowed": lo, "max_allowed": hi})
+            df.loc[mask, col] = np.nan
+
+    invalid_report = pd.DataFrame(invalid_records)
+    return df, duplicate_rows_removed, invalid_report
+
+
+def save_missing_report(df: pd.DataFrame, filename: str = "missing_report_before_imputation.csv") -> pd.DataFrame:
+    report = []
+    for col in df.columns:
+        missing = int(df[col].isna().sum())
+        report.append({
+            "column": col,
+            "missing_count": missing,
+            "missing_pct": round(missing / max(len(df), 1) * 100, 4),
+            "dtype": str(df[col].dtype),
+        })
+    out = pd.DataFrame(report).sort_values("missing_pct", ascending=False)
+    out.to_csv(OUTPUT_DIR / filename, index=False)
     return out
 
 
-def feature_engineering(df: pd.DataFrame) -> pd.DataFrame:
-    print("\n6️⃣  Feature engineering: lag, rolling, cyclical, spatial...")
-    out = df.sort_values(["station_id", "timestamp"]).copy()
-
-    # Current AQI label and next-hour forecasting target.
-    out["aqi_label_current"] = out["pm25"].apply(pm25_to_label)
-    out["pm25_next_1h"] = out.groupby("station_id")["pm25"].shift(-1)
-    out["target_aqi_label_next_1h"] = out["pm25_next_1h"].apply(pm25_to_label)
-
-    base_for_lag = [c for c in ["pm25", "pm10", "no2", "o3", "so2", "co", "temp", "humidity", "wind_speed"] if c in out.columns]
-    for col in base_for_lag:
-        for lag in LAG_HOURS:
-            out[f"{col}_lag_{lag}h"] = out.groupby("station_id")[col].shift(lag)
-
-    for col in [c for c in ["pm25", "pm10", "aqi_numeric", "temp", "humidity", "wind_speed"] if c in out.columns]:
-        for window in ROLLING_WINDOWS:
-            grouped = out.groupby("station_id")[col]
-            out[f"{col}_roll_mean_{window}h"] = grouped.transform(lambda s: s.shift(1).rolling(window, min_periods=1).mean())
-            out[f"{col}_roll_std_{window}h"] = grouped.transform(lambda s: s.shift(1).rolling(window, min_periods=2).std())
-            out[f"{col}_roll_max_{window}h"] = grouped.transform(lambda s: s.shift(1).rolling(window, min_periods=1).max())
-            out[f"{col}_roll_min_{window}h"] = grouped.transform(lambda s: s.shift(1).rolling(window, min_periods=1).min())
-
-    # Number of hours with current AQI above moderate threshold in previous 24h.
-    out["rolling_AQI_exceeds_threshold_24h"] = (
-        out.assign(_exceed=(out["pm25"] > PM25_LABEL_THRESHOLDS[1]).astype(int))
-        .groupby("station_id")["_exceed"]
-        .transform(lambda s: s.shift(1).rolling(24, min_periods=1).sum())
-    )
-
-    out["hour"] = out["timestamp"].dt.hour
-    out["dayofweek"] = out["timestamp"].dt.dayofweek
-    out["month"] = out["timestamp"].dt.month
-    out["hour_sin"] = np.sin(2 * np.pi * out["hour"] / 24)
-    out["hour_cos"] = np.cos(2 * np.pi * out["hour"] / 24)
-    out["dow_sin"] = np.sin(2 * np.pi * out["dayofweek"] / 7)
-    out["dow_cos"] = np.cos(2 * np.pi * out["dayofweek"] / 7)
-    out["month_sin"] = np.sin(2 * np.pi * out["month"] / 12)
-    out["month_cos"] = np.cos(2 * np.pi * out["month"] / 12)
-    out["is_rush_hour"] = out["hour"].isin([7, 8, 9, 16, 17, 18, 19]).astype(int)
-    out["is_weekend"] = out["dayofweek"].isin([5, 6]).astype(int)
-    out["is_dry_season"] = out["month"].isin([11, 12, 1, 2, 3, 4]).astype(int)
-
-    out = add_spatial_features(out)
-
-    # Fill NaNs created by lags/rolling within each station, then global fallback.
-    engineered_numeric = out.select_dtypes(include=[np.number]).columns.tolist()
-    for col in engineered_numeric:
-        out[col] = out.groupby("station_id")[col].transform(lambda s: s.ffill().bfill())
-        if out[col].isna().any():
-            out[col] = out[col].fillna(out[col].median() if not pd.isna(out[col].median()) else 0.0)
-
-    print(f"  ✅ Feature columns now: {len(out.columns)}")
-    return out
+def impute_numeric_by_hierarchy(df: pd.DataFrame, numeric_cols: List[str]) -> pd.DataFrame:
+    df = df.copy()
+    for col in numeric_cols:
+        if col not in df.columns:
+            continue
+        # Fill by country-city median, then country median, then global median.
+        city_median = df.groupby(["country", "city"])[col].transform("median")
+        country_median = df.groupby("country")[col].transform("median")
+        global_median = df[col].median()
+        if pd.isna(global_median):
+            global_median = 0.0
+        df[col] = df[col].fillna(city_median).fillna(country_median).fillna(global_median)
+    return df
 
 
-def add_split_column(df: pd.DataFrame) -> pd.DataFrame:
-    print("\n7️⃣  Splitting train/validation/test without leakage...")
-    out = df.dropna(subset=["target_aqi_label_next_1h"]).sort_values("timestamp").copy()
-    out["split"] = "train"
-
-    # Temporal holdout: last 15% timestamps are test set.
-    unique_times = np.array(sorted(out["timestamp"].dropna().unique()))
-    cutoff_index = max(1, int(len(unique_times) * 0.85))
-    test_start = unique_times[cutoff_index]
-    test_mask = out["timestamp"] >= test_start
-    out.loc[test_mask, "split"] = "test"
-
-    train_val_idx = out.index[~test_mask]
-    train_val = out.loc[train_val_idx]
-    val_size = 0.15 / 0.85
-    try:
-        train_idx, val_idx = train_test_split(
-            train_val.index,
-            test_size=val_size,
-            stratify=train_val["target_aqi_label_next_1h"],
-            random_state=RANDOM_STATE,
-        )
-    except ValueError:
-        train_idx, val_idx = train_test_split(train_val.index, test_size=val_size, random_state=RANDOM_STATE)
-    out.loc[val_idx, "split"] = "val"
-    out.loc[train_idx, "split"] = "train"
-
-    split_summary = out["split"].value_counts().rename_axis("split").reset_index(name="rows")
-    split_summary.to_csv(OUTPUT_DIR / "split_summary.csv", index=False, encoding="utf-8-sig")
-    print("  ✅ Split:", split_summary.to_dict("records"))
-    return out
+def winsorize_iqr(df: pd.DataFrame, numeric_cols: List[str]) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """IQR outlier treatment by country when possible; clip instead of dropping rows."""
+    df = df.copy()
+    records = []
+    for col in numeric_cols:
+        if col not in df.columns:
+            continue
+        total_outliers = 0
+        for country, idx in df.groupby("country").groups.items():
+            values = df.loc[idx, col].dropna()
+            if len(values) < 30:
+                continue
+            q1 = values.quantile(0.25)
+            q3 = values.quantile(0.75)
+            iqr = q3 - q1
+            if not np.isfinite(iqr) or iqr <= 0:
+                continue
+            lower = q1 - 1.5 * iqr
+            upper = q3 + 1.5 * iqr
+            mask = (df.loc[idx, col] < lower) | (df.loc[idx, col] > upper)
+            count = int(mask.sum())
+            if count:
+                total_outliers += count
+                df.loc[idx, col] = df.loc[idx, col].clip(lower=lower, upper=upper)
+        records.append({"column": col, "outlier_count_clipped": total_outliers})
+    report = pd.DataFrame(records).sort_values("outlier_count_clipped", ascending=False)
+    return df, report
 
 
-def save_feature_catalog(df: pd.DataFrame) -> List[str]:
-    non_features = {
-        "timestamp", "station_id", "name", "city", "unit", "aqi_label_current", "target_aqi_label_next_1h",
-        "pm25_next_1h", "split",
-    }
-    # Keep numeric features only for sklearn models. Exclude outlier flags only if they are non-numeric; boolean is acceptable.
-    feature_cols = [c for c in df.select_dtypes(include=[np.number, bool]).columns if c not in non_features]
-    catalog = pd.DataFrame({
-        "feature": feature_cols,
-        "dtype": [str(df[c].dtype) for c in feature_cols],
-        "missing_rate": [round(float(df[c].isna().mean()), 4) for c in feature_cols],
-    })
-    catalog.to_csv(OUTPUT_DIR / "feature_catalog.csv", index=False, encoding="utf-8-sig")
-    print(f"  ✅ Saved feature_catalog.csv ({len(feature_cols)} features)")
-    return feature_cols
+def add_time_features(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    df["year"] = df[DATE_COL].dt.year
+    df["month"] = df[DATE_COL].dt.month
+    df["quarter"] = df[DATE_COL].dt.quarter
+    df["day_of_year"] = df[DATE_COL].dt.dayofyear
+    df["decade"] = (df["year"] // 10) * 10
+    df["is_covid_period"] = df["year"].isin([2020, 2021]).astype(int)
+
+    def season_from_month(m: int) -> str:
+        if m in [12, 1, 2]:
+            return "Winter"
+        if m in [3, 4, 5]:
+            return "Spring"
+        if m in [6, 7, 8]:
+            return "Summer"
+        return "Autumn"
+
+    df["season"] = df["month"].apply(season_from_month)
+    df["month_sin"] = np.sin(2 * np.pi * df["month"] / 12)
+    df["month_cos"] = np.cos(2 * np.pi * df["month"] / 12)
+    df["doy_sin"] = np.sin(2 * np.pi * df["day_of_year"] / 365.25)
+    df["doy_cos"] = np.cos(2 * np.pi * df["day_of_year"] / 365.25)
+    return df
 
 
-def write_outputs(df: pd.DataFrame, feature_cols: List[str], summary: PreprocessSummary) -> None:
-    csv_path = OUTPUT_DIR / "processed_aqi_features.csv"
-    df.to_csv(csv_path, index=False, encoding="utf-8-sig")
-    print(f"  ✅ Saved: {csv_path.relative_to(BASE_DIR)}")
+def safe_div(numerator: pd.Series, denominator: pd.Series, eps: float = 1e-6) -> pd.Series:
+    return numerator / (denominator.replace(0, np.nan) + eps)
 
-    try:
-        parquet_path = OUTPUT_DIR / "processed_aqi_features.parquet"
-        df.to_parquet(parquet_path, index=False)
-        print(f"  ✅ Saved: {parquet_path.relative_to(BASE_DIR)}")
-    except Exception:
-        print("  ⚠️  Không save được Parquet vì thiếu pyarrow/fastparquet. CSV đã đủ cho PH-05.")
 
-    metadata = asdict(summary)
-    metadata["feature_columns"] = feature_cols
-    metadata["label_mapping_vi"] = LABEL_VI
-    metadata["pm25_label_thresholds"] = PM25_LABEL_THRESHOLDS
-    metadata["split_strategy"] = "Temporal test holdout last 15% timestamps; stratified train/val on remaining 85%."
-    with open(OUTPUT_DIR / "preprocessing_metadata.json", "w", encoding="utf-8") as f:
-        json.dump(metadata, f, ensure_ascii=False, indent=2, default=str)
-    print("  ✅ Saved: preprocessing_metadata.json")
+def add_domain_features(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+
+    # Ratios among pollutants. These are useful because AQI category often depends on relative pollutant severity.
+    if {"pm25", "pm10"}.issubset(df.columns):
+        df["pm25_pm10_ratio"] = safe_div(df["pm25"], df["pm10"])
+        df["pm10_minus_pm25"] = df["pm10"] - df["pm25"]
+    if {"no2", "nox"}.issubset(df.columns):
+        df["no2_nox_ratio"] = safe_div(df["no2"], df["nox"])
+    if {"benzene", "toluene"}.issubset(df.columns):
+        df["benzene_toluene_ratio"] = safe_div(df["benzene"], df["toluene"])
+    if {"so2", "no2"}.issubset(df.columns):
+        df["so2_no2_ratio"] = safe_div(df["so2"], df["no2"])
+
+    # Interactions with environmental/social variables.
+    if {"pm25", "humidity"}.issubset(df.columns):
+        df["pm25_humidity_interaction"] = df["pm25"] * df["humidity"]
+        df["high_humidity_flag"] = (df["humidity"] >= 80).astype(int)
+    if {"pm25", "wind_speed"}.issubset(df.columns):
+        df["pm25_wind_dispersion"] = df["pm25"] / (df["wind_speed"] + 1)
+        df["low_wind_flag"] = (df["wind_speed"] < 5).astype(int)
+    if {"population_density", "industry_growth"}.issubset(df.columns):
+        df["industry_density_interaction"] = df["population_density"] * df["industry_growth"]
+    if {"co2_emission", "population_density"}.issubset(df.columns):
+        df["co2_per_density"] = df["co2_emission"] / (df["population_density"] + 1)
+
+    # Frequency encoding for geographical identifiers. This avoids creating thousands of dense dummy columns in PH-03.
+    n = max(len(df), 1)
+    for col in ["country", "city", "state"]:
+        if col in df.columns:
+            freq = df[col].value_counts(normalize=True)
+            df[f"{col}_freq"] = df[col].map(freq).fillna(0)
+
+    if {"country", "city"}.issubset(df.columns):
+        city_key = df["country"].astype(str) + "__" + df["city"].astype(str)
+        freq = city_key.value_counts(normalize=True)
+        df["country_city_freq"] = city_key.map(freq).fillna(0)
+
+    return df
+
+
+def add_lag_rolling_features(df: pd.DataFrame) -> pd.DataFrame:
+    """Create compact lag features by country-city time series.
+
+    For a 1M+ row dataset, lag features are useful and fast. Rolling features are
+    optional because group rolling over thousands of cities can be slow on normal
+    laptops. To enable rolling means, set ENABLE_ROLLING_FEATURES=1.
+    """
+    df = df.copy().sort_values(["country", "city", DATE_COL])
+    group_cols = ["country", "city"]
+    valid_cols = [c for c in LAG_BASE_COLS if c in df.columns]
+
+    for col in valid_cols:
+        grouped_col = df.groupby(group_cols, sort=False)[col]
+        for lag in LAG_PERIODS:
+            new_col = f"{col}_lag_{lag}"
+            df[new_col] = grouped_col.shift(lag)
+            # First records of a city have no history; fill with current value as neutral fallback.
+            df[new_col] = df[new_col].fillna(df[col])
+
+        if ENABLE_ROLLING_FEATURES:
+            for window in ROLLING_WINDOWS:
+                new_col = f"{col}_roll_mean_{window}"
+                df[new_col] = grouped_col.transform(
+                    lambda s: s.shift(1).rolling(window=window, min_periods=1).mean()
+                )
+                df[new_col] = df[new_col].fillna(df[col])
+
+    return df
+
+def split_temporally(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy().sort_values(DATE_COL)
+    unique_dates = np.array(sorted(df[DATE_COL].dropna().unique()))
+    if len(unique_dates) < 5:
+        # Fallback if date granularity is too low.
+        rng = np.random.default_rng(RANDOM_STATE)
+        rand = rng.random(len(df))
+        df[SPLIT_COL] = np.where(rand < 0.7, "train", np.where(rand < 0.85, "val", "test"))
+        return df
+
+    train_cut = unique_dates[int(len(unique_dates) * 0.70)]
+    val_cut = unique_dates[int(len(unique_dates) * 0.85)]
+
+    df[SPLIT_COL] = "test"
+    df.loc[df[DATE_COL] < train_cut, SPLIT_COL] = "train"
+    df.loc[(df[DATE_COL] >= train_cut) & (df[DATE_COL] < val_cut), SPLIT_COL] = "val"
+
+    # Guard against a rare missing class in train due temporal split.
+    if df.loc[df[SPLIT_COL] == "train", TARGET_COL].nunique() < 2:
+        log("  Warning:  Temporal split produced too few train classes. Fallback to stratified-like random split.")
+        rng = np.random.default_rng(RANDOM_STATE)
+        rand = rng.random(len(df))
+        df[SPLIT_COL] = np.where(rand < 0.7, "train", np.where(rand < 0.85, "val", "test"))
+    return df
+
+
+def build_feature_catalog(df: pd.DataFrame) -> Tuple[pd.DataFrame, List[str], List[str]]:
+    excluded = set([DATE_COL, SPLIT_COL, TARGET_COL, "aqi", "aqi_bucket", "aqi_bucket_clean", "source_file"])
+    feature_cols = [c for c in df.columns if c not in excluded]
+
+    categorical_features = [
+        c for c in feature_cols
+        if str(df[c].dtype) in ["object", "string", "category"]
+    ]
+    numeric_features = [c for c in feature_cols if c not in categorical_features]
+
+    catalog_records = []
+    for col in feature_cols:
+        if col in categorical_features:
+            group = "categorical/geography"
+        elif any(token in col for token in ["lag", "roll"]):
+            group = "lag_rolling"
+        elif col in ["year", "month", "quarter", "day_of_year", "decade", "month_sin", "month_cos", "doy_sin", "doy_cos", "is_covid_period"]:
+            group = "time"
+        elif any(token in col for token in ["ratio", "interaction", "flag", "dispersion", "freq", "density"]):
+            group = "domain_engineered"
+        else:
+            group = "base_numeric"
+        catalog_records.append({
+            "feature": col,
+            "dtype": str(df[col].dtype),
+            "feature_type": "categorical" if col in categorical_features else "numeric",
+            "feature_group": group,
+            "missing_count": int(df[col].isna().sum()),
+        })
+    catalog = pd.DataFrame(catalog_records)
+    return catalog, numeric_features, categorical_features
 
 
 def main() -> None:
     print("=" * 80)
-    print("PH-03 PREPROCESSING — AN")
+    print("PH-03 PREPROCESSING | AirGlobal Dataset")
     print("=" * 80)
 
     notes: List[str] = []
-    aqi_df = load_aqi_data()
-    weather_df = load_weather_data()
-    if not weather_df.empty:
-        overlap = (
-            max(aqi_df["timestamp"].min(), weather_df["timestamp"].min()),
-            min(aqi_df["timestamp"].max(), weather_df["timestamp"].max()),
-        )
-        if overlap[0] > overlap[1]:
-            notes.append("Weather timestamp không overlap với AQI; weather features được impute bằng fallback. Nên crawl lại weather cùng date range để tăng chất lượng mô hình.")
-            print("  ⚠️  Weather không overlap với AQI; vẫn giữ columns và impute fallback.")
 
-    hourly = build_hourly_matrix(aqi_df, weather_df)
-    numeric_cols = [c for c in hourly.select_dtypes(include=[np.number]).columns if c not in ["lat", "lon"]]
-    analyze_missing_patterns(hourly, numeric_cols)
-    outlier_handled, _ = handle_outliers(hourly, numeric_cols)
-    imputed = impute_missing_values(outlier_handled, numeric_cols)
-    featured = feature_engineering(imputed)
-    final_df = add_split_column(featured)
-    feature_cols = save_feature_catalog(final_df)
+    log("\n1) Loading dataset...")
+    raw_df = read_raw_or_datalake()
+    raw_rows = len(raw_df)
 
-    label_distribution = final_df["target_aqi_label_next_1h"].value_counts().to_dict()
-    split_distribution = final_df["split"].value_counts().to_dict()
+    log("\n2) Cleaning schema, dates, duplicates, physical invalid values...")
+    df, duplicate_removed, invalid_report = clean_base_data(raw_df)
+    invalid_report.to_csv(OUTPUT_DIR / "physical_invalid_values_report.csv", index=False)
+    log(f"  -> After basic cleaning: {len(df):,} rows | duplicates removed: {duplicate_removed:,}")
+
+    log("\n3) Creating target label and avoiding AQI leakage...")
+    df = add_target_label(df)
+    log(f"  -> Rows with valid target: {len(df):,} | classes: {df[TARGET_COL].nunique()}")
+
+    log("\n4) Missing pattern report before imputation...")
+    missing_before = int(df.isna().sum().sum())
+    missing_report = save_missing_report(df)
+    log(f"  -> Missing cells before imputation: {missing_before:,}")
+
+    existing_numeric_cols = [c for c in NUMERIC_BASE_COLS if c in df.columns]
+
+    log("\n5) IQR outlier treatment + hierarchical median imputation...")
+    df, outlier_report = winsorize_iqr(df, existing_numeric_cols)
+    outlier_report.to_csv(OUTPUT_DIR / "outlier_iqr_report.csv", index=False)
+    df = impute_numeric_by_hierarchy(df, existing_numeric_cols)
+    missing_after_base = int(df[existing_numeric_cols].isna().sum().sum()) if existing_numeric_cols else 0
+    log(f"  -> Missing numeric base cells after imputation: {missing_after_base:,}")
+
+    log("\n6) Feature engineering: time, ratios, interactions, lag/rolling...")
+    df = add_time_features(df)
+    df = add_domain_features(df)
+    df = add_lag_rolling_features(df)
+
+    # Final cleanup for infinite values and residual missing in numeric engineered columns.
+    numeric_cols_now = [c for c in df.columns if pd.api.types.is_numeric_dtype(df[c])]
+    df[numeric_cols_now] = df[numeric_cols_now].replace([np.inf, -np.inf], np.nan)
+    # Fast final fallback for engineered features. Base numeric columns already used hierarchical imputation.
+    numeric_medians = df[numeric_cols_now].median(numeric_only=True)
+    df[numeric_cols_now] = df[numeric_cols_now].fillna(numeric_medians).fillna(0)
+    for col in CATEGORICAL_BASE_COLS + ["season"]:
+        if col in df.columns:
+            df[col] = df[col].astype("string").fillna("Unknown")
+
+    log("\n7) Temporal train/validation/test split...")
+    df = split_temporally(df)
+
+    catalog, numeric_features, categorical_features = build_feature_catalog(df)
+    catalog.to_csv(OUTPUT_DIR / "feature_catalog.csv", index=False)
+
+    label_dist = df[TARGET_COL].value_counts().reindex(AQI_NUMERIC_LABELS).fillna(0).astype(int)
+    label_dist_df = pd.DataFrame({
+        "label": label_dist.index,
+        "label_vi": [LABEL_VI.get(x, x) for x in label_dist.index],
+        "rows": label_dist.values,
+        "pct": np.round(label_dist.values / max(label_dist.values.sum(), 1) * 100, 4),
+    })
+    label_dist_df.to_csv(OUTPUT_DIR / "label_distribution.csv", index=False)
+
+    split_summary = df[SPLIT_COL].value_counts().reindex(["train", "val", "test"]).fillna(0).astype(int)
+    split_summary_df = pd.DataFrame({"split": split_summary.index, "rows": split_summary.values})
+    split_summary_df.to_csv(OUTPUT_DIR / "split_summary.csv", index=False)
+
+    date_from = str(df[DATE_COL].min().date()) if not df.empty else ""
+    date_to = str(df[DATE_COL].max().date()) if not df.empty else ""
+
+    log(f"  -> Split: {split_summary_df.to_dict(orient='records')}")
+    log(f"  -> Features: {len(numeric_features)} numeric + {len(categorical_features)} categorical = {len(numeric_features) + len(categorical_features)}")
+
+    log("\n8) Saving processed dataset and metadata...")
+    # Save date as ISO string for portable outputs. Pickle is the default full output because
+    # it is much faster than writing a 1M+ row CSV on normal laptops.
+    df[DATE_COL] = pd.to_datetime(df[DATE_COL]).dt.strftime("%Y-%m-%d")
+    processed_pkl = OUTPUT_DIR / "processed_airglobal_features.pkl"
+    df.to_pickle(processed_pkl)
+    df.head(5000).to_csv(OUTPUT_DIR / "processed_airglobal_sample_5000.csv", index=False)
+
+    if SAVE_FULL_CSV:
+        processed_csv = OUTPUT_DIR / "processed_airglobal_features.csv"
+        df.to_csv(processed_csv, index=False)
+        notes.append("Saved full CSV because SAVE_FULL_CSV=1.")
+    else:
+        notes.append("Full CSV skipped by default for speed. Set SAVE_FULL_CSV=1 if needed.")
+
+    if SAVE_PARQUET:
+        try:
+            df.to_parquet(OUTPUT_DIR / "processed_airglobal_features.parquet", index=False)
+            notes.append("Saved parquet successfully.")
+        except Exception as exc:
+            notes.append(f"Parquet export skipped: {type(exc).__name__}.")
+            log("  Warning:  Không save được parquet vì thiếu pyarrow/fastparquet. Pickle output đã đủ cho PH-05.")
+
     summary = PreprocessSummary(
-        aqi_rows_loaded=int(len(aqi_df)),
-        weather_rows_loaded=int(len(weather_df)),
-        hourly_rows=int(len(hourly)),
-        rows_after_target=int(len(final_df)),
-        n_stations=int(final_df["station_id"].nunique()),
-        date_from=str(final_df["timestamp"].min()),
-        date_to=str(final_df["timestamp"].max()),
-        feature_count=int(len(feature_cols)),
-        target_col="target_aqi_label_next_1h",
-        label_distribution={str(k): int(v) for k, v in label_distribution.items()},
-        split_distribution={str(k): int(v) for k, v in split_distribution.items()},
+        raw_rows_loaded=int(raw_rows),
+        rows_after_cleaning=int(len(df)),
+        duplicate_rows_removed=int(duplicate_removed),
+        countries=int(df["country"].nunique()) if "country" in df.columns else 0,
+        cities=int(df["city"].nunique()) if "city" in df.columns else 0,
+        date_from=date_from,
+        date_to=date_to,
+        numeric_features=int(len(numeric_features)),
+        categorical_features=int(len(categorical_features)),
+        total_features=int(len(numeric_features) + len(categorical_features)),
+        target_col=TARGET_COL,
+        label_distribution={str(k): int(v) for k, v in label_dist.to_dict().items()},
+        split_distribution={str(k): int(v) for k, v in split_summary.to_dict().items()},
         notes=notes,
     )
-    write_outputs(final_df, feature_cols, summary)
+    with open(OUTPUT_DIR / "preprocessing_metadata.json", "w", encoding="utf-8") as f:
+        json.dump(asdict(summary), f, indent=2, ensure_ascii=False)
 
+    log(f"  -> Saved: {processed_pkl.relative_to(BASE_DIR)}")
+    log("  -> Saved reports: missing_report_before_imputation.csv, outlier_iqr_report.csv, feature_catalog.csv")
     print("\n" + "=" * 80)
-    print("✅ PH-03 DONE")
-    print("Output folder:", OUTPUT_DIR.relative_to(BASE_DIR))
-    print("Next: python ph05_classification/scripts/train_classification.py")
+    print("-> PH-03 DONE")
+    print(f"Output folder: {OUTPUT_DIR.relative_to(BASE_DIR)}")
+    print("Next: python src/train_classification.py")
     print("=" * 80)
 
 

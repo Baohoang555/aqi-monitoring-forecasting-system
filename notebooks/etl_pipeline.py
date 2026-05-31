@@ -24,9 +24,9 @@ from sqlalchemy import create_engine, text
 
 # ─── Cấu hình ───────────────────────────────────────────────────────────────
 DB_HOST: str = "localhost"
-DB_PORT: int = 3306
+DB_PORT: int = 3307
 DB_USER: str = "root"
-DB_PASSWORD: str = "130225"
+DB_PASSWORD: str = "1882005"
 DB_NAME: str = "aqi_dw"
 DB_CHARSET: str = "utf8mb4"
 
@@ -36,8 +36,8 @@ ENGINE_URL = (
 )
 
 # Thư mục Parquet từ PH-01 (chỉnh lại đường dẫn cho đúng)
-BASE_DIR    = Path(__file__).resolve().parents[2]
-PARQUET_DIR = Path(r"F:\DATA_FINAL\data\raw")
+BASE_DIR    = Path(__file__).resolve().parent.parent
+PARQUET_DIR = Path(r"C:\Users\ADMIN\python\DATA_FINAL\data\raw")
 MIN_SUP  = 100   # Ngưỡng Iceberg Cube
 BATCH_ID = datetime.now().strftime("%Y%m%d_%H%M%S")
 
