@@ -70,3 +70,5 @@ __pycache__/
 
 # Chặn file log sinh ra trong quá trình chạy
 *.log
+
+.pkl

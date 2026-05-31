@@ -24,7 +24,7 @@ from sqlalchemy import create_engine, text
 
 # ─── Cấu hình ───────────────────────────────────────────────────────────────
 DB_HOST: str = "localhost"
-DB_PORT: int = 3307
+DB_PORT: int = 3306
 DB_USER: str = "root"
 DB_PASSWORD: str = "1882005"
 DB_NAME: str = "aqi_dw"
