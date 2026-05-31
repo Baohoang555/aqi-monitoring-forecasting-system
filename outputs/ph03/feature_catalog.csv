@@ -20,6 +20,11 @@ deforestation_rate,float64,numeric,base_numeric,0
 industry_growth,float64,numeric,base_numeric,0
 co2_emission,float64,numeric,base_numeric,0
 population_density,float64,numeric,domain_engineered,0
+division,string,categorical,categorical/geography,0
+province,string,categorical,categorical/geography,0
+region,string,categorical,categorical/geography,0
+prefecture,string,categorical,categorical/geography,0
+federal_district,string,categorical,categorical/geography,0
 year,int32,numeric,time,0
 month,int32,numeric,time,0
 quarter,int32,numeric,time,0

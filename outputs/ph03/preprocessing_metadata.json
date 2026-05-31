@@ -1,27 +1,27 @@
 {
-  "raw_rows_loaded": 331920,
-  "rows_after_cleaning": 331920,
-  "duplicate_rows_removed": 0,
-  "countries": 24,
-  "cities": 2270,
+  "raw_rows_loaded": 342720,
+  "rows_after_cleaning": 329734,
+  "duplicate_rows_removed": 10795,
+  "countries": 25,
+  "cities": 2271,
   "date_from": "2014-01-01",
   "date_to": "2025-12-01",
   "numeric_features": 64,
-  "categorical_features": 4,
-  "total_features": 68,
+  "categorical_features": 9,
+  "total_features": 73,
   "target_col": "target_aqi_bucket",
   "label_distribution": {
-    "Good": 89333,
-    "Satisfactory": 53195,
-    "Moderate": 124098,
-    "Unhealthy": 54498,
-    "Very_Unhealthy": 8045,
-    "Hazardous": 2751
+    "Good": 88886,
+    "Satisfactory": 52705,
+    "Moderate": 123232,
+    "Unhealthy": 54133,
+    "Very_Unhealthy": 8031,
+    "Hazardous": 2747
   },
   "split_distribution": {
-    "train": 230500,
-    "val": 50710,
-    "test": 50710
+    "train": 228941,
+    "val": 50411,
+    "test": 50382
   },
   "notes": [
     "Full CSV skipped by default for speed. Set SAVE_FULL_CSV=1 if needed."
