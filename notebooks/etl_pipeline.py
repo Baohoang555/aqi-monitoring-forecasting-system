@@ -24,7 +24,7 @@ from sqlalchemy import create_engine, text
 
 # ─── Cấu hình ───────────────────────────────────────────────────────────────
 DB_HOST: str = "localhost"
-DB_PORT: int = 3306
+DB_PORT: int = 3307
 DB_USER: str = "root"
 DB_PASSWORD: str = "1882005"
 DB_NAME: str = "aqi_dw"
@@ -428,7 +428,8 @@ def run_olap_queries(engine):
     print("OLAP QUERY RESULTS")
     print("=" * 60)
     for title, sql in queries.items():
-        df = pd.read_sql(sql, engine)
+        with engine.connect() as conn:
+            df = pd.read_sql(sql, conn)
         print(f"\n▶ {title}")
         print(df.to_string(index=False))
     print("=" * 60)

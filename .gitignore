@@ -33,7 +33,6 @@ ENV/
 # Environment Variables (QUAN TRỌNG - không commit key!)
 # ============================================================
 .env
-.env.example
 .env.local
 .env.*.local
 *.key
@@ -60,7 +59,6 @@ logs/
 tmp/
 
 # Chặn các file cấu hình môi trường hoặc mật khẩu cá nhân (nếu có)
-.env
 __pycache__/
 *.pyc
 
