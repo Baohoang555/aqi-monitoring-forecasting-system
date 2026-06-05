@@ -15,20 +15,24 @@ router = APIRouter()
 
 CACHE_FILE = Path(__file__).resolve().parent.parent / "city_geo_cache.json"
 _geo_cache = None
+_geo_cache_mtime = None
 
 
 def load_city_geo_cache():
-    global _geo_cache
-    if _geo_cache is not None:
-        return _geo_cache
+    global _geo_cache, _geo_cache_mtime
     try:
         if CACHE_FILE.exists():
-            with CACHE_FILE.open("r", encoding="utf-8") as f:
-                _geo_cache = json.load(f)
+            current_mtime = CACHE_FILE.stat().st_mtime
+            if _geo_cache is None or _geo_cache_mtime != current_mtime:
+                with CACHE_FILE.open("r", encoding="utf-8") as f:
+                    _geo_cache = json.load(f)
+                _geo_cache_mtime = current_mtime
         else:
             _geo_cache = {}
+            _geo_cache_mtime = None
     except Exception:
         _geo_cache = {}
+        _geo_cache_mtime = None
     return _geo_cache
 
 
@@ -215,7 +219,7 @@ def get_all_stations_aqi(db: Session = Depends(get_session)):
             no2 = float(row[3]) if row[3] is not None else None
             
             station_map[city_name] = {
-                "country": None,
+                "countries": set(),
                 "pm25": round(pm25, 1) if pm25 is not None else None,
                 "pm10": round(pm10, 1) if pm10 is not None else None,
                 "no2": round(no2, 1) if no2 is not None else None,
@@ -226,10 +230,10 @@ def get_all_stations_aqi(db: Session = Depends(get_session)):
             }
 
         try:
-            country_rows = db.execute(text("SELECT city, country FROM dim_location WHERE country != 'Unknown'")).fetchall()
+            country_rows = db.execute(text("SELECT city, country FROM dim_location")).fetchall()
             for city_name, country_name in country_rows:
                 if city_name in station_map and country_name:
-                    station_map[city_name]["country"] = country_name
+                    station_map[city_name]["countries"].add(country_name)
         except Exception:
             pass
         
@@ -245,19 +249,32 @@ def get_all_stations_aqi(db: Session = Depends(get_session)):
         for l_row in loc_rows:
             c_name = l_row[0]
             if c_name in station_map:
-                station_map[c_name]["lat"] = float(l_row[1]) if l_row[1] is not None else None
-                station_map[c_name]["lon"] = float(l_row[2]) if l_row[2] is not None else None
+                if station_map[c_name]["lat"] is None and l_row[1] is not None:
+                    station_map[c_name]["lat"] = float(l_row[1])
+                if station_map[c_name]["lon"] is None and l_row[2] is not None:
+                    station_map[c_name]["lon"] = float(l_row[2])
 
         # Bước C: Với các thành phố chưa có tọa độ, dùng cache để tránh gọi API ngoài tuyến.
         geo_cache = load_city_geo_cache()
         for city_name, station in station_map.items():
             if station["lat"] is None or station["lon"] is None:
-                country = station.get("country")
-                key = normalize_city_key(city_name, country)
-                cache_entry = geo_cache.get(key)
-                if cache_entry and cache_entry.get("lat") is not None and cache_entry.get("lon") is not None:
-                    station["lat"], station["lon"] = cache_entry["lat"], cache_entry["lon"]
-            station.pop("country", None)
+                countries = station.get("countries") or []
+                keys_to_try = []
+                for country in countries:
+                    keys_to_try.append(normalize_city_key(city_name, country))
+                keys_to_try.append(normalize_city_key(city_name, "Unknown"))
+                keys_to_try.append(normalize_city_key(city_name, None))
+
+                for key in keys_to_try:
+                    cache_entry = geo_cache.get(key)
+                    if cache_entry and cache_entry.get("lat") is not None and cache_entry.get("lon") is not None:
+                        station["lat"], station["lon"] = cache_entry["lat"], cache_entry["lon"]
+                        break
+            station.pop("countries", None)
+
+        blacklist = {"10Th Of Ramadan", "6Th Of October"}
+        for banned_city in blacklist:
+            station_map.pop(banned_city, None)
 
         return {
             "success": True,

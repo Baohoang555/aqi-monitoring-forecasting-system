@@ -13,7 +13,9 @@ class FactRepository:
         # Trả về danh sách thành phố hiện có dữ liệu trong khối cube,
         # để frontend chỉ vẽ những trạm thực sự có dữ liệu current.
         stmt = select(CubeCitySeason.city).distinct().order_by(CubeCitySeason.city)
-        return [city for city, in self.session.execute(stmt).all()]
+        cities = [city for city, in self.session.execute(stmt).all()]
+        blacklist = {"10Th Of Ramadan", "6Th Of October"}
+        return [city for city in cities if city not in blacklist]
 
     def _apply_filters(self, stmt, city: Optional[str], district: Optional[str], year: Optional[int], month: Optional[int], season: Optional[str]):
         # Tự động thực hiện JOIN với các bảng chiều nếu bộ lọc yêu cầu điều kiện từ bảng đó

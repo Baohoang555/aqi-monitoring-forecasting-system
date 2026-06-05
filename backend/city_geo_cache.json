@@ -9743,5 +9743,1350 @@
     "lat": 30.7833666,
     "lon": 30.9982536,
     "source": "openweather"
+  },
+  "Tapachula,Mexico": {
+    "lat": 14.9042905,
+    "lon": -92.2609265,
+    "source": "openweather"
+  },
+  "Tarakan,Indonesia": {
+    "lat": 3.3416343,
+    "lon": 117.59862807440442,
+    "source": "openweather"
+  },
+  "Tarlac City,Philippines": {
+    "lat": 15.4861218,
+    "lon": 120.5893473,
+    "source": "openweather"
+  },
+  "Tasikmalaya,Indonesia": {
+    "lat": -7.3262484,
+    "lon": 108.2201154,
+    "source": "openweather"
+  },
+  "Tay Ninh,Unknown": {
+    "lat": 11.3138286,
+    "lon": 106.0964769,
+    "source": "openweather"
+  },
+  "Tayma,Saudi Arabia": {
+    "lat": 27.6225952,
+    "lon": 38.539257,
+    "source": "openweather"
+  },
+  "Tegal,Indonesia": {
+    "lat": -6.867334,
+    "lon": 109.1378188,
+    "source": "openweather"
+  },
+  "Tehuacán,Mexico": {
+    "lat": 18.4599877,
+    "lon": -97.3903616,
+    "source": "openweather"
+  },
+  "Tekirdag,Turkey": {
+    "lat": 40.9781214,
+    "lon": 27.5107799,
+    "source": "openweather"
+  },
+  "Teknaf,Bangladesh": {
+    "lat": 20.8684566,
+    "lon": 92.298748,
+    "source": "openweather"
+  },
+  "Tepi,Ethiopia": {
+    "lat": 42.66074825,
+    "lon": 44.31844512872161,
+    "source": "openweather"
+  },
+  "Tepic,Mexico": {
+    "lat": 21.5119156,
+    "lon": -104.8915889,
+    "source": "openweather"
+  },
+  "Teresina,Brazil": {
+    "lat": -5.0874608,
+    "lon": -42.8049571,
+    "source": "openweather"
+  },
+  "Ternate,Indonesia": {
+    "lat": 45.7822863,
+    "lon": 8.6903182,
+    "source": "openweather"
+  },
+  "Thadiq,Saudi Arabia": {
+    "lat": 25.2962532,
+    "lon": 45.8692233,
+    "source": "openweather"
+  },
+  "Thai Binh,Unknown": {
+    "lat": 20.449288,
+    "lon": 106.3424967,
+    "source": "openweather"
+  },
+  "Thai Nguyen,Unknown": {
+    "lat": 37.870009,
+    "lon": 112.5452739,
+    "source": "openweather"
+  },
+  "Thakurgaon,Bangladesh": {
+    "lat": 26.0856143,
+    "lon": 88.2764013,
+    "source": "openweather"
+  },
+  "Thanh Hoa,Unknown": {
+    "lat": 19.8076814,
+    "lon": 105.7767437,
+    "source": "openweather"
+  },
+  "Thatta,Pakistan": {
+    "lat": 33.4326873,
+    "lon": 73.0343187,
+    "source": "openweather"
+  },
+  "Thiruvananthapuram,India": {
+    "lat": 8.4882267,
+    "lon": 76.947551,
+    "source": "openweather"
+  },
+  "Thohoyandou,South Africa": {
+    "lat": -22.9676429,
+    "lon": 30.4596582,
+    "source": "openweather"
+  },
+  "Thoubal,India": {
+    "lat": 24.6386954,
+    "lon": 93.996871,
+    "source": "openweather"
+  },
+  "Thrissur,India": {
+    "lat": 10.5270099,
+    "lon": 76.214621,
+    "source": "openweather"
+  },
+  "Thu Dau Mot,Unknown": {
+    "lat": 10.9808435,
+    "lon": 106.6537483,
+    "source": "openweather"
+  },
+  "Thuan An,Unknown": {
+    "lat": 29.6118467,
+    "lon": 119.0367741,
+    "source": "openweather"
+  },
+  "Tianshui,China": {
+    "lat": 34.5797531,
+    "lon": 105.7062921,
+    "source": "openweather"
+  },
+  "Tijuana,Mexico": {
+    "lat": 32.5317397,
+    "lon": -117.019529,
+    "source": "openweather"
+  },
+  "Timika,Indonesia": {
+    "lat": -4.5481052,
+    "lon": 136.889884,
+    "source": "openweather"
+  },
+  "Timon,Brazil": {
+    "lat": -5.1004341,
+    "lon": -42.8312018,
+    "source": "openweather"
+  },
+  "Tiruchirappalli,India": {
+    "lat": 10.804973,
+    "lon": 78.6870296,
+    "source": "openweather"
+  },
+  "Tirupati,India": {
+    "lat": 13.6316368,
+    "lon": 79.4231711,
+    "source": "openweather"
+  },
+  "Tlalnepantla,Mexico": {
+    "lat": 19.0084963,
+    "lon": -98.9971161,
+    "source": "openweather"
+  },
+  "Tlaquepaque,Mexico": {
+    "lat": 20.6397718,
+    "lon": -103.3120428,
+    "source": "openweather"
+  },
+  "Tlaxcala,Mexico": {
+    "lat": 19.3167101,
+    "lon": -98.2386138,
+    "source": "openweather"
+  },
+  "Toba Tek Singh,Pakistan": {
+    "lat": 30.9777056,
+    "lon": 72.4860799,
+    "source": "openweather"
+  },
+  "Tokat,Turkey": {
+    "lat": 40.3233534,
+    "lon": 36.552162,
+    "source": "openweather"
+  },
+  "Tokorozawa,Japan": {
+    "lat": 35.7987179,
+    "lon": 139.4696758,
+    "source": "openweather"
+  },
+  "Tokushima,Japan": {
+    "lat": 34.0698307,
+    "lon": 134.5550353,
+    "source": "openweather"
+  },
+  "Toledo,Philippines": {
+    "lat": 39.8560679,
+    "lon": -4.0239568,
+    "source": "openweather"
+  },
+  "Toluca,Mexico": {
+    "lat": 19.292545,
+    "lon": -99.6569007,
+    "source": "openweather"
+  },
+  "Tolyatti,Russia": {
+    "lat": 53.5098845,
+    "lon": 49.4189187,
+    "source": "openweather"
+  },
+  "Tomsk,Russia": {
+    "lat": 56.4887526,
+    "lon": 84.9523434,
+    "source": "openweather"
+  },
+  "Tonalá,Mexico": {
+    "lat": 20.6241367,
+    "lon": -103.2421263,
+    "source": "openweather"
+  },
+  "Tonghua,China": {
+    "lat": 41.7260568,
+    "lon": 125.9339857,
+    "source": "openweather"
+  },
+  "Tongi,Bangladesh": {
+    "lat": 23.9084932,
+    "lon": 90.3980037,
+    "source": "openweather"
+  },
+  "Tongyeong,South Korea": {
+    "lat": 34.854254,
+    "lon": 128.433205,
+    "source": "openweather"
+  },
+  "Toowoomba,Australia": {
+    "lat": -27.5610193,
+    "lon": 151.953351,
+    "source": "openweather"
+  },
+  "Topeka,United States": {
+    "lat": 39.049011,
+    "lon": -95.677556,
+    "source": "openweather"
+  },
+  "Torreón,Mexico": {
+    "lat": 25.542698,
+    "lon": -103.410512,
+    "source": "openweather"
+  },
+  "Tosu,Japan": {
+    "lat": 33.3778536,
+    "lon": 130.5061966,
+    "source": "openweather"
+  },
+  "Tottori,Japan": {
+    "lat": 35.4943948,
+    "lon": 134.2219282,
+    "source": "openweather"
+  },
+  "Toulon,France": {
+    "lat": 43.1257311,
+    "lon": 5.9304919,
+    "source": "openweather"
+  },
+  "Toulouse,France": {
+    "lat": 43.6044622,
+    "lon": 1.4442469,
+    "source": "openweather"
+  },
+  "Tourcoing,France": {
+    "lat": 50.7235038,
+    "lon": 3.1605714,
+    "source": "openweather"
+  },
+  "Tours,France": {
+    "lat": 47.3900474,
+    "lon": 0.6889268,
+    "source": "openweather"
+  },
+  "Townsville,Australia": {
+    "lat": -19.2569391,
+    "lon": 146.8239537,
+    "source": "openweather"
+  },
+  "Toyama,Japan": {
+    "lat": 36.6957569,
+    "lon": 137.2136215,
+    "source": "openweather"
+  },
+  "Toyonaka,Japan": {
+    "lat": 34.7811578,
+    "lon": 135.4699059,
+    "source": "openweather"
+  },
+  "Toyota,Japan": {
+    "lat": 35.0834524,
+    "lon": 137.156737,
+    "source": "openweather"
+  },
+  "Tra Vinh,Unknown": {
+    "lat": 9.9355829,
+    "lon": 106.3397849,
+    "source": "openweather"
+  },
+  "Trabzon,Turkey": {
+    "lat": 41.0054605,
+    "lon": 39.7301463,
+    "source": "openweather"
+  },
+  "Trang,Thailand": {
+    "lat": 7.5557778,
+    "lon": 99.6076502,
+    "source": "openweather"
+  },
+  "Traralgon,Australia": {
+    "lat": -38.1946441,
+    "lon": 146.5382327,
+    "source": "openweather"
+  },
+  "Trat,Thailand": {
+    "lat": 12.2440564,
+    "lon": 102.5122822,
+    "source": "openweather"
+  },
+  "Trece Martires,Philippines": {
+    "lat": 14.2811668,
+    "lon": 120.8702367,
+    "source": "openweather"
+  },
+  "Três Lagoas,Brazil": {
+    "lat": -20.7866799,
+    "lon": -51.7061247,
+    "source": "openweather"
+  },
+  "Trier,Germany": {
+    "lat": 49.7596208,
+    "lon": 6.6441878,
+    "source": "openweather"
+  },
+  "Trishal,Bangladesh": {
+    "lat": 24.5823196,
+    "lon": 90.3951768,
+    "source": "openweather"
+  },
+  "Troyes,France": {
+    "lat": 48.2971626,
+    "lon": 4.0746257,
+    "source": "openweather"
+  },
+  "Tsu,Japan": {
+    "lat": 34.7341973,
+    "lon": 136.5153283,
+    "source": "openweather"
+  },
+  "Tsuen Wan,China": {
+    "lat": 22.3716605,
+    "lon": 114.1134699,
+    "source": "openweather"
+  },
+  "Tsukuba,Japan": {
+    "lat": 36.0833265,
+    "lon": 140.077279,
+    "source": "openweather"
+  },
+  "Tsuruoka,Japan": {
+    "lat": 38.7272187,
+    "lon": 139.8266292,
+    "source": "openweather"
+  },
+  "Tsuyama,Japan": {
+    "lat": 35.0691284,
+    "lon": 134.0043355,
+    "source": "openweather"
+  },
+  "Tuban,Indonesia": {
+    "lat": -6.8962656,
+    "lon": 112.0650714,
+    "source": "openweather"
+  },
+  "Tucson,United States": {
+    "lat": 32.2228765,
+    "lon": -110.974847,
+    "source": "openweather"
+  },
+  "Tuguegarao,Philippines": {
+    "lat": 17.6118858,
+    "lon": 121.7300377,
+    "source": "openweather"
+  },
+  "Tula,Russia": {
+    "lat": 54.1930321,
+    "lon": 37.61754,
+    "source": "openweather"
+  },
+  "Tulancingo,Mexico": {
+    "lat": 20.0839585,
+    "lon": -98.3635381,
+    "source": "openweather"
+  },
+  "Tulsa,United States": {
+    "lat": 36.1563122,
+    "lon": -95.9927516,
+    "source": "openweather"
+  },
+  "Tura,India": {
+    "lat": 47.3900474,
+    "lon": 0.6889268,
+    "source": "openweather"
+  },
+  "Turabah,Saudi Arabia": {
+    "lat": 21.2180221,
+    "lon": 41.6334961,
+    "source": "openweather"
+  },
+  "Turaif,Saudi Arabia": {
+    "lat": 31.6725877,
+    "lon": 38.6615532,
+    "source": "openweather"
+  },
+  "Turbat,Pakistan": {
+    "lat": 26.0027894,
+    "lon": 63.0505609,
+    "source": "openweather"
+  },
+  "Tuxtla Gutiérrez,Mexico": {
+    "lat": 16.753801,
+    "lon": -93.115959,
+    "source": "openweather"
+  },
+  "Tuy Hoa,Unknown": {
+    "lat": 46.6520372,
+    "lon": 126.9626572,
+    "source": "openweather"
+  },
+  "Tuyen Quang,Unknown": {
+    "lat": 21.7879695,
+    "lon": 105.217387,
+    "source": "openweather"
+  },
+  "Tver,Russia": {
+    "lat": 56.858675,
+    "lon": 35.9208284,
+    "source": "openweather"
+  },
+  "Tyumen,Russia": {
+    "lat": 57.153534,
+    "lon": 65.542274,
+    "source": "openweather"
+  },
+  "Tzaneen,South Africa": {
+    "lat": -23.8319444,
+    "lon": 30.1611111,
+    "source": "openweather"
+  },
+  "Ube,Japan": {
+    "lat": 33.9518498,
+    "lon": 131.2472243,
+    "source": "openweather"
+  },
+  "Uberlândia,Brazil": {
+    "lat": -18.9188041,
+    "lon": -48.2767837,
+    "source": "openweather"
+  },
+  "Ubon Ratchathani,Thailand": {
+    "lat": 15.2274235,
+    "lon": 104.8589462,
+    "source": "openweather"
+  },
+  "Udaipur,India": {
+    "lat": 24.578721,
+    "lon": 73.6862571,
+    "source": "openweather"
+  },
+  "Udon Thani,Thailand": {
+    "lat": 17.4082448,
+    "lon": 102.7868105,
+    "source": "openweather"
+  },
+  "Ueda,Japan": {
+    "lat": 36.4021192,
+    "lon": 138.2490506,
+    "source": "openweather"
+  },
+  "Ufa,Russia": {
+    "lat": 54.7261409,
+    "lon": 55.947499,
+    "source": "openweather"
+  },
+  "Uijeongbu,South Korea": {
+    "lat": 37.7380747,
+    "lon": 127.0339665,
+    "source": "openweather"
+  },
+  "Uji,Japan": {
+    "lat": 34.885124,
+    "lon": 135.7995651,
+    "source": "openweather"
+  },
+  "Ujjain,India": {
+    "lat": 23.1885131,
+    "lon": 75.7716562,
+    "source": "openweather"
+  },
+  "Ulan-Ude,Russia": {
+    "lat": 51.8357841,
+    "lon": 107.5839105,
+    "source": "openweather"
+  },
+  "Ulm,Germany": {
+    "lat": 48.3984968,
+    "lon": 9.9912458,
+    "source": "openweather"
+  },
+  "Ulsan,South Korea": {
+    "lat": 35.5391697,
+    "lon": 129.3119136,
+    "source": "openweather"
+  },
+  "Ulyanovsk,Russia": {
+    "lat": 54.3150278,
+    "lon": 48.403373,
+    "source": "openweather"
+  },
+  "Umerkot,Pakistan": {
+    "lat": 25.3655302,
+    "lon": 69.7401257,
+    "source": "openweather"
+  },
+  "Umluj,Saudi Arabia": {
+    "lat": 25.0302778,
+    "lon": 37.2622321,
+    "source": "openweather"
+  },
+  "Umuahia,Nigeria": {
+    "lat": 5.5324032,
+    "lon": 7.4924165,
+    "source": "openweather"
+  },
+  "Unaizah,Saudi Arabia": {
+    "lat": 26.0908582,
+    "lon": 43.9864354,
+    "source": "openweather"
+  },
+  "Uong Bi,Unknown": {
+    "lat": 21.0414692,
+    "lon": 106.7740261,
+    "source": "openweather"
+  },
+  "Upington,South Africa": {
+    "lat": -28.456325,
+    "lon": 21.241867,
+    "source": "openweather"
+  },
+  "Uruapan,Mexico": {
+    "lat": 19.4147269,
+    "lon": -102.0522647,
+    "source": "openweather"
+  },
+  "Urumqi,China": {
+    "lat": 43.419754,
+    "lon": 87.319461,
+    "source": "openweather"
+  },
+  "Usak,Turkey": {
+    "lat": 43.3425646,
+    "lon": 19.9594974,
+    "source": "openweather"
+  },
+  "Uthai Thani,Thailand": {
+    "lat": 15.3823399,
+    "lon": 100.0280546,
+    "source": "openweather"
+  },
+  "Utsunomiya,Japan": {
+    "lat": 36.5549677,
+    "lon": 139.8828776,
+    "source": "openweather"
+  },
+  "Uttaradit,Thailand": {
+    "lat": 17.6217255,
+    "lon": 100.0981816,
+    "source": "openweather"
+  },
+  "Uyo,Nigeria": {
+    "lat": 5.0322447,
+    "lon": 7.924791,
+    "source": "openweather"
+  },
+  "Vadodara,India": {
+    "lat": 22.2973142,
+    "lon": 73.1942567,
+    "source": "openweather"
+  },
+  "Valence,France": {
+    "lat": 39.4697065,
+    "lon": -0.3763353,
+    "source": "openweather"
+  },
+  "Valencia,Philippines": {
+    "lat": 39.4697065,
+    "lon": -0.3763353,
+    "source": "openweather"
+  },
+  "Valenciennes,France": {
+    "lat": 50.3579317,
+    "lon": 3.5234846,
+    "source": "openweather"
+  },
+  "Valenzuela,Philippines": {
+    "lat": 37.7751808,
+    "lon": -4.220174,
+    "source": "openweather"
+  },
+  "Van,Turkey": {
+    "lat": 47.6586772,
+    "lon": -2.7599079,
+    "source": "openweather"
+  },
+  "Vancouver,United States": {
+    "lat": 49.2608724,
+    "lon": -123.113952,
+    "source": "openweather"
+  },
+  "Vanderbijlpark,South Africa": {
+    "lat": -26.706891,
+    "lon": 27.836271,
+    "source": "openweather"
+  },
+  "Vannes,France": {
+    "lat": 47.6586772,
+    "lon": -2.7599079,
+    "source": "openweather"
+  },
+  "Varanasi,India": {
+    "lat": 25.3356491,
+    "lon": 83.0076292,
+    "source": "openweather"
+  },
+  "Várzea Grande,Brazil": {
+    "lat": -15.645816,
+    "lon": -56.132218,
+    "source": "openweather"
+  },
+  "Vasco Da Gama,India": {
+    "lat": 15.398403,
+    "lon": 73.8129178,
+    "source": "openweather"
+  },
+  "Vehari,Pakistan": {
+    "lat": 30.04804175,
+    "lon": 72.35635188697299,
+    "source": "openweather"
+  },
+  "Veliky Novgorod,Russia": {
+    "lat": 58.5209862,
+    "lon": 31.2757862,
+    "source": "openweather"
+  },
+  "Vénissieux,France": {
+    "lat": 45.6977109,
+    "lon": 4.8855966,
+    "source": "openweather"
+  },
+  "Veracruz,Mexico": {
+    "lat": 19.2003429,
+    "lon": -96.1383572,
+    "source": "openweather"
+  },
+  "Vereeniging,South Africa": {
+    "lat": -26.6747222,
+    "lon": 27.9261111,
+    "source": "openweather"
+  },
+  "Vi Thanh,Unknown": {
+    "lat": 9.7832231,
+    "lon": 105.4670349,
+    "source": "openweather"
+  },
+  "Victor Harbor,Australia": {
+    "lat": -35.5545579,
+    "lon": 138.6234743,
+    "source": "openweather"
+  },
+  "Victorias,Philippines": {
+    "lat": 10.9013412,
+    "lon": 123.0714943,
+    "source": "openweather"
+  },
+  "Vigan,Philippines": {
+    "lat": 17.5755487,
+    "lon": 120.3872632,
+    "source": "openweather"
+  },
+  "Vijayawada,India": {
+    "lat": 16.5115306,
+    "lon": 80.6160469,
+    "source": "openweather"
+  },
+  "Vila Velha,Brazil": {
+    "lat": -20.3297037,
+    "lon": -40.2920174,
+    "source": "openweather"
+  },
+  "Villahermosa,Mexico": {
+    "lat": 17.9884657,
+    "lon": -92.9366326,
+    "source": "openweather"
+  },
+  "Villeneuve-D'Ascq,France": {
+    "lat": 50.6193174,
+    "lon": 3.1314002,
+    "source": "openweather"
+  },
+  "Villeurbanne,France": {
+    "lat": 45.7733573,
+    "lon": 4.8868454,
+    "source": "openweather"
+  },
+  "Vinh,Unknown": {
+    "lat": 18.6698528,
+    "lon": 105.6840371,
+    "source": "openweather"
+  },
+  "Vinh Long,Unknown": {
+    "lat": 10.252039,
+    "lon": 105.9735715,
+    "source": "openweather"
+  },
+  "Vinh Phuc,Unknown": {
+    "lat": 21.0421695,
+    "lon": 105.8101415,
+    "source": "openweather"
+  },
+  "Virginia,South Africa": {
+    "lat": 47.52326,
+    "lon": -92.536571,
+    "source": "openweather"
+  },
+  "Virginia Beach,United States": {
+    "lat": 36.8496579,
+    "lon": -75.9760751,
+    "source": "openweather"
+  },
+  "Visakhapatnam,India": {
+    "lat": 17.6935526,
+    "lon": 83.2921297,
+    "source": "openweather"
+  },
+  "Vitória,Brazil": {
+    "lat": -20.3200917,
+    "lon": -40.3376682,
+    "source": "openweather"
+  },
+  "Vitória Da Conquista,Brazil": {
+    "lat": -14.8567487,
+    "lon": -40.8414804,
+    "source": "openweather"
+  },
+  "Vitry-Sur-Seine,France": {
+    "lat": 48.7876,
+    "lon": 2.39164,
+    "source": "openweather"
+  },
+  "Vladikavkaz,Russia": {
+    "lat": 43.024593,
+    "lon": 44.68211,
+    "source": "openweather"
+  },
+  "Vladimir,Russia": {
+    "lat": 56.1288899,
+    "lon": 40.4075203,
+    "source": "openweather"
+  },
+  "Vladivostok,Russia": {
+    "lat": 43.1150678,
+    "lon": 131.8855768,
+    "source": "openweather"
+  },
+  "Volgograd,Russia": {
+    "lat": 48.7081906,
+    "lon": 44.5153353,
+    "source": "openweather"
+  },
+  "Vologda,Russia": {
+    "lat": 59.2189391,
+    "lon": 39.8933913,
+    "source": "openweather"
+  },
+  "Volzhsky,Russia": {
+    "lat": 48.7862021,
+    "lon": 44.7519454,
+    "source": "openweather"
+  },
+  "Voronezh,Russia": {
+    "lat": 51.6605982,
+    "lon": 39.2005858,
+    "source": "openweather"
+  },
+  "Vung Tau,Unknown": {
+    "lat": 10.3486485,
+    "lon": 107.0765028,
+    "source": "openweather"
+  },
+  "Wadi Ad-Dawasir,Saudi Arabia": {
+    "lat": 20.4602516,
+    "lon": 44.799553,
+    "source": "openweather"
+  },
+  "Wagga Wagga,Australia": {
+    "lat": -35.115,
+    "lon": 147.3677778,
+    "source": "openweather"
+  },
+  "Wah Cantonment,Pakistan": {
+    "lat": 33.7708032,
+    "lon": 72.7518954,
+    "source": "openweather"
+  },
+  "Wakayama,Japan": {
+    "lat": 34.2345797,
+    "lon": 135.178303,
+    "source": "openweather"
+  },
+  "Wakefield,United Kingdom": {
+    "lat": 53.6829541,
+    "lon": -1.4967286,
+    "source": "openweather"
+  },
+  "Walsall,United Kingdom": {
+    "lat": 52.5847949,
+    "lon": -1.9822687,
+    "source": "openweather"
+  },
+  "Wanju,South Korea": {
+    "lat": 21.8306378,
+    "lon": 112.528013,
+    "source": "openweather"
+  },
+  "Warangal,India": {
+    "lat": 17.9820644,
+    "lon": 79.5970954,
+    "source": "openweather"
+  },
+  "Warren,United States": {
+    "lat": 42.4932575,
+    "lon": -83.0062746,
+    "source": "openweather"
+  },
+  "Warri,Nigeria": {
+    "lat": 5.5186186,
+    "lon": 5.7480196,
+    "source": "openweather"
+  },
+  "Warrington,United Kingdom": {
+    "lat": 53.3899497,
+    "lon": -2.5943178,
+    "source": "openweather"
+  },
+  "Warrnambool,Australia": {
+    "lat": -38.3826241,
+    "lon": 142.4814191,
+    "source": "openweather"
+  },
+  "Warwick,United States": {
+    "lat": 52.27924815,
+    "lon": -1.5786952799716136,
+    "source": "openweather"
+  },
+  "Washington,United States": {
+    "lat": 38.8950368,
+    "lon": -77.0365427,
+    "source": "openweather"
+  },
+  "Watford,United Kingdom": {
+    "lat": 51.6553875,
+    "lon": -0.3957425,
+    "source": "openweather"
+  },
+  "Weifang,China": {
+    "lat": 36.7071591,
+    "lon": 119.1557441,
+    "source": "openweather"
+  },
+  "Weimar,Germany": {
+    "lat": 50.9793301,
+    "lon": 11.3297921,
+    "source": "openweather"
+  },
+  "Weinan,China": {
+    "lat": 34.5169112,
+    "lon": 109.4643291,
+    "source": "openweather"
+  },
+  "Welkite,Ethiopia": {
+    "lat": 8.286087,
+    "lon": 37.781844,
+    "source": "openweather"
+  },
+  "Welkom,South Africa": {
+    "lat": -27.982298,
+    "lon": 26.737969,
+    "source": "openweather"
+  },
+  "Wellington,South Africa": {
+    "lat": -41.2887953,
+    "lon": 174.7772114,
+    "source": "openweather"
+  },
+  "Wenchang,China": {
+    "lat": 19.5452604,
+    "lon": 110.7932208,
+    "source": "openweather"
+  },
+  "Wenzhou,China": {
+    "lat": 27.9963899,
+    "lon": 120.695345,
+    "source": "openweather"
+  },
+  "West Valley City,United States": {
+    "lat": 40.6967254,
+    "lon": -111.986821,
+    "source": "openweather"
+  },
+  "Westminster,United Kingdom": {
+    "lat": 51.5004439,
+    "lon": -0.1265398,
+    "source": "openweather"
+  },
+  "Whyalla,Australia": {
+    "lat": -33.0382085,
+    "lon": 137.5843572,
+    "source": "openweather"
+  },
+  "Wichita,United States": {
+    "lat": 37.6922361,
+    "lon": -97.3375448,
+    "source": "openweather"
+  },
+  "Wiesbaden,Germany": {
+    "lat": 50.0820384,
+    "lon": 8.2416556,
+    "source": "openweather"
+  },
+  "Wilmington,United States": {
+    "lat": 39.7459468,
+    "lon": -75.546589,
+    "source": "openweather"
+  },
+  "Wittenberg,Germany": {
+    "lat": 51.8666527,
+    "lon": 12.646761,
+    "source": "openweather"
+  },
+  "Wodonga,Australia": {
+    "lat": -36.1205539,
+    "lon": 146.8880837,
+    "source": "openweather"
+  },
+  "Wolfsburg,Germany": {
+    "lat": 52.4205588,
+    "lon": 10.7861682,
+    "source": "openweather"
+  },
+  "Wollongong,Australia": {
+    "lat": -34.4278083,
+    "lon": 150.893054,
+    "source": "openweather"
+  },
+  "Wolverhampton,United Kingdom": {
+    "lat": 52.5847651,
+    "lon": -2.127567,
+    "source": "openweather"
+  },
+  "Wonju,South Korea": {
+    "lat": 37.3420996,
+    "lon": 127.9197603,
+    "source": "openweather"
+  },
+  "Worabe,Ethiopia": {
+    "lat": 7.8534494,
+    "lon": 38.1872959,
+    "source": "openweather"
+  },
+  "Worcester,South Africa": {
+    "lat": 42.2625621,
+    "lon": -71.8018877,
+    "source": "openweather"
+  },
+  "Wrexham,United Kingdom": {
+    "lat": 53.0465084,
+    "lon": -2.9937869,
+    "source": "openweather"
+  },
+  "Wudil,Nigeria": {
+    "lat": 11.8089,
+    "lon": 8.84463,
+    "source": "openweather"
+  },
+  "Wuhan,China": {
+    "lat": 30.5951051,
+    "lon": 114.2999353,
+    "source": "openweather"
+  },
+  "Wuhu,China": {
+    "lat": 31.3422958,
+    "lon": 118.3797326,
+    "source": "openweather"
+  },
+  "Wuppertal,Germany": {
+    "lat": 51.264018,
+    "lon": 7.1780374,
+    "source": "openweather"
+  },
+  "Wurzburg,Germany": {
+    "lat": 49.7933723,
+    "lon": 9.9309779,
+    "source": "openweather"
+  },
+  "Wuxi,China": {
+    "lat": 31.5776626,
+    "lon": 120.2952752,
+    "source": "openweather"
+  },
+  "Wuzhong,China": {
+    "lat": 37.9970759,
+    "lon": 106.1943085,
+    "source": "openweather"
+  },
+  "Xalapa,Mexico": {
+    "lat": 19.5408338,
+    "lon": -96.9146374,
+    "source": "openweather"
+  },
+  "Xi'An,China": {
+    "lat": 34.261004,
+    "lon": 108.9423363,
+    "source": "openweather"
+  },
+  "Xiamen,China": {
+    "lat": 24.4801069,
+    "lon": 118.0853479,
+    "source": "openweather"
+  },
+  "Xiangtan,China": {
+    "lat": 27.7827319,
+    "lon": 112.9455981,
+    "source": "openweather"
+  },
+  "Xiangyang,China": {
+    "lat": 32.010998,
+    "lon": 112.1163785,
+    "source": "openweather"
+  },
+  "Xianyang,China": {
+    "lat": 34.3323227,
+    "lon": 108.7128495,
+    "source": "openweather"
+  },
+  "Xingtai,China": {
+    "lat": 37.0616519,
+    "lon": 114.499746,
+    "source": "openweather"
+  },
+  "Xining,China": {
+    "lat": 36.617331,
+    "lon": 101.7761976,
+    "source": "openweather"
+  },
+  "Xinxiang,China": {
+    "lat": 35.3021133,
+    "lon": 113.9202062,
+    "source": "openweather"
+  },
+  "Xuzhou,China": {
+    "lat": 34.2665258,
+    "lon": 117.1810431,
+    "source": "openweather"
+  },
+  "Yakutsk,Russia": {
+    "lat": 62.0274078,
+    "lon": 129.7319787,
+    "source": "openweather"
+  },
+  "Yala,Thailand": {
+    "lat": 6.5567245,
+    "lon": 101.2902517,
+    "source": "openweather"
+  },
+  "Yalova,Turkey": {
+    "lat": 40.6582529,
+    "lon": 29.2699916,
+    "source": "openweather"
+  },
+  "Yamagata,Japan": {
+    "lat": 38.2553393,
+    "lon": 140.3400205,
+    "source": "openweather"
+  },
+  "Yamaguchi,Japan": {
+    "lat": 34.1781317,
+    "lon": 131.4737077,
+    "source": "openweather"
+  },
+  "Yan'An,China": {
+    "lat": 36.602796,
+    "lon": 109.4873978,
+    "source": "openweather"
+  },
+  "Yanbu,Saudi Arabia": {
+    "lat": 24.089019,
+    "lon": 38.0687076,
+    "source": "openweather"
+  },
+  "Yangju,South Korea": {
+    "lat": 37.7849312,
+    "lon": 127.0457771,
+    "source": "openweather"
+  },
+  "Yangsan,South Korea": {
+    "lat": 35.3349979,
+    "lon": 129.0370582,
+    "source": "openweather"
+  },
+  "Yantai,China": {
+    "lat": 37.461928,
+    "lon": 121.4425255,
+    "source": "openweather"
+  },
+  "Yaroslavl,Russia": {
+    "lat": 57.6263877,
+    "lon": 39.8933705,
+    "source": "openweather"
+  },
+  "Yatsushiro,Japan": {
+    "lat": 32.5081425,
+    "lon": 130.6020211,
+    "source": "openweather"
+  },
+  "Yekaterinburg,Russia": {
+    "lat": 56.839104,
+    "lon": 60.60825,
+    "source": "openweather"
+  },
+  "Yen Bai,Unknown": {
+    "lat": 21.69611,
+    "lon": 104.8752392,
+    "source": "openweather"
+  },
+  "Yenagoa,Nigeria": {
+    "lat": 4.9334651,
+    "lon": 6.2747786,
+    "source": "openweather"
+  },
+  "Yeongcheon,South Korea": {
+    "lat": 35.98842,
+    "lon": 128.942,
+    "source": "openweather"
+  },
+  "Yeongju,South Korea": {
+    "lat": 36.805685,
+    "lon": 128.624054,
+    "source": "openweather"
+  },
+  "Yeosu,South Korea": {
+    "lat": 34.7546257,
+    "lon": 127.659859,
+    "source": "openweather"
+  },
+  "Yichang,China": {
+    "lat": 30.694088,
+    "lon": 111.2803074,
+    "source": "openweather"
+  },
+  "Yinchuan,China": {
+    "lat": 38.4852037,
+    "lon": 106.2261926,
+    "source": "openweather"
+  },
+  "Yirgalem,Ethiopia": {
+    "lat": 6.746936,
+    "lon": 38.405763,
+    "source": "openweather"
+  },
+  "Yokkaichi,Japan": {
+    "lat": 34.9648428,
+    "lon": 136.624845,
+    "source": "openweather"
+  },
+  "Yokohama,Japan": {
+    "lat": 35.4503381,
+    "lon": 139.6343802,
+    "source": "openweather"
+  },
+  "Yokote,Japan": {
+    "lat": 39.3137847,
+    "lon": 140.5667433,
+    "source": "openweather"
+  },
+  "Yola,Nigeria": {
+    "lat": 9.2089255,
+    "lon": 12.4802485,
+    "source": "openweather"
+  },
+  "Yonago,Japan": {
+    "lat": 35.4276408,
+    "lon": 133.331459,
+    "source": "openweather"
+  },
+  "Yongin,South Korea": {
+    "lat": 37.2405741,
+    "lon": 127.1785572,
+    "source": "openweather"
+  },
+  "York,United Kingdom": {
+    "lat": 53.9590555,
+    "lon": -1.0815361,
+    "source": "openweather"
+  },
+  "Yozgat,Turkey": {
+    "lat": 39.8221974,
+    "lon": 34.8080972,
+    "source": "openweather"
+  },
+  "Yueyang,China": {
+    "lat": 29.3594838,
+    "lon": 113.1229551,
+    "source": "openweather"
+  },
+  "Yulin,China": {
+    "lat": 38.2851657,
+    "lon": 109.7290619,
+    "source": "openweather"
+  },
+  "Yuncheng,China": {
+    "lat": 35.027637,
+    "lon": 111.002141,
+    "source": "openweather"
+  },
+  "Yuxi,China": {
+    "lat": 24.3511487,
+    "lon": 102.527044,
+    "source": "openweather"
+  },
+  "Yuzhno-Sakhalinsk,Russia": {
+    "lat": 46.9574273,
+    "lon": 142.727438,
+    "source": "openweather"
+  },
+  "Zacatecas,Mexico": {
+    "lat": 22.7753891,
+    "lon": -102.5722706,
+    "source": "openweather"
+  },
+  "Zagazig,Egypt": {
+    "lat": 30.5853431,
+    "lon": 31.5035127,
+    "source": "openweather"
+  },
+  "Zamboanga City,Philippines": {
+    "lat": 6.9046909,
+    "lon": 122.076462,
+    "source": "openweather"
+  },
+  "Zamora,Mexico": {
+    "lat": 41.5056332,
+    "lon": -5.744755,
+    "source": "openweather"
+  },
+  "Zapopan,Mexico": {
+    "lat": 20.7211203,
+    "lon": -103.3913671,
+    "source": "openweather"
+  },
+  "Zaria,Nigeria": {
+    "lat": 11.1134917,
+    "lon": 7.7188449,
+    "source": "openweather"
+  },
+  "Zhangzhou,China": {
+    "lat": 24.5164639,
+    "lon": 117.6424895,
+    "source": "openweather"
+  },
+  "Zhengzhou,China": {
+    "lat": 34.7533392,
+    "lon": 113.6599983,
+    "source": "openweather"
+  },
+  "Zhob,Pakistan": {
+    "lat": 31.3397058,
+    "lon": 69.4476997,
+    "source": "openweather"
+  },
+  "Zhongshan,China": {
+    "lat": 24.5290384,
+    "lon": 111.2975324,
+    "source": "openweather"
+  },
+  "Zhuhai,China": {
+    "lat": 22.273734,
+    "lon": 113.5721327,
+    "source": "openweather"
+  },
+  "Zhuzhou,China": {
+    "lat": 27.7009794,
+    "lon": 113.1380117,
+    "source": "openweather"
+  },
+  "Zibo,China": {
+    "lat": 36.8129564,
+    "lon": 118.0488401,
+    "source": "openweather"
+  },
+  "Zifta,Egypt": {
+    "lat": 30.7152872,
+    "lon": 31.2470999,
+    "source": "openweather"
+  },
+  "Zigong,China": {
+    "lat": 29.3419256,
+    "lon": 104.7761224,
+    "source": "openweather"
+  },
+  "Zonguldak,Turkey": {
+    "lat": 41.4506981,
+    "lon": 31.7919867,
+    "source": "openweather"
+  },
+  "Zulfi,Saudi Arabia": {
+    "lat": 38.5821102,
+    "lon": 69.1727946,
+    "source": "openweather"
+  },
+  "Zunyi,China": {
+    "lat": 27.6912954,
+    "lon": 106.9155974,
+    "source": "openweather"
+  },
+  "Zwickau,Germany": {
+    "lat": 50.7185043,
+    "lon": 12.4939267,
+    "source": "openweather"
   }
 }
