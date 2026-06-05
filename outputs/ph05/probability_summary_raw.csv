@@ -1,0 +1,2 @@
+﻿model,suffix,mean_max_probability,median_max_probability,p90_max_probability,p99_max_probability,accuracy,log_loss
+LightGBM_Optuna,raw,0.9968904185016713,0.9999989102987628,0.999999857548681,0.9999999650719673,0.9905146913823704,0.04014666504869984

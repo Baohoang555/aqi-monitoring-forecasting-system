@@ -1,2804 +1,2805 @@
 ﻿feature,importance
-num__pm25,14364
-num__country_freq,4005
-num__deforestation_rate,3490
-num__co2_emission,2903
-num__industry_growth,2725
-num__pm25_pm10_ratio,2698
-num__pm25_humidity_interaction,2576
-num__o3,2528
-num__no2_nox_ratio,2334
-num__o3_lag_3,2329
-num__humidity,2247
-num__o3_lag_12,2228
-num__o3_lag_1,2199
-num__wind_speed_lag_1,2172
-num__humidity_lag_3,2109
-num__wind_speed,2095
-num__wind_speed_lag_12,2042
-num__wind_speed_lag_3,2024
-num__humidity_lag_12,2015
-num__pm25_wind_dispersion,1993
-num__so2_no2_ratio,1957
-num__xylene,1947
-num__co2_per_density,1944
-num__benzene_toluene_ratio,1910
-num__nh3,1869
-num__humidity_lag_1,1855
-num__co,1855
-num__nox,1732
-num__no,1698
-num__no2_lag_3,1687
-num__no2,1672
-num__no2_lag_12,1645
-num__pm10,1578
-num__toluene,1545
-num__industry_density_interaction,1520
-num__co_lag_12,1513
-num__co_lag_1,1509
-num__benzene,1509
-num__co_lag_3,1497
-num__no2_lag_1,1452
-num__so2,1440
-num__pm25_lag_12,1439
-num__pm25_lag_3,1384
-num__pm25_lag_1,1322
-num__pm10_lag_1,1231
-num__population_density,1200
-num__pm10_lag_3,1191
-num__pm10_minus_pm25,1107
-num__state_freq,1087
-num__year,951
-num__pm10_lag_12,921
-cat__country_India,916
-num__doy_cos,752
-num__doy_sin,636
-cat__country_China,629
-cat__country_Indonesia,414
-num__day_of_year,331
-cat__country_Japan,315
-num__month_cos,281
-num__month,274
-num__month_sin,252
-cat__country_Brazil,177
-cat__state_Sumatra,167
-cat__country_France,163
-cat__country_Philippines,162
-cat__country_Australia,124
-cat__country_Russia,115
-cat__country_Bangladesh,112
-cat__state_São Paulo,109
-cat__country_Egypt,102
-cat__country_Pakistan,100
-cat__country_Mexico,98
-cat__country_Saudi Arabia,94
-cat__city_Karratha,89
-cat__state_Addis Ababa (City),86
-cat__city_Amritsar,78
-num__is_covid_period,74
-cat__state_Kano,68
-cat__state_South Australia,63
-cat__city_Jambi,60
-cat__state_Kalimantan (Borneo),59
-cat__country_United Kingdom,59
-cat__state_Shizuoka,59
-cat__city_Novokuznetsk,58
-cat__state_Rivers,51
-cat__country_South Africa,51
-cat__country_South Korea,49
-cat__state_Ural,48
-cat__state_Henan,47
-cat__country_Ethiopia,45
-cat__state_Central Anatolia,38
-cat__state_Auvergne-Rhône-Alpes,38
-cat__country_Germany,37
-cat__city_Guarulhos,33
-cat__city_Whyalla,32
-cat__state_Region II (Cagayan Valley),31
-cat__city_Port Harcourt,31
-cat__city_Nizhny Tagil,31
-cat__city_Daegu,29
-cat__state_Berlin,29
-cat__city_Darbhanga,28
-cat__city_Narayanganj,27
-cat__country_Nigeria,26
-cat__state_Papua & Maluku,26
-cat__state_Hyogo,26
-cat__city_Chelyabinsk,25
-cat__state_Michoacán,24
-cat__city_Faridabad,23
-cat__state_Tocantins,23
-cat__city_Rio Branco,23
-cat__state_Region III (Central Luzon),22
-cat__city_Ghaziabad,22
-cat__city_Tuguegarao,22
-cat__city_Marikina,22
-cat__city_Tangshan,22
-cat__state_Xinjiang,22
-cat__city_Krasnoyarsk,21
-cat__state_Region VI (Western Visayas),20
-cat__city_Lorient,20
+num__pm25,14041
+num__wind_speed_lag_3,12321
+num__wind_speed_lag_1,11711
+num__industry_growth,11102
+num__o3_lag_3,11029
+num__wind_speed_lag_12,10998
+num__o3_lag_1,10415
+num__benzene_toluene_ratio,10269
+num__o3,10208
+num__humidity_lag_3,10205
+num__no2_nox_ratio,10164
+num__deforestation_rate,10131
+num__humidity_lag_1,10036
+num__humidity,9817
+num__humidity_lag_12,9752
+num__so2_no2_ratio,9594
+num__wind_speed,9579
+num__o3_lag_12,9502
+num__pm25_humidity_interaction,9007
+num__xylene,8904
+num__nh3,8388
+num__pm25_pm10_ratio,8230
+num__pm25_wind_dispersion,8191
+num__no2_lag_3,8100
+num__co2_emission,7998
+num__co_lag_3,7721
+num__industry_density_interaction,7154
+num__pm10_lag_3,7036
+num__no2_lag_1,7030
+num__co,6904
+num__no,6836
+num__co_lag_12,6813
+num__so2,6802
+num__no2_lag_12,6759
+num__benzene,6744
+num__pm25_lag_3,6690
+num__no2,6655
+num__co_lag_1,6597
+num__nox,6558
+num__co2_per_density,6466
+num__toluene,6443
+num__pm10_lag_1,5884
+num__pm25_lag_1,5744
+num__pm25_lag_12,5201
+num__pm10_lag_12,5070
+num__pm10,4756
+num__population_density,4607
+num__pm10_minus_pm25,4008
+num__country_freq,3786
+num__state_freq,2781
+num__year,2626
+num__doy_cos,2460
+num__doy_sin,2453
+num__day_of_year,1755
+num__month_sin,958
+num__month,720
+num__month_cos,622
+cat__country_India,501
+cat__country_China,402
+cat__country_Indonesia,269
+cat__country_Bangladesh,180
+cat__city_Epe,151
+cat__city_Port Harcourt,149
+cat__country_France,133
+cat__country_Brazil,133
+num__city_freq,123
+cat__city_Ludhiana,121
+cat__city_London,107
+cat__city_Krasnoyarsk,101
+cat__city_Nizhny Tagil,100
+cat__state_Sumatra,96
+cat__city_New Delhi,96
+cat__city_Ghaziabad,96
+cat__city_Kano,95
+cat__city_Norilsk,95
+cat__country_United Kingdom,93
+cat__country_Australia,89
+cat__city_Munich,86
+cat__city_Qingdao,85
+cat__city_Kota,85
+cat__city_Amritsar,85
+cat__city_Chelyabinsk,82
+cat__country_Japan,80
+cat__city_Hazaribagh,79
+cat__state_Osaka,79
+cat__country_South Africa,79
+cat__country_Germany,79
+cat__city_Tagaytay,74
+cat__city_Weifang,73
+cat__state_São Paulo,72
+cat__city_Darbhanga,67
+cat__state_Kalimantan (Borneo),65
+cat__city_Glasgow,65
+cat__city_Cirebon,63
+cat__country_Saudi Arabia,63
+cat__city_Manokwari,62
+cat__country_South Korea,62
+num__is_covid_period,61
+cat__city_Manchester,60
+cat__city_Novokuznetsk,60
+cat__city_Nanyang,60
+cat__state_Hamburg,60
+cat__state_Occitanie,60
+cat__city_Nowshera,59
+cat__state_Île-de-France,59
+cat__city_Patiala,57
+cat__city_Frankfurt,57
+cat__state_Daegu-Gyeongbuk,56
+cat__city_Calamba,54
+cat__state_Puebla,54
+cat__city_Dongguan,52
+cat__city_Dwarka,51
+cat__state_Kano,51
+cat__city_Chuadanga,51
+cat__city_Bochum,50
+cat__city_Gaibandha,49
+cat__city_Bratsk,49
+cat__city_Nova Iguaçu,49
+cat__country_Philippines,48
+cat__city_Luoyang,47
+cat__country_Pakistan,46
+cat__city_Manaus,46
+cat__city_Rondonópolis,46
+cat__city_Bhubaneswar,46
+cat__state_Western Australia,45
+cat__city_Dehradun,45
+cat__state_Chattogram,45
+cat__city_Jambi,44
+cat__city_Handan,44
+cat__city_Osaka,44
+cat__city_Narowal,43
+cat__city_Ariquemes,43
+cat__city_Bontang,43
+cat__state_Addis Ababa (City),42
+cat__city_Al Ahsa,41
+cat__city_Lyon,41
+num__country_city_freq,41
+cat__city_Osan,41
+cat__city_Cherepovets,40
+cat__state_Jeonbuk,40
+cat__city_Guiyang,39
+cat__state_Nouvelle-Aquitaine,39
+cat__city_Uijeongbu,39
+cat__city_Rabigh,38
+cat__city_Bengkulu,37
+cat__city_Agra,37
+cat__city_Merauke,37
+cat__city_Leeds,37
+cat__city_Magnitogorsk,36
+cat__city_Syracuse,36
+cat__state_California,36
+cat__state_Papua & Maluku,35
+cat__city_Dortmund,35
+cat__country_Russia,34
+cat__state_Haryana,34
+cat__state_Region VI (Western Visayas),34
+cat__city_Rajkot,33
+cat__city_Ikeja,33
+cat__city_Rio Branco,32
+cat__city_Binjai,32
+cat__state_Chiba,32
+cat__state_Makkah Province,32
+cat__city_Faridabad,31
+cat__city_Pangkal Pinang,30
+cat__city_Narayanganj,30
+cat__city_Karratha,29
+cat__state_Hiroshima,29
+cat__state_Greater London,29
+cat__city_Palembang,28
+cat__state_Region XI (Davao),27
+cat__city_Cologne,27
+cat__city_Whyalla,27
+cat__state_Rajshahi,27
+cat__city_Pontianak,27
+cat__city_Santo André,26
+cat__city_Salem,26
+cat__city_Newcastle upon Tyne,26
+cat__city_Tanjung Pinang,26
+cat__city_Leipzig,26
+cat__city_Bengbu,26
+cat__state_Meghalaya,26
+cat__city_Tarakan,26
+cat__state_Aichi,25
+cat__state_Hyogo,25
+cat__city_Gopalganj,25
+cat__city_King William's Town,25
+cat__city_Tangub,25
+cat__city_Dhanbad,24
+cat__city_Cuiabá,24
+cat__state_Odisha,24
+cat__state_Rangpur,24
+cat__city_Wudil,24
+cat__state_Lagos,23
+cat__city_Sorong,23
+cat__city_Rohini,23
+cat__city_Chungju,23
+cat__state_Hunan,23
+cat__city_Guarulhos,23
+cat__city_Padang,23
+cat__state_Auvergne-Rhône-Alpes,23
+cat__city_Tokorozawa,23
+cat__state_Victoria,23
+cat__city_San Francisco,22
+cat__city_Raipur,22
+cat__city_Deyang,22
+cat__city_Mundka,22
+cat__state_Region IV-A (CALABARZON),22
+cat__city_Banda Aceh,21
+cat__city_Rajshahi,21
+cat__city_Chiba,21
+cat__city_Medan,21
+cat__city_Timika,21
+cat__state_Northwestern,20
+cat__city_Shenyang,20
+cat__city_Nagpur,20
+cat__country_Mexico,20
+cat__city_General Trias,20
+cat__state_Khyber Pakhtunkhwa,20
+cat__city_Toyonaka,20
+cat__city_Imus,19
+cat__city_Surigao City,19
+cat__state_Riyadh Province,19
+cat__city_Ansan,19
+cat__city_Durgapur,19
+cat__city_Noida,19
+cat__city_San Jose del Monte,19
 cat__country_United States,19
-cat__city_Ludhiana,19
-cat__city_San Jose City,19
-cat__city_Mille,19
-cat__city_Suita,19
-cat__city_Medan,19
-cat__state_Makkah Province,19
-cat__state_Aguascalientes,18
-cat__state_Gauteng,18
-cat__state_Madhya Pradesh,17
-cat__city_Bengkulu,17
-cat__city_Cumilla,17
+cat__city_Kawasaki,19
+cat__state_Tokyo,19
+cat__city_Shangrao,19
+cat__state_Sichuan,19
+num__high_humidity_flag,19
+cat__state_Daejeon-Chungnam,18
+cat__city_Sheffield,18
+cat__city_Gurugram,18
+cat__city_Funabashi,18
+cat__state_Jharkhand,18
+cat__state_Bavaria,18
+cat__city_Rorainópolis,18
+cat__state_Region IX (Zamboanga Peninsula),17
+cat__state_Liaoning,17
+cat__state_Maharashtra,17
+cat__city_San Pablo,17
+cat__city_Ichikawa,17
+cat__city_Pasay,17
+cat__state_Rajasthan,17
 num__decade,17
-cat__state_Osaka,17
-cat__state_Beijing,16
-cat__state_Northwestern,16
-cat__city_Merauke,15
-cat__state_Yorkshire,15
-cat__city_Gode,15
-cat__city_Béziers,14
-cat__state_Lagos,14
-num__low_wind_flag,14
-cat__city_Pasuruan,14
-cat__city_Norilsk,14
-cat__state_Delhi,14
-cat__city_Cadiz,13
-cat__state_Jammu and Kashmir,13
-cat__city_Imus,13
+cat__state_Region VII (Central Visayas),17
+cat__city_Zigong,17
+cat__state_Hebei,17
+cat__state_Scotland,17
+cat__state_Mato Grosso,16
+cat__city_Seosan,16
+cat__city_Digos,16
+cat__state_North Caucasian,16
+cat__state_Amazonas,16
+cat__city_Fujisawa,16
+cat__state_Region III (Central Luzon),16
+cat__city_Pekanbaru,16
+cat__state_South Australia,16
+cat__city_Toulouse,16
+cat__city_Mataram,16
+cat__state_Berlin,16
+cat__state_Acre,16
+cat__city_Cumilla,16
+cat__city_Sing Buri,16
+cat__city_São Paulo,15
+cat__state_Nevada,15
+cat__city_Carcar,15
+cat__country_Ethiopia,15
+cat__state_Ural,15
+cat__city_Ambala,15
+cat__state_Region VIII (Eastern Visayas),15
+cat__country_Egypt,15
+cat__city_Badagry,15
+cat__state_Saitama,15
+cat__state_Delhi,15
+cat__city_Saitama,14
+cat__state_Aguascalientes,14
+cat__state_Shizuoka,14
+cat__city_Pateros,14
+cat__state_Kanagawa,14
+cat__state_Yorkshire,14
+cat__season_Spring,14
+cat__city_Gaya,14
+cat__city_Meycauayan,14
+cat__city_Lucena,14
+cat__state_Telangana,14
+cat__city_Yichang,14
+cat__city_Obio-Akpor,14
+cat__city_Jhelum,14
+cat__state_Hesse,14
+cat__state_Region XIII (Caraga),14
+cat__city_Kawaguchi,14
+cat__state_Region X (Northern Mindanao),14
+cat__city_Danao,14
+cat__state_Saxony,14
+cat__city_Warangal,13
+cat__state_Jiangxi,13
 cat__city_Mecca,13
-cat__city_Nowshera,12
-cat__city_Glasgow,12
-cat__city_San Pablo,12
-cat__season_Summer,11
-cat__state_Fukuoka,11
-cat__state_Fukushima,11
-num__quarter,11
-cat__season_Winter,11
-cat__state_Siberian,11
-cat__city_Bais,11
-cat__city_Langfang,11
-cat__state_Ibaraki,11
-cat__state_Shanxi,10
-num__city_freq,10
-cat__city_Nova Iguaçu,10
-cat__city_Mito,10
-cat__city_Eleme,10
-cat__state_Hiroshima,10
-cat__state_Washington,9
-cat__city_Port Augusta,9
-cat__city_Ternate,9
-cat__state_Region IV-A (CALABARZON),9
-cat__state_Daegu-Gyeongbuk,9
-cat__city_London,9
-cat__city_Munich,9
-cat__city_Lahore,9
-cat__city_Samarinda,9
-cat__state_Miyagi,8
-cat__city_Valenzuela,8
-cat__state_BARMM,8
-cat__state_California,8
-cat__state_Sulawesi,8
-cat__state_Roraima,8
-cat__city_Dwarka,8
+cat__city_Okazaki,13
+cat__city_Rafha,13
+cat__state_Federal District,13
+cat__city_Bac Ninh,13
+cat__city_Austin,13
+cat__city_Jabalpur,13
+cat__season_Summer,13
+cat__city_Marabá,13
+cat__city_Sagay,13
+cat__city_Singkawang,13
+cat__state_Busan-Ulsan-Gyeongnam,13
+num__low_wind_flag,13
+num__quarter,13
+cat__city_Cárdenas,13
+cat__city_Bais,13
+cat__city_Kasugai,13
+cat__state_Centre-Val de Loire,13
+cat__state_Jeju,12
+cat__city_Larkana,12
+cat__city_Khabarovsk,12
+cat__city_Araguaína,12
+cat__state_Region V (Bicol),12
+cat__city_Tanauan,12
+cat__city_Dhahran,12
+cat__state_Gwangju-Jeonnam,12
+cat__state_Barishal,12
+cat__city_Irkutsk,12
+cat__city_Puebla,12
+cat__state_Jakarta (DKI),12
+cat__state_Roraima,11
+cat__city_Uberlândia,11
+cat__state_Mpumalanga,11
+cat__city_Tonghua,11
+cat__city_Fukuoka,11
+cat__state_Pará,11
+cat__city_Balikpapan,11
+cat__state_Pays de la Loire,11
+cat__city_Shubra El Kheima,11
+cat__city_Rembang,11
+cat__city_Shillong,11
+cat__state_North Rhine-Westphalia,11
+cat__city_Porto Velho,11
+cat__state_Shanxi,11
+cat__city_Parintins,11
+cat__city_Pachuca,11
+cat__city_Ichinomiya,11
+cat__state_Guangdong,11
+cat__state_Hauts-de-France,11
+cat__city_Manali,11
+cat__city_Kurgan,11
+cat__city_Imizu,11
+cat__state_Rondônia,10
+cat__city_Eugene,10
+cat__city_Kidapawan,10
+cat__city_Xingtai,10
+cat__city_Las Pinas,10
+cat__state_West Java,10
+cat__state_Eastern Province,10
+cat__city_Várzea Grande,10
+cat__city_Tlaxcala,10
+cat__state_Akita,10
+cat__city_Semera,10
+cat__city_Baotou,10
+cat__city_Secunda,10
+cat__city_Nonsan,10
+cat__state_Federal Capital Territory,10
+cat__city_Gyeongju,10
+cat__state_Rivers,9
+cat__state_Ehime,9
+cat__city_Cebu City,9
+cat__city_Caloocan,9
+cat__state_Tasmania,9
+cat__state_Uttarakhand,9
+cat__state_Bali & Nusa Tenggara,9
+cat__city_Jiujiang,9
+cat__city_Bunbury,9
+cat__city_Pasuruan,9
+cat__city_Jeju City,9
+cat__state_Bretagne,9
+cat__city_Anand Vihar,9
+cat__city_Anshan,9
+cat__state_Colorado,9
+cat__city_Ananindeua,9
+cat__state_Gauteng,9
+cat__city_Cauayan,9
+cat__city_Valenzuela,9
+cat__city_Banjarmasin,9
+cat__city_Banjarbaru,9
+cat__city_Science City of Munoz,9
+cat__city_Bacoor,9
+cat__city_Singaraja,9
+cat__state_Grand Est,9
+cat__state_Queensland,9
+cat__state_Fukuoka,9
+cat__city_Kurume,9
+cat__state_North West,9
+cat__city_Bukittinggi,9
+cat__city_Clermont-Ferrand,8
+cat__city_Konya,8
+cat__state_Shandong,8
+cat__city_Toowoomba,8
+cat__city_Port Augusta,8
+cat__city_Butuan,8
+cat__state_Jiangsu,8
+cat__city_Marikina,8
+cat__state_Red River Delta,8
+cat__state_Tamil Nadu,8
+cat__city_Palangka Raya,8
+cat__city_Gwangju,8
+cat__city_Sasolburg,8
+cat__city_Dumai,8
+cat__state_Guizhou,8
+cat__city_Sorocaba,8
+cat__city_Kabankalan,8
+cat__state_Uttar Pradesh,8
+cat__city_Navotas,8
+cat__state_Cordillera Administrative Region (CAR),8
+cat__city_Mandaluyong,8
+cat__state_Henan,8
+cat__city_Yeosu,8
+cat__city_Hub,8
+cat__city_Pekalongan,8
 cat__city_Addis Ababa,8
-cat__state_Region VII (Central Visayas),8
-cat__state_East Java,8
-cat__state_Mato Grosso,8
-num__high_humidity_flag,7
-cat__city_Pekalongan,7
-cat__city_Rondonópolis,7
-cat__city_Chandler,7
-cat__city_Essen,7
-cat__state_Central Java,7
-cat__city_Burdur,7
-cat__state_East Midlands,7
-cat__state_West Java,7
-cat__state_Western Australia,7
-cat__state_Nagaland,7
-cat__state_Region XI (Davao),7
-cat__state_Hamburg,7
-cat__state_Aichi,6
-cat__state_Region V (Bicol),6
-cat__state_Gwangju-Jeonnam,6
-cat__city_Manchester,6
-cat__city_Larkana,6
+cat__city_Abqaiq,8
+cat__state_Free State,8
+cat__state_Hubei,8
+cat__city_Bokaro,8
+cat__city_Gumi,8
+cat__city_Datong,8
+cat__state_Ogun,8
+cat__city_Samarinda,7
+cat__city_Fukuyama,7
+cat__city_Zhengzhou,7
+cat__city_Chicago,7
+cat__city_Linyi,7
+cat__state_Baden-Wurtemberg,7
+cat__state_Region II (Cagayan Valley),7
+cat__state_Siberian,7
+cat__city_Chitral,7
+cat__state_Assam,7
+cat__city_Hakkari,7
+cat__state_East Java,7
+cat__city_Faisalabad,7
+cat__state_Tlaxcala,7
+cat__city_Palayan,7
+cat__city_Ranchi,7
+cat__city_Elizabeth,7
+cat__state_Gujarat,7
+cat__city_Nuevo Vallarta,7
+cat__city_Dapitan,7
+cat__state_Kerala,7
+cat__state_Khulna,7
+cat__city_Palmerston,7
+cat__city_Batac,7
+cat__city_Pittsburgh,7
+cat__season_Autumn,7
+cat__state_Beijing,7
+cat__city_Oakland,7
+cat__city_Malolos,7
+cat__city_Bayawan,7
+cat__city_Amagasaki,7
+cat__city_Lakshmipur,7
+cat__city_Baguio,7
+cat__city_Vanderbijlpark,6
+cat__city_Vigan,6
+cat__state_Mexico City,6
+cat__state_Himachal Pradesh,6
+cat__state_Mie,6
+cat__city_Bacolod,6
+cat__city_Bandar Lampung,6
+cat__city_Dangjin,6
+cat__state_Pennsylvania,6
+cat__state_Yamagata,6
+cat__city_Himeji,6
+cat__state_Tianjin,6
+cat__city_Iriga,6
+cat__city_Bogo,6
+cat__season_Winter,6
+cat__city_Changwon,6
+cat__city_Kishoreganj,6
+cat__state_Sulawesi,6
+cat__city_Los Angeles,6
+cat__city_Mati,6
+cat__city_Iloilo City,6
+cat__city_Hamburg,6
+cat__city_Nawabshah (Shaheed Benazirabad),6
+cat__city_Bathinda,6
+cat__city_Annecy,6
 cat__state_Karnataka,6
-cat__city_Hung Yen,6
-cat__state_Tokyo,6
-cat__state_Macau SAR,6
-cat__state_Arizona,6
-cat__state_North Rhine-Westphalia,6
-cat__city_Marabá,5
-cat__city_Ichikawa,5
-cat__city_Lanzhou,5
-cat__city_Kaifeng,5
-cat__city_Bratsk,5
-cat__city_Gaya,5
-cat__city_Joypurhat,5
-cat__state_Inner Mongolia,5
-cat__state_Region X (Northern Mindanao),5
-cat__city_Toba Tek Singh,5
-cat__state_Region XII (SOCCSKSARGEN),5
+cat__city_Borongan,6
+cat__city_Sakai,6
+cat__city_Tacloban,6
+cat__city_Tangshan,6
+cat__city_Alice Springs,6
+cat__state_Bihar,5
+cat__city_Jodhpur,5
+cat__city_Dasmarinas,5
+cat__city_Passi,5
+cat__city_Sacramento,5
+cat__city_Victorias,5
+cat__city_Gawler,5
+cat__city_Ulsan,5
 cat__city_Nashik,5
+cat__country_Nigeria,5
+cat__city_Tsu,5
+cat__city_Jamshedpur,5
+cat__state_Region XII (SOCCSKSARGEN),5
+cat__state_Asir Province,5
+cat__city_Joypurhat,5
+cat__city_Rourkela,5
+cat__city_Ribeirão Preto,5
+cat__city_Anyang,5
+cat__city_Gwangmyeong,5
+cat__city_Toluca,5
+cat__city_eMalahleni,5
+cat__city_Taiyuan,5
+cat__state_Gansu,5
 cat__state_Goa,5
-cat__state_Hong Kong SAR,5
-cat__city_Mati,5
-cat__state_Mpumalanga,5
-cat__city_Chiba,5
-cat__state_Kerala,4
-cat__city_Kasur,4
-cat__state_Maharashtra,4
-cat__city_Banjarmasin,4
-cat__state_Region I (Ilocos),4
-cat__state_Kanagawa,4
-cat__city_Caxias do Sul,4
-cat__city_Baoding,4
-cat__city_Tangub,4
-cat__city_Cuiabá,4
-cat__state_Rondônia,4
-cat__city_Morelia,4
-cat__city_Bilecik,4
-cat__state_Shaanxi,4
-cat__state_Toyama,4
-cat__city_Ilorin,4
-cat__state_Chiba,4
-cat__state_Amazonas,4
+cat__city_Stellenbosch,5
+cat__city_Sinop,5
+cat__city_Cruzeiro do Sul,5
+cat__city_Wuzhong,5
+cat__city_San Diego,5
+cat__state_BARMM,5
+cat__state_Hidalgo,5
+cat__city_Pasig,5
+cat__city_Iligan,5
+cat__city_Nakatsu,5
+cat__city_Wardar,5
+cat__city_Shibuya,5
+cat__city_Birmingham,5
+cat__city_Kasur,5
+cat__state_Sikkim,5
+cat__city_Vijayawada,5
+cat__city_Bellevue,5
+cat__city_Higashihiroshima,5
+cat__state_Central Java,5
+cat__city_Higashiosaka,5
+cat__city_Ikorodu,4
+cat__state_Rio Grande do Sul,4
+cat__city_Mount Gambier,4
+cat__state_Madinah Province,4
+cat__city_Fuji,4
+cat__city_Boa Vista,4
+cat__city_Rustenburg,4
+cat__city_Island Garden City of Samal,4
+cat__city_Mandaue,4
+cat__state_Manipur,4
+cat__state_Al-Qassim Province,4
+cat__city_Juchitán,4
+cat__city_Gujrat,4
+cat__state_Seoul Capital Area,4
+cat__state_Somali,4
+cat__state_Anhui,4
+cat__city_Calapan,4
+cat__city_Xiangtan,4
+cat__state_Punjab,4
+cat__city_Jorhat,4
+cat__city_Manila,4
+cat__city_Quezon City,4
+cat__state_Balochistan,4
+cat__city_Ambon,4
+cat__city_Yueyang,4
+cat__city_Vénissieux,4
+cat__city_Kalgoorlie,4
+cat__state_Minas Gerais,4
 cat__city_Guihulngan,4
-cat__city_Dapitan,4
-cat__city_Rangpur,4
-cat__city_Chattogram,4
-cat__city_Germiston,3
-cat__state_Punjab,3
-cat__city_Nanyang,3
-cat__state_Bavaria,3
-cat__city_Digos,3
-cat__city_Ota,3
-cat__state_Haryana,3
-cat__state_Telangana,3
-cat__season_Autumn,3
-cat__city_Manaus,3
-cat__season_Spring,3
-cat__state_Federal District,3
-cat__city_Tagaytay,3
-cat__city_Srinagar,3
+cat__state_Chhattisgarh,4
+cat__state_Chongqing,4
+cat__city_Jalandhar,4
+cat__city_Candon,4
+cat__city_Kashgar,4
+cat__city_Beijing-Dongcheng,4
+cat__city_Olongapo,4
+cat__city_Reno,4
+cat__city_Asaba,4
+cat__state_Heilongjiang,4
+cat__city_Tagbilaran,4
+cat__state_Fukushima,4
+cat__city_Suzhou,4
+cat__city_Bhagalpur,4
+cat__state_Sylhet,4
+cat__state_Northern Territory,4
+cat__city_Setagaya,4
+cat__city_Pyeongtaek,4
+cat__city_Chandler,4
+cat__city_Gandhinagar,4
+cat__state_Dhaka,4
+cat__city_Changzhi,4
+cat__city_Nagoya,4
+cat__city_Surgut,4
+cat__state_Region I (Ilocos),4
+cat__city_Pohang,4
+cat__city_Samcheok,4
+cat__city_Banyumas,4
+cat__city_Suita,4
+cat__city_Essen,4
+cat__city_Cabuyao,4
+cat__city_Numazu,4
+cat__city_Binan,4
+cat__city_Shinile,4
+cat__city_Iwaki,3
+cat__city_Mumbai,3
+cat__state_Afar,3
+cat__city_Chongqing-Shapingba,3
+cat__city_Chongqing-Wanzhou,3
 cat__city_Jayapura,3
-cat__city_Nottingham,3
-cat__city_Patiala,3
-cat__state_Jakarta (DKI),3
-cat__city_Orange,3
+cat__city_Kohat,3
+cat__city_Huangshi,3
+cat__state_Cairo,3
+cat__city_Muntinlupa,3
+cat__city_Muzaffarpur,3
+cat__city_Aguascalientes,3
+cat__city_Bishnupur,3
+cat__state_Eastern,3
+cat__state_Texas,3
+cat__state_Gangwon,3
+cat__state_Gunma,3
+cat__city_Hotan,3
+cat__state_Inner Mongolia,3
+cat__city_Busan,3
+cat__city_Nerima,3
+cat__state_Jammu and Kashmir,3
+cat__state_Jazan Province,3
+cat__city_Bwari,3
+cat__state_Jilin,3
 cat__city_Namwon,3
-cat__state_Uttarakhand,3
-cat__state_Himachal Pradesh,3
-cat__state_Greater London,3
-cat__city_Kurume,3
-cat__city_Epe,2
-cat__state_Afar,2
-cat__state_Dadra Nagar Haveli and Daman Diu,2
-cat__state_Chandigarh,2
-cat__country_Thailand,2
-cat__city_Zigong,2
-cat__state_Nevada,2
-cat__city_Dagupan,2
-cat__state_Gansu,2
-cat__city_Carcar,2
-cat__state_Busan-Ulsan-Gyeongnam,2
-cat__state_NCR,2
-cat__state_Saitama,2
-cat__city_Changwon,2
-cat__state_North East,2
+cat__city_Cadiz,3
+cat__city_Mito,3
+cat__city_Karachi,3
+cat__city_Kashiwa,3
+cat__city_Batangas City,3
+cat__city_Ogaki,3
+cat__city_Onitsha,3
+cat__city_Guadalajara,3
+cat__city_Ota,3
+cat__city_Changsha,3
+cat__city_Panipat,3
+cat__state_West Midlands,3
+cat__state_West Bengal,3
+cat__state_Washington,3
+cat__city_Perth,3
+cat__city_Ilagan,3
+cat__state_Qalyubia,3
+cat__state_Provence-Alpes-Côte d'Azur,3
+cat__city_Sambalpur,3
+cat__city_San Jose City,3
+cat__city_San Juan,3
+cat__city_Shizuishan,3
+cat__state_Normandie,3
+cat__city_Canlaon,3
+cat__city_Stuttgart,3
+cat__state_Saxony-Anhalt,3
+cat__city_São Bernardo do Campo,3
+cat__state_New South Wales,3
+cat__city_Takasaki,3
+cat__city_Tehuacán,3
+cat__state_Nagasaki,3
+cat__city_Tsuyama,3
+cat__city_Vancouver,3
+cat__city_Dagupan,3
+cat__city_Daegu,3
+cat__city_Wuxi,3
+cat__city_Xiangyang,3
+cat__city_Xinxiang,3
+cat__city_Yangsan,3
+cat__city_Kawagoe,3
+cat__state_Ladakh,3
+cat__city_Rishikesh,2
+cat__city_Riyadh,2
 cat__city_Jakarta Utara,2
-cat__city_Dinajpur,2
-cat__city_Gwangju,2
-cat__city_Bogura,2
-cat__city_Aguascalientes,2
-cat__state_Occitanie,2
-cat__state_North West,2
-cat__city_Hamburg,2
+cat__city_Juiz de Fora,2
+cat__city_Baoding,2
+cat__city_Jubail,2
+cat__city_Roxas,2
+cat__city_Joliet,2
+cat__city_Sacheon,2
+cat__city_Cabanatuan,2
+cat__city_Safwa,2
+cat__city_Orem,2
+cat__city_Mille,2
+cat__city_Salatiga,2
+cat__city_Salt Lake City,2
+cat__city_Omsk,2
+cat__city_Bayugan,2
+cat__city_Durg,2
 cat__state_Tibet,2
-cat__state_Kagawa,2
-cat__city_Abbottabad,2
-cat__city_Fujisawa,2
-cat__state_Rajasthan,2
-cat__city_Balikpapan,2
-cat__city_Hazaribagh,2
-cat__city_Dumai,2
-cat__city_Adwa,2
-cat__state_Riyadh Province,2
-cat__state_Rio Grande do Sul,2
-cat__state_Meghalaya,2
-cat__city_Jodhpur,2
-cat__city_Kakamigahara,2
-cat__state_Bali & Nusa Tenggara,2
-cat__city_Manokwari,2
-cat__city_Olongapo,2
-cat__city_Ogaki,2
+cat__state_Oregon,2
 cat__city_Palmas,2
-cat__city_Palangka Raya,2
-cat__city_Parintins,2
-cat__state_Andhra Pradesh,2
-cat__state_Arunachal Pradesh,2
-cat__city_Santo André,2
-cat__city_Sing Buri,2
-cat__city_São Paulo,2
+cat__city_Lucknow,2
+cat__city_Santarém,2
+cat__city_Santiago,2
+cat__state_Okayama,2
+cat__state_Indiana,2
+cat__city_Asansol,2
+cat__state_Northern Cape,2
+cat__state_Idaho,2
+cat__state_North East,2
+cat__city_Mexico City (CDMX),2
+cat__state_Tocantins,2
+cat__city_Sidoarjo,2
+cat__city_Pathum Thani,2
+cat__city_Belém,2
+cat__city_Noakhali,2
+cat__city_Sipalay,2
+cat__city_Duque de Caxias,2
+cat__state_New York,2
+cat__state_Guangxi,2
+cat__city_Stockport,2
+cat__city_Ormoc,2
+cat__city_Cox's Bazar,2
+cat__city_Sunderland,2
+cat__city_Liupanshui,2
+cat__city_Gwangyang,2
+cat__state_Gambela,2
+cat__city_Berlin,2
+cat__city_Novosibirsk,2
+cat__city_Ji-Paraná,2
+cat__state_Fukui,2
+cat__city_Taif,2
+cat__city_Linfen,2
+cat__city_Probolinggo,2
+cat__state_Nayarit,2
+cat__city_Jinan,2
+cat__city_Tanjay,2
 cat__city_Tank,2
-cat__city_Timika,2
-cat__city_Ulsan,2
-cat__state_Chattogram,1
-cat__city_Carson City,1
-cat__state_Tokushima,1
-cat__state_Qinghai,1
-cat__state_Khulna,1
-cat__city_Catbalogan,1
-cat__state_Tigray,1
-cat__state_Vermont,1
-cat__state_Rajshahi,1
-cat__state_Sylhet,1
-cat__state_Tianjin,1
-cat__city_Kagoshima,1
-cat__state_Pará,1
-cat__city_Kidapawan,1
-cat__city_Khanka,1
-cat__city_Kobe,1
-cat__city_Kitakyushu,1
-cat__city_Kota,1
-cat__city_Koronadal,1
-cat__state_Sikkim,1
-cat__city_Kuruman,1
-cat__city_Dangjin,1
-cat__state_Jeonbuk,1
-cat__state_Barishal,1
-cat__state_Eastern Province,1
-cat__city_Los Angeles,1
-cat__city_Faridpur,1
-cat__city_Dir,1
-cat__state_Hainan,1
-cat__city_Aga,1
-cat__city_Dasmarinas,1
-cat__city_Masbate City,1
-cat__city_Hanam,1
-cat__city_Nagoya,1
-cat__state_Heilongjiang,1
-cat__state_Ogun,1
-cat__state_Yunnan,1
-cat__city_Nevsehir,1
-cat__state_New Mexico,1
-cat__city_Northampton,1
+cat__city_Iizuka,2
+cat__city_Pune,2
+cat__city_Fukushima,2
+cat__city_Purwakarta,2
+cat__city_Campinas,2
+cat__state_Far Eastern,2
+cat__state_NCR,2
+cat__state_Mymensingh,2
+cat__city_Beijing-Chaoyang,2
+cat__state_Dadra Nagar Haveli and Daman Diu,2
+cat__state_South Ethiopia,2
+cat__state_Mizoram,2
+cat__state_Miyazaki,2
+cat__city_Fort Wayne,2
+cat__city_Usak,2
+cat__city_Valencia,2
+cat__state_Minya,2
+cat__state_Shanghai,2
+cat__city_Nha Trang,2
+cat__city_Varanasi,2
+cat__city_Kushtia,2
+cat__city_Angeles,2
+cat__city_Batman,2
+cat__city_Villeurbanne,2
+cat__city_Mansehra,2
+cat__state_Tabasco,2
+cat__city_New Cairo,2
+cat__state_Tabuk Province,2
+cat__city_West Valley City,2
+cat__city_Daejeon,2
+cat__city_Baramulla,2
+cat__state_Qinghai,2
+cat__city_Eleme,2
+cat__state_Arizona,2
+cat__state_Xinjiang,2
+cat__city_Paranaque,2
+cat__city_Kargil,2
+cat__city_Calbayog,2
+cat__city_Kobe,2
+cat__city_Gimpo,2
+cat__country_Vietnam,2
+cat__city_Dinajpur,2
+cat__city_Zamboanga City,2
+cat__city_Gimcheon,2
+cat__city_Yuncheng,2
+cat__city_Cagayan de Oro,2
+cat__city_Miyazaki,2
+cat__city_Malaybalay,2
+cat__state_KwaZulu-Natal,2
+cat__state_Kumamoto,2
+cat__city_Anqing,1
+cat__city_Colombes,1
+cat__city_Antipolo,1
+cat__city_Gode,1
+cat__city_Duisburg,1
+cat__city_Paterson,1
+cat__state_Eastern Cape,1
+cat__state_Shiga,1
+cat__state_Faiyum,1
+cat__city_Chanthaburi,1
+cat__state_Fujian,1
+cat__city_Peshawar,1
+cat__city_Philadelphia,1
+cat__state_Volga,1
+cat__state_Gifu,1
+cat__city_Dundee,1
+cat__city_Ijebu Ode,1
+cat__city_Arba Minch,1
 cat__state_Utah,1
-cat__state_Madinah Province,1
-cat__city_Orem,1
-cat__city_Iwaki,1
-cat__city_Padang,1
-cat__state_Scotland,1
-cat__city_Panabo,1
-cat__state_Kwara,1
-cat__state_Rio de Janeiro,1
-cat__state_Seoul Capital Area,1
-cat__city_Chitral,1
-cat__state_North Caucasian,1
-cat__city_Haridwar,1
-cat__state_Shanghai,1
-cat__state_Alexandria,1
-cat__state_Dhaka,1
-cat__state_Gujarat,1
-cat__city_Rabigh,1
-cat__city_Reno,1
-cat__city_Rustenburg,1
-cat__city_Boston,1
-cat__city_Seosan,1
-cat__city_Shibuya,1
+cat__city_Henderson,1
+cat__city_Provo,1
+cat__state_Tripura,1
+cat__city_Gwagwalada,1
+cat__city_Hanam,1
+cat__state_Hong Kong SAR,1
+cat__state_Illinois,1
+cat__city_Esperance,1
+cat__city_RK Puram,1
+cat__state_Region IV-B (MIMAROPA),1
+cat__state_Ishikawa,1
+cat__state_Iwate,1
+cat__state_Shaanxi,1
+cat__city_Cabadbaran,1
+cat__city_Astrakhan,1
+cat__city_Cuttack,1
+cat__state_Kentucky,1
+cat__city_Attock,1
+cat__city_Kaifeng,1
+cat__city_Rio de Janeiro,1
+cat__city_Kanazawa,1
+cat__city_Jakarta Pusat,1
+cat__city_Kanpur,1
+cat__city_Karimnagar,1
+cat__city_Cotabato City,1
+cat__city_Jaipur,1
+cat__city_Jacobabad,1
+cat__city_Khagrachhari,1
+cat__city_Isahaya,1
+cat__city_Jeddah,1
+cat__city_Kolkata,1
+cat__city_Isabela City,1
+cat__city_Korla,1
+cat__city_Jijiga,1
+cat__city_Kupang,1
+cat__city_Catbalogan,1
+cat__city_Kurashiki,1
+cat__state_Paraná,1
+cat__city_Kurigram,1
+cat__city_Howrah,1
+cat__city_Kyoto,1
+cat__city_San Fernando (La Union),1
+cat__city_Banjar,1
+cat__city_La Rochelle,1
+cat__city_La Seyne-sur-Mer,1
+cat__city_Ahmedabad,1
+cat__city_San Juan del Río,1
+cat__city_Leh,1
+cat__city_San Pedro,1
+cat__city_Chifeng,1
+cat__city_Lipa,1
+cat__state_Schleswig-Holstein,1
+cat__city_Caruaru,1
+cat__city_Satkhira,1
+cat__state_State of Mexico,1
+cat__city_Seattle,1
+cat__state_Oita,1
+cat__state_Ohio,1
+cat__state_Nuevo León,1
+cat__city_Seoul,1
+cat__city_Long Xuyen,1
+cat__city_Lorient,1
+cat__city_Shaqra,1
+cat__city_Jember,1
+cat__state_Northern,1
 cat__city_Shibin El Kom,1
-cat__state_Marmara,1
-cat__city_Singkawang,1
-cat__city_Sorocaba,1
-cat__city_Banjarbaru,1
-cat__city_Syracuse,1
-cat__city_Jhelum,1
-cat__city_Baiyin,1
-cat__city_Gumi,1
-cat__state_Chungbuk,1
-cat__state_Kaduna,1
-cat__state_Colorado,1
-cat__city_East Kilbride,1
-cat__city_Baotou,1
-cat__state_Region VIII (Eastern Visayas),1
+cat__city_Degehabur,1
+cat__city_Shijiazhuang,1
+cat__city_Lydenburg,1
+cat__city_Maasin,1
+cat__city_Hengyang,1
+cat__city_Mahd Al Thahab,1
+cat__city_Shizuoka,1
+cat__city_Cannes,1
+cat__city_Makati,1
+cat__city_Siliguri,1
+cat__city_Dharamshala,1
+cat__city_Bilecik,1
+cat__state_Niigata,1
+cat__city_Chaman,1
+cat__city_Cheyenne,1
+cat__city_Sirnak,1
+cat__city_Siwa,1
+cat__city_Slough,1
+cat__city_Mandurah,1
+cat__city_Mangaluru,1
+cat__city_Standerton,1
+cat__city_Manikganj,1
+cat__city_Ad Dawadimi,1
+cat__city_Strasbourg,1
+cat__city_Marawi,1
+cat__city_Bijie,1
+cat__city_Maryborough,1
+cat__city_Surat,1
+cat__city_Masbate City,1
+cat__city_Jeonju,1
+cat__city_Jepara,1
+cat__city_Suzuka,1
+cat__city_Swabi,1
+cat__city_Mesa,1
+cat__city_Mianwali,1
+cat__city_São Gonçalo,1
+cat__city_Middelburg,1
+cat__city_Jilin City,1
+cat__state_New Hampshire,1
+cat__city_Minya,1
+cat__city_Miyakonojo,1
+cat__city_Mokokchung,1
+cat__city_Montreuil,1
+cat__city_Talisay (Cebu),1
+cat__city_Bhilai,1
+cat__city_Tando Allahyar,1
+cat__city_Mungyeong,1
+cat__state_Toyama,1
+cat__city_Harbin,1
+cat__city_Gapan,1
+cat__city_Mysuru,1
+cat__city_Naga,1
+cat__city_Naga (Cebu),1
 cat__city_Abha,1
-cat__city_Victorias,1
-cat__city_Wittenberg,1
-cat__city_eMalahleni,1
-cat__state_Liaoning,0
-cat__state_Lakshadweep,0
-cat__state_Ladakh,0
-cat__state_Kyoto,0
-cat__state_KwaZulu-Natal,0
-cat__state_Kumamoto,0
-cat__state_Kogi,0
-cat__state_Ehime,0
-cat__state_Edo,0
-cat__state_Ebonyi,0
-cat__state_Eastern Cape,0
-cat__state_Eastern Anatolia,0
-cat__state_Eastern,0
-cat__state_East of England,0
-cat__state_Durango,0
-cat__state_District of Columbia,0
-cat__state_Dire Dawa (City),0
-cat__state_Maryland,0
-cat__state_Maranhão,0
-cat__state_Manipur,0
-cat__state_Missouri,0
-cat__state_Mississippi,0
-cat__state_Minya,0
-cat__state_Minnesota,0
-cat__state_Minas Gerais,0
-cat__state_Mie,0
-cat__state_Michigan,0
-cat__state_Mexico City,0
-cat__state_Mekong River Delta,0
-cat__state_Mediterranean,0
-cat__state_Matrouh,0
-cat__state_Mato Grosso do Sul,0
-cat__state_Massachusetts,0
-cat__state_Enugu,0
-cat__state_Ekiti,0
-cat__state_Nebraska,0
-cat__state_Nayarit,0
-cat__state_Nasarawa,0
-cat__state_Nara,0
-cat__state_Najran Province,0
-cat__state_Nagasaki,0
-cat__state_Nagano,0
-cat__state_Mymensingh,0
-cat__state_Morelos,0
-cat__state_Monufia,0
-cat__state_Montana,0
-cat__state_Mizoram,0
-cat__state_Miyazaki,0
-cat__state_North Dakota,0
-cat__state_North Central Coast,0
-cat__state_North Carolina,0
-cat__state_Normandie,0
-cat__state_Ningxia,0
-cat__state_Niigata,0
-cat__state_Niger,0
-cat__state_New York,0
-cat__state_New Valley,0
-cat__state_New South Wales,0
-cat__state_New Jersey,0
-cat__state_New Hampshire,0
-cat__state_Odisha,0
-cat__state_Oaxaca,0
-cat__state_Nuevo León,0
-cat__state_Nouvelle-Aquitaine,0
-cat__state_Northwest,0
-cat__state_Northern Territory,0
-cat__state_Northern Ireland,0
-cat__state_Northern Cape,0
-cat__state_Northern Borders,0
-cat__state_Northern,0
-cat__state_Northeastern,0
-cat__state_Northeast,0
-cat__state_North Sinai,0
-cat__state_Pernambuco,0
-cat__state_Pennsylvania,0
-cat__state_Pays de la Loire,0
-cat__state_Paraíba,0
-cat__state_Paraná,0
-cat__state_Oyo,0
-cat__state_Osun,0
-cat__state_Oromia,0
-cat__state_Oregon,0
-cat__state_Ondo,0
-cat__state_Oklahoma,0
-cat__state_Okinawa,0
-cat__state_Okayama,0
-cat__state_Oita,0
-cat__state_Ohio,0
-cat__state_Red River Delta,0
-cat__state_Rangpur,0
-cat__state_Quintana Roo,0
-cat__state_Querétaro,0
-cat__state_Queensland,0
-cat__state_Qena,0
-cat__state_Qalyubia,0
-cat__state_Puebla,0
-cat__state_Puducherry,0
-cat__state_Provence-Alpes-Côte d'Azur,0
-cat__state_Plateau,0
-cat__state_Piauí,0
-cat__state_Rio Grande do Norte,0
-cat__state_Rhode Island,0
-cat__state_Rhineland-Palatinate,0
-cat__state_Region XIII (Caraga),0
-cat__state_Region IX (Zamboanga Peninsula),0
-cat__state_Region IV-B (MIMAROPA),0
-cat__state_Red Sea,0
-cat__state_Delaware,0
-cat__state_Damietta,0
-cat__state_Dakahlia,0
-cat__state_Daejeon-Chungnam,0
-cat__state_Cross River,0
-cat__state_Cordillera Administrative Region (CAR),0
-cat__state_Connecticut,0
-cat__state_Colima,0
-cat__state_Coahuila,0
-cat__state_Chongqing,0
-cat__state_San Luis Potosí,0
-cat__state_Saga,0
-cat__state_Sidama,0
-cat__state_Sichuan,0
-cat__state_Shimane,0
-cat__state_Shiga,0
-cat__state_Sharkia,0
-cat__state_Shandong,0
-cat__state_Sergipe,0
-cat__state_Schleswig-Holstein,0
-cat__state_Saxony-Anhalt,0
-cat__state_Saxony,0
-cat__state_Santa Catarina,0
-cat__state_Delta,0
-cat__state_Southeastern Anatolia,0
-cat__state_Southeast,0
-cat__state_South West,0
-cat__state_South Sinai,0
-cat__state_South Ethiopia,0
-cat__state_South East,0
-cat__state_South Dakota,0
-cat__state_South Central Coast,0
-cat__state_South Carolina,0
-cat__state_Sonora,0
-cat__state_Somali,0
-cat__state_Sokoto,0
-cat__state_Sohag,0
-cat__state_Sindh,0
-cat__state_Sinaloa,0
-cat__state_Thuringia,0
-cat__state_Texas,0
-cat__state_Tennessee,0
-cat__state_Tasmania,0
-cat__state_Taraba,0
-cat__state_Tamil Nadu,0
-cat__state_Tamaulipas,0
-cat__state_Tabuk Province,0
-cat__state_Tabasco,0
-cat__state_State of Mexico,0
-cat__state_Southwest Ethiopia,0
-cat__state_Southern,0
-cat__state_Volga,0
-cat__state_Virginia,0
-cat__state_Victoria,0
-cat__state_Veracruz,0
-cat__state_Uttar Pradesh,0
-cat__state_Tripura,0
-cat__state_Tottori,0
-cat__state_Tochigi,0
-cat__state_Tlaxcala,0
-cat__state_Chiapas,0
-cat__state_Chhattisgarh,0
-cat__state_Centre-Val de Loire,0
-cat__state_Central Highlands,0
-cat__state_Central Ethiopia,0
-cat__state_Central,0
-cat__state_Ceará,0
-cat__state_Canal Zone,0
-cat__state_Campeche,0
-cat__state_West Virginia,0
-cat__state_West Midlands,0
-cat__state_West Bengal,0
-cat__state_Wales,0
-cat__state_Wakayama,0
-cat__city_10th of Ramadan,0
-cat__state_Île-de-France,0
-cat__state_Zhejiang,0
-cat__state_Zamfara,0
-cat__state_Zacatecas,0
-cat__state_Yucatán,0
-cat__state_Yobe,0
-cat__state_Yamanashi,0
-cat__state_Yamaguchi,0
-cat__state_Yamagata,0
-cat__state_Wyoming,0
-cat__state_Wisconsin,0
-cat__state_Western Cape,0
-cat__state_Chihuahua,0
-cat__city_Abutig,0
-cat__city_Abuja,0
-cat__city_Abu Simbel,0
-cat__city_Abu Qir,0
-cat__city_Abu Hummus,0
-cat__city_Abu Arish,0
-cat__city_Abqaiq,0
-cat__city_Abobo,0
-cat__city_Aberdeen,0
-cat__city_Abeokuta,0
-cat__city_Abakan,0
-cat__city_Abakaliki,0
-cat__city_Aba,0
-cat__city_6th of October,0
-cat__city_Agra,0
-cat__city_Agartala,0
-cat__city_Agami,0
-cat__city_Afyonkarahisar,0
-cat__city_Afif,0
-cat__city_Ado Ekiti,0
-cat__city_Adiyaman,0
-cat__city_Adigrat,0
-cat__city_Adelaide,0
-cat__city_Adana,0
-cat__city_Adama (Nazret),0
-cat__city_Ad Dawadimi,0
-cat__city_Ad Darb,0
-cat__city_Acapulco,0
-cat__city_Al Bukayriyah,0
-cat__city_Al Badai,0
-cat__city_Al Ahsa,0
-cat__city_Akure,0
-cat__city_Aksu,0
-cat__city_Aksaray,0
-cat__city_Akron,0
-cat__city_Akita,0
-cat__city_Akhmim,0
-cat__city_Ajmer,0
-cat__city_Aizuwakamatsu,0
-cat__city_Aizawl,0
-cat__city_Aix-en-Provence,0
-cat__city_Ahmedabad,0
-cat__city_Agri,0
-cat__city_Alexandria,0
-cat__city_Aleta Wendo,0
-cat__city_Albury,0
-cat__city_Albuquerque,0
-cat__city_Albi,0
-cat__city_Albany,0
-cat__city_Alaminos,0
-cat__city_Alamata,0
-cat__city_Al Wasta,0
-cat__city_Al Wajh,0
-cat__city_Al Ula,0
-cat__city_Al Quwayiyah,0
-cat__city_Al Qunfudhah,0
-cat__city_Al Lith,0
-cat__city_Al Kharj,0
-cat__city_Al Ghazalah,0
-cat__city_Anantnag,0
-cat__city_Ananindeua,0
-cat__city_Anand Vihar,0
-cat__city_Anan,0
-cat__city_Amtali,0
-cat__city_Amiens,0
-cat__city_Ambon,0
-cat__city_Ambo,0
-cat__city_Ambala,0
-cat__city_Amasya,0
-cat__city_Amanzimtoti,0
-cat__city_Amagasaki,0
-cat__city_Allentown,0
-cat__city_Allahabad,0
-cat__city_Aliwal North,0
-cat__city_Alice Springs,0
-cat__city_Antipolo,0
-cat__city_Antibes,0
-cat__city_Antalya,0
-cat__city_Anshun,0
-cat__city_Anshan,0
-cat__city_Ansan,0
-cat__city_Anqing,0
-cat__city_Annecy,0
-cat__city_Annapolis,0
-cat__city_Ann Arbor,0
-cat__city_Ankara,0
-cat__city_Angers,0
-cat__city_Angeles,0
-cat__city_Ang Thong,0
-cat__city_Andong,0
-cat__city_Anchorage,0
-cat__city_Arish,0
-cat__city_Ariquemes,0
-cat__city_Argenteuil,0
-cat__city_Arba Minch,0
-cat__city_Arar,0
-cat__city_Arapiraca,0
-cat__city_Arao,0
-cat__city_Araguaína,0
-cat__city_Aracaju,0
-cat__city_Ar Rass,0
-cat__city_Apodaca,0
-cat__city_Apizaco,0
-cat__city_Aparecida de Goiânia,0
-cat__city_Aomori,0
-cat__city_Anápolis,0
-cat__city_Anyang,0
-cat__city_Astrakhan,0
-cat__city_Asosa,0
-cat__city_Asnières-sur-Seine,0
-cat__city_Ashulia,0
-cat__city_Ashmoun,0
-cat__city_Ashikaga,0
-cat__city_Asella,0
-cat__city_Asayita,0
-cat__city_Asansol,0
-cat__city_Asan,0
-cat__city_Asahikawa,0
-cat__city_Asaba,0
-cat__city_Artvin,0
-cat__city_Armavir,0
-cat__city_Armant,0
-cat__city_Arkhangelsk,0
-cat__city_Ayutthaya,0
-cat__city_Aydin,0
-cat__city_Axum,0
-cat__city_Awka,0
-cat__city_Awash,0
-cat__city_Avignon,0
-cat__city_Austin,0
-cat__city_Aurora,0
-cat__city_Aurangabad,0
-cat__city_Augusta,0
-cat__city_Augsburg,0
-cat__city_Auchi,0
-cat__city_Attock,0
-cat__city_Atlanta,0
-cat__city_Asyut,0
-cat__city_Aswan,0
-cat__city_Bahir Dar,0
-cat__city_Bahawalpur,0
-cat__city_Baguio,0
-cat__city_Bago,0
-cat__city_Bagerhat,0
-cat__city_Badr,0
-cat__city_Badin,0
-cat__city_Bader,0
-cat__city_Badagry,0
-cat__city_Bacoor,0
-cat__city_Bacolod,0
-cat__city_Bac Ninh,0
-cat__city_Bac Lieu,0
-cat__city_Bac Kan,0
-cat__city_Bac Giang,0
-cat__city_Azare,0
-cat__city_Bangor,0
-cat__city_Bangkok,0
-cat__city_Bandung,0
-cat__city_Bandarban,0
-cat__city_Bandar Lampung,0
-cat__city_Banda Aceh,0
-cat__city_Bambasi,0
-cat__city_Bama,0
-cat__city_Baltimore,0
-cat__city_Baltim,0
-cat__city_Ballarat,0
-cat__city_Balikesir,0
-cat__city_Bale Robe,0
-cat__city_Balanga,0
-cat__city_Barishal,0
-cat__city_Baris,0
-cat__city_Barguna,0
-cat__city_Baramulla,0
-cat__city_Baqaa,0
-cat__city_Baoji,0
-cat__city_Bao Loc,0
-cat__city_Banyuwangi,0
-cat__city_Banyumas,0
-cat__city_Bannu,0
-cat__city_Banjar,0
-cat__city_Banha,0
-cat__city_Bayugan,0
-cat__city_Baybay,0
-cat__city_Bayawan,0
-cat__city_Bauchi,0
-cat__city_Baubau,0
-cat__city_Batu,0
-cat__city_Baton Rouge,0
-cat__city_Batman,0
-cat__city_Bati,0
-cat__city_Bathurst,0
-cat__city_Bathinda,0
-cat__city_Batangas City,0
-cat__city_Batac,0
-cat__city_Bartin,0
-cat__city_Barry,0
-cat__city_Barnaul,0
-cat__city_Ben Tre,0
-cat__city_Belém,0
-cat__city_Belo Horizonte,0
-cat__city_Bellevue,0
-cat__city_Belgorod,0
-cat__city_Belgaum,0
-cat__city_Belfort,0
-cat__city_Belfast,0
-cat__city_Bela-Bela,0
-cat__city_Bekasi,0
-cat__city_Beijing-Tongzhou,0
-cat__city_Beijing-Haidian,0
-cat__city_Beijing-Dongcheng,0
-cat__city_Beijing-Chaoyang,0
-cat__city_Beihai,0
-cat__city_Beanibazar,0
-cat__city_Bhaluka,0
-cat__city_Bhagalpur,0
-cat__city_Betim,0
-cat__city_Bethlehem,0
-cat__city_Bethal,0
-cat__city_Besançon,0
-cat__city_Berlin,0
-cat__city_Beppu,0
-cat__city_Bensa,0
-cat__city_Benoni,0
-cat__city_Benin City,0
-cat__city_Beni Suef,0
-cat__city_Bengbu,0
-cat__city_Bengaluru,0
-cat__city_Bendigo,0
-cat__city_Bend,0
-cat__city_Binjai,0
-cat__city_Bingol,0
-cat__city_Binan,0
-cat__city_Bima,0
-cat__city_Billings,0
-cat__city_Bilbeis,0
-cat__city_Bilaspur,0
-cat__city_Bijie,0
-cat__city_Bien Hoa,0
-cat__city_Bielefeld,0
-cat__city_Biba,0
-cat__city_Bhubaneswar,0
-cat__city_Bhopal,0
-cat__city_Bhola,0
-cat__city_Bhilai,0
-cat__city_Boa Vista,0
-cat__city_Blumenau,0
-cat__city_Blois,0
-cat__city_Bloemfontein,0
-cat__city_Blitar,0
-cat__city_Blagoveshchensk,0
-cat__city_Blackpool,0
-cat__city_Bitung,0
-cat__city_Bitlis,0
-cat__city_Bismarck,0
-cat__city_Bislig,0
-cat__city_Bishoftu,0
-cat__city_Bishnupur,0
-cat__city_Bisha,0
-cat__city_Birnin Kebbi,0
-cat__city_Birmingham,0
-cat__city_Boryeong,0
-cat__city_Borongan,0
-cat__city_Borg El Arab,0
-cat__city_Bordeaux,0
-cat__city_Bontang,0
-cat__city_Bonn,0
-cat__city_Bonga,0
-cat__city_Bolton,0
-cat__city_Boksburg,0
-cat__city_Bokaro,0
-cat__city_Bojonegoro,0
-cat__city_Boise,0
-cat__city_Bogor,0
-cat__city_Bogo,0
-cat__city_Bochum,0
-cat__city_Brisbane,0
-cat__city_Brighton,0
-cat__city_Bridgeport,0
-cat__city_Brest,0
+cat__city_Namchi,1
+cat__city_Nancy,1
+cat__city_Toledo,1
+cat__city_Nantes,1
+cat__state_Nagaland,1
+cat__city_Tongyeong,1
+cat__city_Narail,1
+cat__city_Dessau,1
+cat__city_Narsingdi,1
+cat__city_Trece Martires,1
+cat__city_Jamalpur,1
+cat__city_Netrokona,1
+cat__city_Tyumen,1
+cat__city_Niihama,1
+cat__city_Nilphamari,1
+cat__city_Ningbo,1
+cat__city_Urumqi,1
+cat__city_Bethal,1
+cat__city_Vadodara,1
+cat__state_South East,1
+cat__state_Sindh,1
+cat__city_Aksu,1
+cat__city_Blois,1
+cat__city_Zaria,1
+cat__city_Vereeniging,1
+cat__country_Thailand,1
+cat__country_Turkey,1
+cat__city_Bogura,1
+cat__city_Guadalupe,1
+cat__city_Diriyah,1
+cat__state_Andhra Pradesh,1
+cat__city_Wagga Wagga,1
+cat__city_Wanju,1
+cat__state_Zhejiang,1
+cat__state_Aomori,1
+cat__state_Saga,1
+cat__state_Arunachal Pradesh,1
+cat__city_Hakusan,1
+cat__city_Wodonga,1
+cat__city_Ordos,1
+cat__city_Wuhan,1
+cat__state_Australian Capital Territory,1
+cat__city_Hefei,1
+cat__city_Gera,1
+cat__city_Amiens,1
+cat__state_Matrouh,1
+cat__city_Ciudad del Carmen,1
+cat__city_Yanbu,1
+cat__city_Oyama,1
+cat__city_Yantai,1
+cat__city_Ayutthaya,1
+cat__state_Massachusetts,1
+cat__state_Yunnan,1
+cat__state_Yucatán,1
+cat__state_Canal Zone,1
+cat__city_Gladstone,1
+cat__state_Central Anatolia,1
+cat__state_Central Ethiopia,1
+cat__state_Madhya Pradesh,1
+cat__city_York,1
+cat__state_Macau SAR,1
+cat__state_Rio de Janeiro,1
+cat__state_Chihuahua,1
+cat__city_Panabo,1
+cat__state_Rhode Island,1
+cat__city_Cairo,1
+cat__city_Dresden,1
+cat__city_Hubli-Dharwad,1
+cat__city_Colorado Springs,1
+cat__city_Colmar,1
+cat__state_Kyoto,1
+cat__city_Hafar Al Batin,1
+cat__city_Paris,1
+cat__city_Shinjuku,1
 cat__city_Brasília,0
-cat__city_Brandenburg an der Havel,0
-cat__city_Brahmanbaria,0
-cat__city_Bradford,0
-cat__city_Bozeman,0
-cat__city_Bowling Green,0
-cat__city_Bournemouth,0
-cat__city_Bourges,0
-cat__city_Boulogne-Billancourt,0
-cat__city_Botshabelo,0
-cat__city_Burayu,0
-cat__city_Buraidah,0
-cat__city_Buqayq,0
-cat__city_Buon Ma Thuot,0
-cat__city_Bundaberg,0
-cat__city_Bunbury,0
-cat__city_Bulaq El Dakrour,0
-cat__city_Bukittinggi,0
-cat__city_Buffalo,0
-cat__city_Bucheon,0
-cat__city_Bryansk,0
-cat__city_Brunswick,0
-cat__city_Broome,0
-cat__city_Bromley,0
-cat__city_Brits,0
+cat__city_Brest,0
+cat__city_Bridgeport,0
+cat__city_Brighton,0
+cat__city_Brisbane,0
 cat__city_Bristol,0
-cat__city_Cairns,0
-cat__city_Cagayan de Oro,0
-cat__city_Caen,0
-cat__city_Cabuyao,0
-cat__city_Cabo San Lucas,0
-cat__city_Cabanatuan,0
-cat__city_Cabadbaran,0
-cat__city_Ca Mau,0
-cat__city_Bwari,0
-cat__city_Butuan,0
-cat__city_Busselton,0
-cat__city_Busan,0
-cat__city_Bursa,0
-cat__city_Burnie,0
-cat__city_Burlington,0
+cat__city_Brits,0
+cat__city_Bromley,0
+cat__city_Broome,0
+cat__city_Brunswick,0
+cat__city_Bryansk,0
+cat__city_Bucheon,0
+cat__city_Buffalo,0
+cat__city_Bulaq El Dakrour,0
+cat__city_Bundaberg,0
+cat__city_Buon Ma Thuot,0
+cat__city_Buqayq,0
+cat__city_Buraidah,0
+cat__city_Burayu,0
+cat__city_Burdur,0
 cat__city_Buri Ram,0
-cat__city_Can Tho,0
-cat__city_Campo Grande,0
-cat__city_Campinas,0
-cat__city_Campina Grande,0
-cat__city_Campeche,0
-cat__city_Cambridge,0
-cat__city_Camaçari,0
-cat__city_Cam Ranh,0
-cat__city_Cam Pha,0
-cat__city_Caloocan,0
-cat__city_Calbayog,0
-cat__city_Calapan,0
-cat__city_Calamba,0
-cat__city_Calais,0
+cat__city_Burlington,0
+cat__city_Burnie,0
+cat__city_Bursa,0
+cat__city_Busselton,0
+cat__city_Béziers,0
+cat__city_Ca Mau,0
+cat__city_Cabo San Lucas,0
+cat__city_Caen,0
+cat__city_Cairns,0
 cat__city_Calabar,0
-cat__city_Cairo,0
-cat__city_Casper,0
-cat__city_Caruaru,0
-cat__city_Cardiff,0
-cat__city_Cape Town,0
-cat__city_Cao Lanh,0
-cat__city_Cao Bang,0
-cat__city_Canoas,0
-cat__city_Cannes,0
-cat__city_Canlaon,0
-cat__city_Candon,0
-cat__city_Cancún,0
-cat__city_Canberra,0
+cat__city_Calais,0
+cat__city_Cam Pha,0
+cat__city_Cam Ranh,0
+cat__city_Camaçari,0
+cat__city_Cambridge,0
+cat__city_Campeche,0
+cat__city_Campina Grande,0
+cat__city_Campo Grande,0
+cat__city_Can Tho,0
 cat__city_Canakkale,0
-cat__city_Chaman,0
-cat__city_Chalon-sur-Saône,0
-cat__city_Chalco,0
-cat__city_Chaiyaphum,0
-cat__city_Chai Nat,0
-cat__city_Chachoengsao,0
-cat__city_Centurion,0
-cat__city_Central Coast,0
-cat__city_Central,0
-cat__city_Celaya,0
-cat__city_Cedar Rapids,0
-cat__city_Cebu City,0
-cat__city_Cavite City,0
+cat__city_Canberra,0
+cat__city_Cancún,0
+cat__city_Canoas,0
+cat__city_Cao Bang,0
+cat__city_Cao Lanh,0
+cat__city_Cape Town,0
+cat__city_Cardiff,0
+cat__city_Carson City,0
+cat__city_Casper,0
 cat__city_Caucaia,0
-cat__city_Cauayan,0
-cat__city_Chattanooga,0
-cat__city_Charsadda,0
-cat__city_Charlotte,0
-cat__city_Charleston,0
-cat__city_Chapainawabganj,0
-cat__city_Chanthaburi,0
-cat__city_Changzhou,0
-cat__city_Changzhi,0
-cat__city_Changsha,0
-cat__city_Changchun,0
-cat__city_Chandpur,0
-cat__city_Chandigarh,0
-cat__city_Champhai,0
-cat__city_Chamdo,0
+cat__city_Cavite City,0
+cat__city_Caxias do Sul,0
+cat__city_Cedar Rapids,0
+cat__city_Celaya,0
+cat__city_Central,0
+cat__city_Central Coast,0
+cat__city_Centurion,0
+cat__city_Chachoengsao,0
+cat__city_Chai Nat,0
+cat__city_Chaiyaphum,0
+cat__city_Chalco,0
+cat__city_Chalon-sur-Saône,0
 cat__city_Chambéry,0
-cat__city_Chiang Rai,0
-cat__city_Chiang Mai,0
-cat__city_Chi Linh,0
-cat__city_Cheyenne,0
-cat__city_Chetumal,0
-cat__city_Chesapeake,0
-cat__city_Cherepovets,0
-cat__city_Cherbourg-en-Cotentin,0
-cat__city_Cheongju,0
-cat__city_Cheonan,0
-cat__city_Chennai,0
-cat__city_Chengdu,0
-cat__city_Chemnitz,0
-cat__city_Cheltenham,0
+cat__city_Chamdo,0
+cat__city_Champhai,0
+cat__city_Chandigarh,0
+cat__city_Chandpur,0
+cat__city_Changchun,0
+cat__city_Changzhou,0
+cat__city_Chapainawabganj,0
+cat__city_Charleston,0
+cat__city_Charlotte,0
+cat__city_Charsadda,0
+cat__city_Chattanooga,0
+cat__city_Chattogram,0
 cat__city_Cheboksary,0
-cat__city_Chongqing-Shapingba,0
-cat__city_Chongqing-Jiangbei,0
-cat__city_Chonburi,0
-cat__city_Cholula,0
-cat__city_Cholet,0
-cat__city_Chiyoda,0
-cat__city_Chita,0
-cat__city_Chiniot,0
-cat__city_Chilpancingo,0
-cat__city_Chilgok,0
-cat__city_Chilas,0
+cat__city_Cheltenham,0
+cat__city_Chemnitz,0
+cat__city_Chengdu,0
+cat__city_Chennai,0
+cat__city_Cheonan,0
+cat__city_Cheongju,0
+cat__city_Cherbourg-en-Cotentin,0
+cat__city_Chesapeake,0
+cat__city_Chetumal,0
+cat__city_Chi Linh,0
+cat__city_Chiang Mai,0
+cat__city_Chiang Rai,0
 cat__city_Chihuahua,0
-cat__city_Chifeng,0
-cat__city_Chicago,0
-cat__city_Clermont-Ferrand,0
-cat__city_Ciudad del Carmen,0
-cat__city_Ciudad Valles,0
-cat__city_Ciudad Obregón,0
-cat__city_Ciudad Juárez,0
-cat__city_City of London,0
-cat__city_Cirebon,0
-cat__city_Cincinnati,0
-cat__city_Cimahi,0
-cat__city_Cilacap,0
-cat__city_Cianjur,0
-cat__city_Chungju,0
-cat__city_Chuncheon,0
-cat__city_Chuadanga,0
+cat__city_Chilas,0
+cat__city_Chilgok,0
+cat__city_Chilpancingo,0
+cat__city_Chiniot,0
+cat__city_Chita,0
+cat__city_Chiyoda,0
+cat__city_Cholet,0
+cat__city_Cholula,0
+cat__city_Chonburi,0
+cat__city_Chongqing-Jiangbei,0
 cat__city_Chongqing-Yuzhong,0
-cat__city_Chongqing-Wanzhou,0
-cat__city_Cottbus,0
-cat__city_Cotabato City,0
-cat__city_Corum,0
-cat__city_Contagem,0
-cat__city_Concord,0
-cat__city_Columbus,0
-cat__city_Columbia,0
-cat__city_Colorado Springs,0
-cat__city_Colombes,0
-cat__city_Cologne,0
-cat__city_Colmar,0
-cat__city_Colima,0
-cat__city_Coimbatore,0
-cat__city_Coffs Harbour,0
-cat__city_Coatzacoalcos,0
+cat__city_Chuncheon,0
+cat__city_Cianjur,0
+cat__city_Cilacap,0
+cat__city_Cimahi,0
+cat__city_Cincinnati,0
+cat__city_City of London,0
+cat__city_Ciudad Juárez,0
+cat__city_Ciudad Obregón,0
+cat__city_Ciudad Valles,0
 cat__city_Cleveland,0
-cat__city_Dadu,0
-cat__city_Da Nang,0
-cat__city_Da Lat,0
-cat__city_Cárdenas,0
-cat__city_Cuttack,0
-cat__city_Curitiba,0
-cat__city_Culiacán,0
-cat__city_Cuernavaca,0
-cat__city_Créteil,0
-cat__city_Cruzeiro do Sul,0
-cat__city_Croydon,0
-cat__city_Criciúma,0
-cat__city_Cranston,0
-cat__city_Cox's Bazar,0
+cat__city_Coatzacoalcos,0
+cat__city_Coffs Harbour,0
+cat__city_Coimbatore,0
+cat__city_Colima,0
+cat__city_Columbia,0
+cat__city_Columbus,0
+cat__city_Concord,0
+cat__city_Contagem,0
+cat__city_Corum,0
+cat__city_Cottbus,0
 cat__city_Coventry,0
-cat__city_Danao,0
-cat__city_Dammam,0
-cat__city_Damietta,0
-cat__city_Damaturu,0
-cat__city_Damanhur,0
-cat__city_Daman,0
-cat__city_Dallas,0
-cat__city_Dalian,0
-cat__city_Dali,0
-cat__city_Dakhla,0
-cat__city_Daisen,0
-cat__city_Dairut,0
+cat__city_Cranston,0
+cat__city_Criciúma,0
+cat__city_Croydon,0
+cat__city_Créteil,0
+cat__city_Cuernavaca,0
+cat__city_Culiacán,0
+cat__city_Curitiba,0
+cat__city_Da Lat,0
+cat__city_Da Nang,0
+cat__city_Dadu,0
 cat__city_Dahab,0
-cat__city_Daejeon,0
-cat__city_Dekernes,0
-cat__city_Dehradun,0
-cat__city_Degehabur,0
-cat__city_Debre Markos,0
-cat__city_De Aar,0
-cat__city_Davenport,0
-cat__city_Davao City,0
-cat__city_Daura,0
-cat__city_Datong,0
-cat__city_Darwin,0
-cat__city_Darmstadt,0
-cat__city_Darlington,0
-cat__city_Daqing,0
+cat__city_Dairut,0
+cat__city_Daisen,0
+cat__city_Dakhla,0
+cat__city_Dali,0
+cat__city_Dalian,0
+cat__city_Dallas,0
+cat__city_Daman,0
+cat__city_Damanhur,0
+cat__city_Damaturu,0
+cat__city_Damietta,0
+cat__city_Dammam,0
 cat__city_Danzhou,0
-cat__city_Detroit,0
-cat__city_Dessie,0
-cat__city_Dessau,0
-cat__city_Desouk,0
-cat__city_Des Moines,0
-cat__city_Derry,0
-cat__city_Derby,0
-cat__city_Dera Ismail Khan,0
-cat__city_Dera Ghazi Khan,0
-cat__city_Depok,0
-cat__city_Denver,0
-cat__city_Denpasar,0
-cat__city_Denizli,0
-cat__city_Dembi Dolo,0
-cat__city_Demak,0
+cat__city_Daqing,0
+cat__city_Darlington,0
+cat__city_Darmstadt,0
+cat__city_Darwin,0
+cat__city_Daura,0
+cat__city_Davao City,0
+cat__city_Davenport,0
+cat__city_De Aar,0
+cat__city_Debre Markos,0
+cat__city_Dekernes,0
 cat__city_Delicias,0
-cat__city_Dipolog,0
-cat__city_Dimapur,0
-cat__city_Dila,0
-cat__city_Dijon,0
-cat__city_Dien Bien Phu,0
-cat__city_Dibrugarh,0
-cat__city_Di An,0
-cat__city_Dharmanagar,0
-cat__city_Dharamshala,0
-cat__city_Dhanbad,0
-cat__city_Dhaka,0
-cat__city_Dhahran,0
-cat__city_Deyang,0
+cat__city_Demak,0
+cat__city_Dembi Dolo,0
+cat__city_Denizli,0
+cat__city_Denpasar,0
+cat__city_Denver,0
+cat__city_Depok,0
+cat__city_Dera Ghazi Khan,0
+cat__city_Dera Ismail Khan,0
+cat__city_Derby,0
+cat__city_Derry,0
+cat__city_Des Moines,0
+cat__city_Desouk,0
+cat__city_Dessie,0
+cat__city_Detroit,0
 cat__city_Devonport,0
-cat__city_Dubbo,0
-cat__city_Duba,0
-cat__city_Dresden,0
-cat__city_Dover,0
-cat__city_Dourados,0
-cat__city_Dortmund,0
-cat__city_Donghae,0
-cat__city_Dongguan,0
-cat__city_Dong Xoai,0
-cat__city_Dong Hoi,0
-cat__city_Dong Ha,0
-cat__city_Doncaster,0
-cat__city_Diyarbakir,0
-cat__city_Diriyah,0
+cat__city_Dhaka,0
+cat__city_Dharmanagar,0
+cat__city_Di An,0
+cat__city_Dibrugarh,0
+cat__city_Dien Bien Phu,0
+cat__city_Dijon,0
+cat__city_Dila,0
+cat__city_Dimapur,0
+cat__city_Dipolog,0
+cat__city_Dir,0
 cat__city_Dire Dawa,0
-cat__city_Dusseldorf,0
-cat__city_Durham,0
-cat__city_Durgapur,0
-cat__city_Durg,0
-cat__city_Durban,0
-cat__city_Durango,0
-cat__city_Durame,0
-cat__city_Duque de Caxias,0
-cat__city_Dunkerque,0
-cat__city_Dundee,0
-cat__city_Dumat Al Jandal,0
-cat__city_Dumaguete,0
-cat__city_Duluth,0
-cat__city_Duisburg,0
+cat__city_Diyarbakir,0
+cat__city_Doncaster,0
+cat__city_Dong Ha,0
+cat__city_Dong Hoi,0
+cat__city_Dong Xoai,0
+cat__city_Donghae,0
+cat__city_Dourados,0
+cat__city_Dover,0
+cat__city_Duba,0
+cat__city_Dubbo,0
 cat__city_Dudley,0
-cat__state_Bretagne,0
-cat__state_Brandenburg,0
-cat__state_Bourgogne-Franche-Comté,0
-cat__state_Borno,0
-cat__state_Black Sea,0
-cat__state_Bihar,0
-cat__state_Benue,0
-cat__state_Benishangul-Gumuz,0
-cat__state_Beni Suef,0
-cat__state_Beheira,0
-cat__state_Bayelsa,0
-cat__city_East London,0
+cat__city_Duluth,0
+cat__city_Dumaguete,0
+cat__city_Dumat Al Jandal,0
+cat__city_Dunkerque,0
+cat__city_Durame,0
+cat__city_Durango,0
+cat__city_Durban,0
+cat__city_Durham,0
+cat__city_Dusseldorf,0
 cat__city_Dutse,0
-cat__city_Elazig,0
-cat__city_El Tor,0
-cat__city_El Salvador,0
-cat__city_El Qoseir,0
-cat__city_El Paso,0
-cat__city_El Mahalla El Kubra,0
-cat__city_El Dabaa,0
-cat__city_El Alamein,0
-cat__city_Eket,0
-cat__city_Edku,0
-cat__city_Edirne,0
-cat__city_Edinburgh,0
-cat__city_Edfu,0
-cat__city_Echizen,0
+cat__city_East Kilbride,0
+cat__city_East London,0
 cat__city_Ecatepec,0
-cat__state_Cairo,0
-cat__city_Esperance,0
-cat__city_Esna,0
-cat__city_Eskisehir,0
-cat__city_Escalante,0
-cat__city_Erzurum,0
-cat__city_Erzincan,0
-cat__city_Ermelo,0
-cat__city_Erlangen,0
-cat__city_Erie,0
-cat__city_Erfurt,0
-cat__city_Enugu,0
-cat__city_Ensenada,0
-cat__city_Empangeni,0
+cat__city_Echizen,0
+cat__city_Edfu,0
+cat__city_Edinburgh,0
+cat__city_Edirne,0
+cat__city_Edku,0
+cat__city_Eket,0
+cat__city_El Alamein,0
+cat__city_El Dabaa,0
+cat__city_El Mahalla El Kubra,0
+cat__city_El Paso,0
+cat__city_El Qoseir,0
+cat__city_El Salvador,0
+cat__city_El Tor,0
+cat__city_Elazig,0
 cat__city_Emerald,0
-cat__city_Elizabeth,0
-cat__city_Feira de Santana,0
-cat__city_Fayetteville,0
-cat__city_Fayed,0
-cat__city_Fargo,0
-cat__city_Faraskour,0
-cat__city_Farasan,0
-cat__city_Farafra,0
-cat__city_Faqous,0
-cat__city_Faiyum,0
-cat__city_Faisalabad,0
-cat__city_Fairbanks,0
-cat__city_Exeter,0
-cat__city_Evansville,0
+cat__city_Empangeni,0
+cat__city_Ensenada,0
+cat__city_Enugu,0
+cat__city_Erfurt,0
+cat__city_Erie,0
+cat__city_Erlangen,0
+cat__city_Ermelo,0
+cat__city_Erzincan,0
+cat__city_Erzurum,0
+cat__city_Escalante,0
+cat__city_Eskisehir,0
+cat__city_Esna,0
 cat__city_Eumseong,0
-cat__city_Eugene,0
-cat__city_Fresno,0
-cat__city_Fresnillo,0
-cat__city_Freiburg,0
-cat__city_Frederick,0
-cat__city_Frankfurt (Oder),0
-cat__city_Frankfurt,0
-cat__city_Foshan,0
-cat__city_Fortaleza,0
-cat__city_Fort Worth,0
-cat__city_Fort Wayne,0
-cat__city_Fort Smith,0
-cat__city_Fort Collins,0
-cat__city_Florianópolis,0
-cat__city_Flensburg,0
-cat__city_Finote Selam,0
+cat__city_Evansville,0
+cat__city_Exeter,0
+cat__city_Fairbanks,0
+cat__city_Faiyum,0
+cat__city_Faqous,0
+cat__city_Farafra,0
+cat__city_Farasan,0
+cat__city_Faraskour,0
+cat__city_Fargo,0
+cat__city_Faridpur,0
+cat__city_Fayed,0
+cat__city_Fayetteville,0
+cat__city_Feira de Santana,0
 cat__city_Feni,0
-cat__city_Gangtok,0
-cat__city_Gangneung,0
-cat__city_Gandhinagar,0
-cat__city_Gambela,0
-cat__city_Gaibandha,0
-cat__city_Fuzhou,0
-cat__city_Fushun,0
-cat__city_Furth,0
-cat__city_Funabashi,0
-cat__city_Fukuyama,0
-cat__city_Fukushima,0
-cat__city_Fukuoka,0
-cat__city_Fukui,0
-cat__city_Fuji,0
+cat__city_Finote Selam,0
+cat__city_Flensburg,0
+cat__city_Florianópolis,0
+cat__city_Fort Collins,0
+cat__city_Fort Smith,0
+cat__city_Fort Worth,0
+cat__city_Fortaleza,0
+cat__city_Foshan,0
+cat__city_Frankfurt (Oder),0
+cat__city_Frederick,0
+cat__city_Freiburg,0
+cat__city_Fresnillo,0
+cat__city_Fresno,0
 cat__city_Fuefuki,0
-cat__city_Geraldton,0
-cat__city_Gera,0
-cat__city_George,0
-cat__city_Geoje,0
-cat__city_General Trias,0
-cat__city_General Santos,0
-cat__city_Geelong,0
-cat__city_Gboko,0
-cat__city_Gazipur,0
-cat__city_Gaziantep,0
-cat__city_Gawler,0
-cat__city_Gateshead,0
-cat__city_Garut,0
-cat__city_Gapan,0
+cat__city_Fukui,0
+cat__city_Furth,0
+cat__city_Fushun,0
+cat__city_Fuzhou,0
+cat__city_Gambela,0
+cat__city_Gangneung,0
+cat__city_Gangtok,0
 cat__city_Ganzhou,0
-cat__city_Giza,0
-cat__city_Girga,0
-cat__city_Giresun,0
-cat__city_Ginowan,0
-cat__city_Gingoog,0
-cat__city_Gimpo,0
-cat__city_Gimje,0
-cat__city_Gimhae,0
-cat__city_Gimcheon,0
-cat__city_Gimbi,0
-cat__city_Gilgit,0
-cat__city_Gifu,0
-cat__city_Giessen,0
-cat__city_Gia Nghia,0
+cat__city_Garut,0
+cat__city_Gateshead,0
+cat__city_Gaziantep,0
+cat__city_Gazipur,0
+cat__city_Gboko,0
+cat__city_Geelong,0
+cat__city_General Santos,0
+cat__city_Geoje,0
+cat__city_George,0
+cat__city_Geraldton,0
+cat__city_Germiston,0
 cat__city_Ghotki,0
-cat__city_Gqeberha,0
-cat__city_Goyang,0
-cat__city_Gournadi,0
-cat__city_Gottingen,0
-cat__city_Gotha,0
-cat__city_Goseong,0
-cat__city_Gorontalo,0
-cat__city_Gopalganj,0
-cat__city_Gongju,0
-cat__city_Gondar,0
-cat__city_Gombe,0
-cat__city_Golmud,0
-cat__city_Gold Coast,0
-cat__city_Goiânia,0
+cat__city_Gia Nghia,0
+cat__city_Giessen,0
+cat__city_Gifu,0
+cat__city_Gilgit,0
+cat__city_Gimbi,0
+cat__city_Gimhae,0
+cat__city_Gimje,0
+cat__city_Gingoog,0
+cat__city_Ginowan,0
+cat__city_Giresun,0
+cat__city_Girga,0
+cat__city_Giza,0
 cat__city_Gloucester,0
-cat__city_Gladstone,0
-cat__city_Guba,0
-cat__city_Guangzhou,0
-cat__city_Guanajuato,0
-cat__city_Guadalupe,0
-cat__city_Guadalajara,0
-cat__city_Grozny,0
-cat__city_Griffith,0
-cat__city_Gresik,0
-cat__city_Grenoble,0
-cat__city_Greenville,0
-cat__city_Greensboro,0
-cat__city_Green Bay,0
-cat__city_Grand Rapids,0
-cat__city_Grand Forks,0
+cat__city_Goiânia,0
+cat__city_Gold Coast,0
+cat__city_Golmud,0
+cat__city_Gombe,0
+cat__city_Gondar,0
+cat__city_Gongju,0
+cat__city_Gorontalo,0
+cat__city_Goseong,0
+cat__city_Gotha,0
+cat__city_Gottingen,0
+cat__city_Gournadi,0
+cat__city_Goyang,0
+cat__city_Gqeberha,0
 cat__city_Graaff-Reinet,0
-cat__city_Gwalior,0
-cat__city_Gwagwalada,0
-cat__city_Gwadar,0
-cat__city_Guwahati,0
-cat__city_Gusau,0
-cat__city_Gurugram,0
-cat__city_Guri,0
-cat__city_Guntur,0
-cat__city_Gunsan,0
-cat__city_Gunpo,0
-cat__city_Gulfport,0
-cat__city_Gujrat,0
-cat__city_Gujranwala,0
-cat__city_Guiyang,0
+cat__city_Grand Forks,0
+cat__city_Grand Rapids,0
+cat__city_Green Bay,0
+cat__city_Greensboro,0
+cat__city_Greenville,0
+cat__city_Grenoble,0
+cat__city_Gresik,0
+cat__city_Griffith,0
+cat__city_Grozny,0
+cat__city_Guanajuato,0
+cat__city_Guangzhou,0
+cat__city_Guba,0
 cat__city_Guilin,0
-cat__city_Hai Duong,0
-cat__city_Hafizabad,0
-cat__city_Hafar Al Batin,0
-cat__city_Haenam,0
-cat__city_Hachinohe,0
-cat__city_Habiganj,0
-cat__city_Ha Tinh,0
-cat__city_Ha Nam,0
-cat__city_Ha Giang,0
-cat__city_Gómez Palacio,0
-cat__city_Gyeongsan,0
-cat__city_Gyeongju,0
+cat__city_Gujranwala,0
+cat__city_Gulfport,0
+cat__city_Gunpo,0
+cat__city_Gunsan,0
+cat__city_Guntur,0
+cat__city_Guri,0
+cat__city_Gusau,0
+cat__city_Guwahati,0
+cat__city_Gwadar,0
+cat__city_Gwalior,0
 cat__city_Gyalshing,0
-cat__city_Gwangyang,0
-cat__city_Gwangmyeong,0
-cat__city_Hanau,0
-cat__city_Hanakiyah,0
-cat__city_Haman,0
-cat__city_Hamamatsu,0
-cat__city_Hamada,0
-cat__city_Halle,0
-cat__city_Halaba Kulito,0
-cat__city_Hakusan,0
-cat__city_Hakodate,0
-cat__city_Hakkari,0
-cat__city_Hail,0
-cat__city_Haikou,0
-cat__city_Haidong,0
+cat__city_Gyeongsan,0
+cat__city_Gómez Palacio,0
+cat__city_Ha Giang,0
+cat__city_Ha Nam,0
+cat__city_Ha Tinh,0
+cat__city_Habiganj,0
+cat__city_Hachinohe,0
+cat__city_Haenam,0
+cat__city_Hafizabad,0
+cat__city_Hai Duong,0
 cat__city_Hai Phong,0
-cat__city_Hefei,0
-cat__city_Hawassa,0
-cat__city_Hatay,0
-cat__city_Hat Yai,0
-cat__city_Hashimoto,0
-cat__city_Hartford,0
-cat__city_Harrisburg,0
-cat__city_Haripur,0
-cat__city_Harbin,0
-cat__city_Harar,0
-cat__city_Hanover,0
-cat__city_Hanoi,0
+cat__city_Haidong,0
+cat__city_Haikou,0
+cat__city_Hail,0
+cat__city_Hakodate,0
+cat__city_Halaba Kulito,0
+cat__city_Halle,0
+cat__city_Hamada,0
+cat__city_Hamamatsu,0
+cat__city_Haman,0
+cat__city_Hanakiyah,0
+cat__city_Hanau,0
 cat__city_Hangzhou,0
-cat__city_Handan,0
-cat__city_Hirosaki,0
-cat__city_Himeji,0
-cat__city_Himamaylan,0
-cat__city_Hilo,0
-cat__city_Hildesheim,0
-cat__city_Higashiosaka,0
-cat__city_Higashihiroshima,0
-cat__city_Hervey Bay,0
-cat__city_Hermosillo,0
-cat__city_Hermanus,0
-cat__city_Hengyang,0
-cat__city_Henderson,0
-cat__city_Helwan,0
-cat__city_Helena,0
-cat__city_Heilbronn,0
+cat__city_Hanoi,0
+cat__city_Hanover,0
+cat__city_Harar,0
+cat__city_Haridwar,0
+cat__city_Haripur,0
+cat__city_Harrisburg,0
+cat__city_Hartford,0
+cat__city_Hashimoto,0
+cat__city_Hat Yai,0
+cat__city_Hatay,0
+cat__city_Hawassa,0
 cat__city_Heidelberg,0
-cat__city_Huangshi,0
-cat__city_Howrah,0
-cat__city_Houston,0
-cat__city_Hotan,0
-cat__city_Hosaena,0
-cat__city_Honolulu,0
-cat__city_Hongseong,0
-cat__city_Hongcheon,0
-cat__city_Hoi An,0
-cat__city_Hohhot,0
-cat__city_Hobart,0
-cat__city_Hoa Binh,0
-cat__city_Ho Chi Minh City,0
-cat__city_Hitachi,0
-cat__city_Hisar,0
+cat__city_Heilbronn,0
+cat__city_Helena,0
+cat__city_Helwan,0
+cat__city_Hermanus,0
+cat__city_Hermosillo,0
+cat__city_Hervey Bay,0
+cat__city_Hildesheim,0
+cat__city_Hilo,0
+cat__city_Himamaylan,0
+cat__city_Hirosaki,0
 cat__city_Hiroshima,0
-cat__city_Ibshaway,0
-cat__city_Ibadan,0
-cat__city_Hyderabad,0
-cat__city_Hwasun,0
-cat__city_Hwaseong,0
-cat__city_Hurghada,0
-cat__city_Hunza,0
-cat__city_Huntsville,0
-cat__city_Huntington,0
-cat__city_Hulunbuir,0
-cat__city_Hull,0
-cat__city_Hue,0
+cat__city_Hisar,0
+cat__city_Hitachi,0
+cat__city_Ho Chi Minh City,0
+cat__city_Hoa Binh,0
+cat__city_Hobart,0
+cat__city_Hohhot,0
+cat__city_Hoi An,0
+cat__city_Hongcheon,0
+cat__city_Hongseong,0
+cat__city_Honolulu,0
+cat__city_Hosaena,0
+cat__city_Houston,0
 cat__city_Hubuna,0
-cat__city_Hubli-Dharwad,0
-cat__city_Hub,0
-cat__city_Iloilo City,0
-cat__city_Iligan,0
-cat__city_Ile-Ife,0
-cat__city_Ilagan,0
-cat__city_Iksan,0
-cat__city_Ikorodu,0
-cat__city_Ikoma,0
-cat__city_Ikom,0
-cat__city_Ikeja,0
-cat__city_Ijebu Ode,0
-cat__city_Iizuka,0
-cat__city_Igdir,0
-cat__city_Ichinoseki,0
-cat__city_Ichinomiya,0
+cat__city_Hue,0
+cat__city_Hull,0
+cat__city_Hulunbuir,0
+cat__city_Hung Yen,0
+cat__city_Huntington,0
+cat__city_Huntsville,0
+cat__city_Hunza,0
+cat__city_Hurghada,0
+cat__city_Hwaseong,0
+cat__city_Hwasun,0
+cat__city_Hyderabad,0
+cat__city_Ibadan,0
+cat__city_Ibshaway,0
 cat__city_Icheon,0
-cat__city_Isabela City,0
-cat__city_Irkutsk,0
-cat__city_Iriga,0
-cat__city_Irapuato,0
-cat__city_Ipswich,0
-cat__city_Ingolstadt,0
-cat__city_Indramayu,0
-cat__city_Indore,0
-cat__city_Indianapolis,0
-cat__city_Incheon,0
-cat__city_Imphal,0
-cat__city_Imperatriz,0
-cat__city_Imizu,0
-cat__city_Imbaba,0
+cat__city_Ichinoseki,0
+cat__city_Igdir,0
+cat__city_Ikom,0
+cat__city_Ikoma,0
+cat__city_Iksan,0
+cat__city_Ile-Ife,0
+cat__city_Debre Birhan,0
+cat__city_Ilorin,0
 cat__city_Imabari,0
-cat__city_Jaboatão dos Guararapes,0
-cat__city_Jabalpur,0
-cat__city_Izumo,0
-cat__city_Izmir,0
-cat__city_Izhvesk,0
-cat__city_Ivanovo,0
-cat__city_Itang,0
-cat__city_Itanagar,0
-cat__city_Istanbul,0
-cat__city_Isparta,0
-cat__city_Ismailia,0
-cat__city_Island Garden City of Samal,0
-cat__city_Islamabad,0
-cat__city_Ishinomaki,0
-cat__city_Isahaya,0
-cat__city_Jashore,0
-cat__city_Jamshedpur,0
-cat__city_Jammu,0
-cat__city_Jamalpur,0
-cat__city_Jalingo,0
-cat__city_Jalandhar,0
-cat__city_Jakarta Timur,0
-cat__city_Jakarta Selatan,0
-cat__city_Jakarta Pusat,0
-cat__city_Jakarta Barat,0
-cat__city_Jaipur,0
-cat__city_Jacobabad,0
-cat__city_Jacksonville,0
-cat__city_Jackson,0
-cat__city_Jiamusi,0
-cat__city_Ji-Paraná,0
-cat__city_Jhenaidah,0
-cat__city_Jhang,0
-cat__city_Jhalokati,0
-cat__city_Jersey City,0
-cat__city_Jepara,0
-cat__city_Jeonju,0
-cat__city_Jeongeup,0
-cat__city_Jena,0
-cat__city_Jember,0
-cat__city_Jeju City,0
-cat__city_Jeddah,0
-cat__city_Jecheon,0
-cat__city_Jazan,0
-cat__city_Jiutepec,0
-cat__city_Jiuquan,0
-cat__city_Jiujiang,0
-cat__city_Jinzhou,0
-cat__city_Jinka,0
-cat__city_Jinju,0
-cat__city_Jinhua,0
-cat__city_Jingzhou,0
-cat__city_Jingdezhen,0
-cat__city_Jincheon,0
-cat__city_Jinan,0
-cat__city_Jimma,0
-cat__city_Jilin City,0
-cat__city_Jikawo,0
-cat__city_Jijiga,0
-cat__city_Jiaxing,0
-cat__city_Kabankalan,0
-cat__city_Juneau,0
-cat__city_Juiz de Fora,0
-cat__city_Juchitán,0
-cat__city_Jubail,0
-cat__city_Juazeiro do Norte,0
-cat__city_João Pessoa,0
-cat__city_Jowai,0
-cat__city_Jos,0
-cat__city_Jorhat,0
-cat__city_Joliet,0
-cat__city_Joinville,0
-cat__city_Johannesburg,0
-cat__city_Joetsu,0
-cat__city_York,0
-cat__city_Kaluga,0
-cat__city_Kaliningrad,0
-cat__city_Kalgoorlie,0
-cat__city_Kalat,0
-cat__city_Kalasin,0
-cat__city_Kakinada,0
+cat__city_Imbaba,0
 cat__city_Zhongshan,0
-cat__city_Kaiserslautern,0
-cat__city_Kailua,0
-cat__city_Zhuhai,0
-cat__city_Kahramanmaras,0
-cat__city_Zhuzhou,0
-cat__city_Kafr El Zayat,0
-cat__city_Kafr El Sheikh,0
-cat__city_Kafr El Dawwar,0
-cat__city_Kaduna,0
-cat__city_Karatsu,0
-cat__city_Karat Konso,0
-cat__city_Karaman,0
-cat__city_Karak,0
-cat__city_Karaikal,0
-cat__city_Karachi,0
-cat__city_Karabuk,0
-cat__city_Kansas City,0
-cat__city_Kanpur,0
-cat__city_Kanoya,0
-cat__city_Kano,0
-cat__city_Kanchanaburi,0
-cat__city_Kanazawa,0
-cat__city_Kamphaeng Phet,0
-cat__city_Kameoka,0
-cat__city_Kamashi,0
-cat__city_Kawagoe,0
-cat__city_Kavaratti,0
-cat__city_Katsina,0
-cat__city_Zibo,0
-cat__city_Kasugai,0
-cat__city_Kastamonu,0
-cat__city_Kassel,0
-cat__city_Kashiwa,0
-cat__city_Kashihara,0
-cat__city_Kashgar,0
-cat__city_Kars,0
-cat__city_Karlsruhe,0
-cat__city_Karimnagar,0
-cat__city_Kariega,0
-cat__city_Kargil,0
-cat__city_Karawang,0
-cat__city_Khairpur,0
-cat__city_Khagrachhari,0
-cat__city_Khafji,0
-cat__city_Khabarovsk,0
-cat__city_Kepulauan Seribu,0
-cat__city_Kenosha,0
-cat__city_Kendari,0
-cat__city_Kendal,0
-cat__city_Kemerovo,0
-cat__city_Keffi,0
-cat__city_Kediri,0
-cat__city_Kebri Dahar,0
-cat__city_Kazan,0
-cat__city_Kayseri,0
-cat__city_Kawasaki,0
-cat__city_Kawaguchi,0
-cat__city_Kimberley,0
-cat__city_Kilis,0
-cat__city_Kiel,0
-cat__city_Zifta,0
-cat__city_Khuzdar,0
-cat__city_Khulna,0
-cat__city_Khulais,0
-cat__city_Khon Kaen,0
-cat__city_Khobar,0
-cat__city_Khasavyurt,0
-cat__city_Kharga,0
-cat__city_Kharan,0
-cat__city_Zonguldak,0
-cat__city_Khanewal,0
-cat__city_Khammam,0
-cat__city_Khamis Mushait,0
-cat__city_Kocaeli,0
-cat__city_Kobo,0
-cat__city_Koblenz,0
-cat__city_Zulfi,0
-cat__city_Knoxville,0
-cat__city_Klerksdorp,0
-cat__city_Zunyi,0
-cat__city_Kislovodsk,0
-cat__city_Kishoreganj,0
-cat__city_Kiryu,0
-cat__city_Kirsehir,0
-cat__city_Kirov,0
-cat__city_Kirklareli,0
-cat__city_Kirishima,0
-cat__city_Kirikkale,0
-cat__city_King William's Town,0
-cat__city_Korla,0
-cat__city_Koriyama,0
-cat__city_Korem,0
-cat__city_Korba,0
-cat__city_Konya,0
-cat__city_Kon Tum,0
-cat__city_Komsomolsk-on-Amur,0
-cat__city_Kombolcha,0
-cat__city_Komatsu,0
-cat__city_Kom Ombo,0
-cat__city_Kollam,0
-cat__city_Kolkata,0
-cat__city_Kohima,0
-cat__city_Kohat,0
-cat__city_Kofu,0
-cat__city_Kochi,0
-cat__city_Kurgan,0
-cat__city_Kure,0
-cat__city_Kurayoshi,0
-cat__city_Kurashiki,0
-cat__city_Kupang,0
-cat__city_Kunming,0
-cat__city_Kumamoto,0
-cat__city_Kudus,0
-cat__city_Krugersdorp,0
-cat__city_Kroonstad,0
-cat__city_Krasnodar,0
-cat__city_Krabi,0
-cat__city_Kozhikode,0
-cat__city_Kowloon,0
-cat__city_Zwickau,0
-cat__state_Gharbia,0
-cat__city_Lafia,0
-cat__city_Lafayette,0
-cat__city_Ladysmith,0
-cat__city_La Seyne-sur-Mer,0
-cat__city_La Rochelle,0
-cat__city_La Paz,0
-cat__city_La Carlota,0
-cat__city_Kyoto,0
-cat__city_KwaDukuza,0
-cat__city_Kutahya,0
-cat__city_Kushtia,0
-cat__city_Kushiro,0
-cat__city_Kusatsu,0
-cat__state_Georgia,0
-cat__state_Gangwon,0
-cat__city_Kurigram,0
-cat__city_Las Pinas,0
-cat__city_Las Cruces,0
-cat__state_Gambela,0
-cat__city_Laramie,0
-cat__city_Lapu-Lapu,0
-cat__city_Laoag,0
-cat__city_Lao Cai,0
-cat__state_Fukui,0
-cat__city_Lang Son,0
-cat__city_Lamphun,0
-cat__city_Lampang,0
-cat__city_Lamitan,0
-cat__city_Lalmonirhat,0
-cat__city_Lalibela,0
-cat__city_Lakshmipur,0
-cat__city_Lai Chau,0
-cat__city_Lhasa,0
-cat__city_León,0
-cat__city_Lexington,0
-cat__city_Lewiston,0
-cat__city_Leshan,0
-cat__city_Lephalale,0
-cat__city_Leku,0
-cat__city_Leipzig,0
-cat__city_Leicester,0
-cat__city_Leh,0
-cat__city_Legazpi,0
-cat__city_Leeds,0
-cat__city_Le Mans,0
-cat__city_Le Havre,0
-cat__city_Launceston,0
-cat__city_Las Vegas,0
-cat__city_Liverpool,0
-cat__city_Liuzhou,0
-cat__city_Liupanshui,0
-cat__city_Little Rock,0
-cat__city_Lismore,0
-cat__city_Lisburn,0
-cat__city_Lipetsk,0
-cat__city_Lipa,0
-cat__city_Linyi,0
-cat__city_Linfen,0
-cat__city_Lincoln,0
-cat__city_Limoges,0
-cat__city_Lille,0
-cat__city_Lijiang,0
-cat__city_Ligao,0
-cat__city_Lichtenburg,0
-cat__state_Fujian,0
-cat__state_Bangkok Metro,0
-cat__state_Balochistan,0
-cat__state_Free State,0
-cat__state_Baja California Sur,0
-cat__state_Baja California,0
-cat__state_Bahia,0
-cat__state_Baden-Wurtemberg,0
-cat__state_Australian Capital Territory,0
-cat__state_Asyut,0
-cat__state_Aswan,0
-cat__state_Assam,0
-cat__state_Asir Province,0
-cat__city_Lokoja,0
-cat__city_Logia,0
-cat__city_Loei,0
-cat__city_Luton,0
-cat__city_Luoyang,0
-cat__city_Lunglei,0
-cat__city_Ludwigshafen,0
-cat__city_Lucknow,0
-cat__city_Lucena,0
-cat__city_Lubeck,0
-cat__city_Louisville,0
-cat__city_Los Mochis,0
-cat__state_Florida,0
-cat__city_Loralai,0
-cat__city_Lopburi,0
-cat__city_Long Xuyen,0
-cat__city_Long Khanh,0
-cat__city_Londrina,0
-cat__state_Bauchi,0
-cat__city_Maebashi,0
-cat__city_Mae Hong Son,0
-cat__city_Madurai,0
-cat__city_Madiun,0
-cat__city_Madison,0
-cat__city_Madaripur,0
-cat__city_Mackay,0
-cat__city_Maceió,0
-cat__city_Macau Peninsula,0
-cat__city_Macapá,0
-cat__city_Maasin,0
-cat__city_Maadi,0
-cat__city_Ma'anshan,0
-cat__city_Lyon,0
-cat__city_Lydenburg,0
-cat__city_Luxor,0
-cat__city_Makassar,0
-cat__city_Majmaah,0
-cat__city_Maji,0
-cat__city_Majardah,0
-cat__city_Maitland,0
-cat__city_Mainz,0
-cat__city_Maiduguri,0
-cat__city_Mahikeng,0
-cat__city_Mahd Al Thahab,0
-cat__city_Maha Sarakham,0
-cat__city_Magura,0
-cat__city_Magnitogorsk,0
-cat__city_Maghagha,0
-cat__city_Magelang,0
-cat__city_Magdeburg,0
-cat__city_Magadan,0
-cat__city_Mandaue,0
-cat__city_Mandaluyong,0
-cat__state_Federal Capital Territory,0
-cat__state_Far Eastern,0
-cat__city_Manali,0
-cat__city_Manado,0
-cat__city_Malolos,0
-cat__city_Mallawi,0
-cat__city_Malaybalay,0
-cat__city_Malatya,0
-cat__city_Malang,0
-cat__city_Malabon,0
-cat__city_Makurdi,0
-cat__city_Makhanda,0
-cat__city_Makhachkala,0
-cat__city_Makati,0
-cat__city_Mardin,0
-cat__city_Mardan,0
-cat__city_Marburg,0
-cat__city_Marawi,0
-cat__state_Faiyum,0
-cat__city_Manzanillo,0
-cat__city_Mansoura,0
-cat__city_Mansfield,0
-cat__city_Mansehra,0
-cat__state_Espírito Santo,0
-cat__city_Mannheim,0
-cat__city_Manisa,0
-cat__city_Manila,0
-cat__city_Manikganj,0
-cat__city_Mangaluru,0
-cat__city_Manfalut,0
-cat__city_Mbombela,0
-cat__city_Mazatlán,0
-cat__city_Matsuyama,0
-cat__city_Matsumoto,0
-cat__city_Matsue,0
-cat__city_Évreux,0
-cat__city_Mataram,0
-cat__city_Matamoros,0
-cat__city_Mastung,0
-cat__state_Gunma,0
-cat__city_Maryborough,0
-cat__city_Marugame,0
-cat__city_Marseille,0
-cat__city_Marsa Alam,0
-cat__city_Maringá,0
-cat__city_Margao,0
-cat__city_Mexico City (CDMX),0
-cat__city_Mexicali,0
-cat__city_Metz,0
-cat__city_Metoubes,0
-cat__city_Mesa,0
-cat__city_Mersin,0
-cat__city_Mersa Matruh,0
-cat__city_Meridian,0
-cat__city_Menouf,0
-cat__city_Memphis,0
-cat__city_Melton,0
-cat__city_Melbourne,0
-cat__city_Mekelle,0
-cat__city_Meherpur,0
-cat__city_Meerut,0
-cat__city_Medina,0
-cat__city_Mirpur Khas,0
-cat__city_Minya El Qamh,0
-cat__city_Minya,0
-cat__city_Minneapolis,0
-cat__city_Minna,0
-cat__city_Mingora (Swat),0
-cat__city_Minami-Alps,0
-cat__city_Milwaukee,0
-cat__city_Milton Keynes,0
-cat__city_Mildura,0
-cat__city_Middlesbrough,0
-cat__city_Middelburg,0
-cat__city_Mianyang,0
-cat__city_Mianwali,0
-cat__city_Miami,0
-cat__city_Meycauayan,0
-cat__city_Montgomery,0
-cat__city_Monterrey,0
-cat__city_Montauban,0
-cat__city_Mong Cai,0
-cat__city_Monclova,0
-cat__city_Mokpo,0
-cat__city_Mokopane,0
-cat__city_Mokokchung,0
-cat__city_Mojokerto,0
-cat__city_Mobile,0
-cat__city_Mizan Teferi,0
-cat__city_Miyazaki,0
-cat__city_Miyakonojo,0
-cat__city_Mit Ghamr,0
-cat__city_Missoula,0
-cat__city_Miryang,0
-cat__city_Mubi,0
-cat__city_Muan,0
-cat__city_Mthatha,0
-cat__city_Mount Isa,0
-cat__city_Mount Gambier,0
-cat__city_Moulvibazar,0
-cat__city_Mossoró,0
-cat__city_Mossel Bay,0
-cat__city_Moscow,0
-cat__city_Morwell,0
-cat__city_Morioka,0
-cat__city_Morgantown,0
-cat__state_Guizhou,0
-cat__city_Montreuil,0
-cat__city_Montpellier,0
-cat__city_Montpelier,0
-cat__city_Muzaffargarh,0
-cat__city_Musina,0
-cat__city_Mus,0
-cat__city_Murray Bridge,0
-cat__city_Murmansk,0
-cat__city_Muntinlupa,0
-cat__city_Munster,0
-cat__city_Munshiganj,0
-cat__city_Mungyeong,0
-cat__city_Mundka,0
-cat__city_Mumbai,0
-cat__city_Multan,0
-cat__city_Mulhouse,0
-cat__city_Muhayil,0
-cat__city_Mugla,0
-cat__city_Mudanjiang,0
-cat__state_Guerrero,0
-cat__city_Nagasaki,0
-cat__city_Nagaoka,0
-cat__city_Nagano,0
-cat__city_Nagahama,0
-cat__city_Naga Hammadi,0
-cat__city_Naga (Cebu),0
-cat__city_Naga,0
-cat__city_Naberezhnye Chelny,0
-cat__city_Mérignac,0
-cat__city_Mérida,0
-cat__city_Mysuru,0
-cat__city_Mymensingh,0
-cat__city_My Tho,0
-cat__city_Muzahmiyya,0
-cat__city_Muzaffarpur,0
-cat__city_Nampa,0
-cat__city_Namchi,0
-cat__city_Nam Dinh,0
-cat__city_Nalchik,0
-cat__city_Nakhon Si Thammarat,0
-cat__city_Nakhon Sawan,0
-cat__city_Nakhon Ratchasima,0
-cat__city_Nakhon Pathom,0
-cat__city_Nakhon Nayok,0
-cat__city_Nakatsu,0
-cat__city_Naju,0
-cat__city_Najran,0
-cat__city_Nainital,0
-cat__city_Naharlagun,0
-cat__city_Naha,0
-cat__city_Nagpur,0
-cat__city_Nara,0
-cat__city_Naperville,0
-cat__city_Naogaon,0
-cat__state_Guangxi,0
-cat__city_Nantong,0
-cat__city_Nantes,0
-cat__city_Nanterre,0
-cat__city_Nanning,0
-cat__city_Nankoku,0
-cat__city_Nanjing,0
-cat__city_Nancy,0
-cat__city_Nanchong,0
-cat__city_Nanchang,0
-cat__city_Nan,0
-cat__city_Namyangju,0
-cat__state_Guangdong,0
-cat__city_Nawabshah (Shaheed Benazirabad),0
-cat__city_Navotas,0
-cat__city_Naucalpan,0
-cat__city_Natori,0
-cat__city_Natore,0
-cat__city_Natal,0
-cat__city_Nashville,0
-cat__city_Nashua,0
-cat__state_Guanajuato,0
-cat__city_Naruto,0
-cat__city_Narsingdi,0
-cat__city_Narowal,0
-cat__city_Nariyah,0
-cat__city_Narbonne,0
-cat__city_Narathiwat,0
-cat__city_Narail,0
-cat__city_Newport,0
-cat__city_Newman,0
-cat__city_Newcastle upon Tyne,0
-cat__city_Newcastle,0
-cat__city_Newark,0
-cat__city_New York City,0
-cat__city_New Orleans,0
-cat__city_New Haven,0
-cat__city_New Delhi,0
-cat__city_New Damietta,0
-cat__city_New Cairo,0
-cat__state_Grand Est,0
-cat__city_Neumunster,0
-cat__city_Netrokona,0
-cat__city_Nerima,0
-cat__city_Nekemte,0
-cat__city_Nizhny Novgorod,0
-cat__city_Nizhnevartovsk,0
-cat__city_Nizamabad,0
-cat__city_Niterói,0
-cat__city_Nishinomiya,0
-cat__city_Niort,0
-cat__city_Ninh Binh,0
-cat__city_Ningbo,0
-cat__city_Nilphamari,0
-cat__city_Niihama,0
-cat__city_Niigata,0
-cat__city_Nigde,0
-cat__city_Nice,0
-cat__city_Nha Trang,0
-cat__city_Nezahualcóyotl,0
-cat__city_Newtownabbey,0
-cat__state_Gombe,0
-cat__city_Nossa Senhora do Socorro,0
-cat__city_Norwich,0
-cat__state_Goiás,0
-cat__city_North Charleston,0
-cat__city_Norman,0
-cat__city_Norfolk,0
-cat__city_Nonthaburi,0
-cat__city_Nonsan,0
-cat__city_Nong Khai,0
-cat__city_Nong Bua Lamphu,0
-cat__city_Noida,0
-cat__city_Nogales,0
-cat__city_Nobeoka,0
-cat__city_Noakhali,0
-cat__city_Nnewi,0
-cat__city_Obour,0
-cat__city_Obio-Akpor,0
-cat__city_Obihiro,0
-cat__city_Oaxaca,0
-cat__city_Oakland,0
-cat__city_Nîmes,0
-cat__city_Nuweiba,0
-cat__city_Nushki,0
-cat__city_Nuremberg,0
-cat__city_Numazu,0
-cat__city_Nuevo Vallarta,0
-cat__city_Nuevo Laredo,0
-cat__city_Nsukka,0
-cat__city_Nowra,0
-cat__city_Novosibirsk,0
-cat__city_Novorossiysk,0
-cat__city_Omaha,0
-cat__state_Giza,0
-cat__city_Olinda,0
-cat__city_Oldenburg,0
-cat__city_Oklahoma City,0
-cat__city_Okinawa City,0
-cat__city_Okigwe,0
-cat__city_Okene,0
-cat__city_Okazaki,0
-cat__city_Okayama,0
-cat__city_Okara,0
-cat__city_Oita,0
-cat__city_Ogbomosho,0
-cat__state_Gilgit-Baltistan,0
-cat__city_Offenbach,0
-cat__city_Offa,0
-cat__city_Oshu,0
-cat__city_Osan,0
-cat__city_Osaka,0
-cat__city_Oryol,0
-cat__city_Oroquieta,0
-cat__city_Ormoc,0
-cat__city_Orléans,0
-cat__city_Orlando,0
-cat__city_Orenburg,0
-cat__state_Gifu,0
-cat__city_Ordu,0
-cat__city_Ordos,0
-cat__state_Idaho,0
-cat__city_Onitsha,0
-cat__city_Ondo City,0
-cat__city_Omsk,0
-cat__city_Pagadian,0
-cat__state_Hunan,0
-cat__city_Pachuca,0
-cat__city_Pabna,0
-cat__city_Paarl,0
-cat__city_Ozamiz,0
-cat__city_Oyama,0
-cat__city_Oxford,0
-cat__city_Owerri,0
-cat__city_Overland Park,0
-cat__city_Oudtshoorn,0
-cat__city_Otsu,0
-cat__state_Hubei,0
-cat__city_Osogbo,0
-cat__city_Osnabruck,0
-cat__city_Osmaniye,0
-cat__city_Panipat,0
-cat__city_Pangkal Pinang,0
-cat__city_Panchagarh,0
-cat__city_Panaji,0
-cat__state_Hokkaido,0
-cat__city_Palu,0
-cat__city_Palopo,0
-cat__city_Palmerston,0
-cat__state_Hidalgo,0
-cat__city_Palembang,0
-cat__city_Palayan,0
-cat__state_Hesse,0
-cat__city_Pakpattan,0
-cat__city_Pakenham,0
-cat__city_Paju,0
-cat__city_Paisley,0
-cat__state_Hebei,0
-cat__city_Pati,0
-cat__city_Pathum Thani,0
-cat__city_Paterson,0
-cat__city_Pateros,0
-cat__city_Passi,0
-cat__city_Pasighat,0
-cat__city_Pasig,0
-cat__city_Pasay,0
-cat__city_Parnaíba,0
-cat__city_Parnamirim,0
-cat__city_Paris,0
-cat__state_Hawaii,0
-cat__city_Parepare,0
-cat__city_Paranaque,0
-cat__city_Pankshin,0
-cat__state_Arkansas,0
-cat__state_Hauts-de-France,0
-cat__state_Aomori,0
-cat__state_Anhui,0
-cat__state_Harari,0
-cat__state_Andaman and Nicobar Islands,0
-cat__state_Anambra,0
-cat__state_Amhara,0
-cat__state_Hail Province,0
-cat__state_Amapá,0
-cat__state_Jiangxi,0
-cat__state_Alaska,0
-cat__state_Alagoas,0
-cat__state_Alabama,0
-cat__state_Al-Qassim Province,0
-cat__city_Patna,0
-cat__city_Pforzheim,0
-cat__city_Petrozavodsk,0
-cat__city_Petropavlovsk-Kamchatsky,0
-cat__city_Peterborough,0
-cat__city_Pessac,0
-cat__city_Peshawar,0
-cat__city_Perth,0
-cat__city_Perpignan,0
-cat__city_Perm,0
-cat__city_Penza,0
-cat__city_Pelotas,0
-cat__city_Pekanbaru,0
-cat__city_Pau,0
-cat__city_Patuakhali,0
-cat__city_Pattani,0
-cat__state_Jiangsu,0
-cat__city_Phuthaditjhaba,0
-cat__city_Phuket,0
-cat__city_Phuc Yen,0
-cat__city_Phu Tho,0
-cat__city_Phrae,0
-cat__city_Phoenix,0
-cat__city_Phitsanulok,0
-cat__city_Philadelphia,0
-cat__city_Phichit,0
-cat__city_Phetchaburi,0
-cat__city_Phetchabun,0
-cat__city_Phayao,0
-cat__city_Phatthalung,0
-cat__city_Phang Nga,0
-cat__city_Phan Thiet,0
-cat__city_Phan Rang,0
-cat__city_Port Blair,0
-cat__city_Pontianak,0
-cat__city_Ponta Grossa,0
-cat__city_Polokwane,0
-cat__city_Poitiers,0
-cat__city_Pohang,0
-cat__city_Plymouth,0
-cat__city_Pleiku,0
-cat__city_Playa del Carmen,0
-cat__city_Plauen,0
-cat__city_Pittsburgh,0
-cat__city_Pishin,0
-cat__city_Pirojpur,0
-cat__city_Pietermaritzburg,0
-cat__city_Piet Retief,0
-cat__city_Piedras Negras,0
-cat__city_Prachuap Khiri Khan,0
-cat__city_Prachin Buri,0
-cat__city_Poza Rica,0
-cat__city_Potsdam,0
-cat__city_Potchefstroom,0
-cat__city_Portsmouth,0
-cat__city_Porto Velho,0
-cat__city_Porto Alegre,0
-cat__city_Portland,0
-cat__city_Port Shepstone,0
-cat__city_Port Said,0
-cat__city_Port Pirie,0
-cat__city_Port Macquarie,0
-cat__city_Port Lincoln,0
-cat__city_Port Hedland,0
-cat__city_Port Fouad,0
-cat__city_Pyeongtaek,0
-cat__city_Pyatigorsk,0
-cat__city_Putian,0
-cat__city_Purwakarta,0
-cat__city_Puri,0
-cat__city_Pune,0
-cat__city_Puerto Vallarta,0
-cat__city_Puerto Princesa,0
-cat__city_Puebla,0
-cat__city_Puducherry,0
-cat__city_Pskov,0
-cat__city_Provo,0
-cat__city_Providence,0
-cat__city_Probolinggo,0
-cat__city_Pretoria,0
-cat__city_Preston,0
-cat__city_Qus,0
-cat__city_Qurayyat,0
-cat__city_Qujing,0
-cat__city_Quimper,0
-cat__city_Quezon City,0
-cat__city_Quetta,0
-cat__city_Querétaro,0
-cat__city_Queenstown,0
-cat__city_Quanzhou,0
-cat__city_Quang Ninh,0
-cat__city_Qiqihar,0
-cat__city_Qingdao,0
-cat__city_Qena,0
-cat__city_Qatif,0
-cat__city_Qantara,0
-cat__city_Qalyub,0
-cat__city_Ranyah,0
-cat__state_Jharkhand,0
-cat__city_Rangamati,0
-cat__city_Ranchi,0
-cat__city_Raleigh,0
-cat__city_Rajshahi,0
-cat__city_Rajkot,0
-cat__city_Rajbari,0
-cat__city_Raipur,0
-cat__city_Rahim Yar Khan,0
-cat__city_Rafha,0
-cat__city_Rafah,0
-cat__city_Rach Gia,0
-cat__state_Jeju,0
-cat__city_RK Puram,0
-cat__city_Quy Nhon,0
-cat__city_Reynosa,0
-cat__state_Jazan Province,0
-cat__city_Rennes,0
-cat__city_Rembang,0
-cat__city_Reims,0
-cat__city_Regensburg,0
-cat__city_Recife,0
-cat__city_Reading,0
-cat__city_Rayong,0
-cat__city_Rawalpindi,0
-cat__city_Ratchaburi,0
-cat__city_Rashid,0
-cat__city_Ras Tanura,0
-cat__city_Ras Gharib,0
-cat__city_Ras El Bar,0
-cat__city_Rapid City,0
-cat__city_Roubaix,0
-cat__city_Rostov-on-Don,0
-cat__city_Rorainópolis,0
-cat__city_Roodepoort,0
-cat__city_Roi Et,0
-cat__city_Rohini,0
-cat__city_Rockhampton,0
-cat__city_Rochester,0
-cat__city_Rize,0
-cat__city_Riyadh,0
-cat__city_Rishikesh,0
-cat__city_Rio de Janeiro,0
-cat__city_Rio Rancho,0
-cat__city_Richmond,0
-cat__city_Richards Bay,0
-cat__city_Ribeirão Preto,0
-cat__city_Sagamihara,0
-cat__city_Saga,0
-cat__city_Safwa,0
-cat__city_Safaga,0
-cat__city_Sadat City,0
-cat__city_Sacramento,0
-cat__city_Sacheon,0
-cat__city_Sabya,0
-cat__city_Sabae,0
-cat__city_Sa Kaeo,0
-cat__city_Ryazan,0
-cat__city_Rutland,0
-cat__state_Jalisco,0
-cat__city_Roxas,0
-cat__city_Rourkela,0
-cat__city_Rouen,0
-cat__city_Salamanca,0
-cat__city_Sakon Nakhon,0
-cat__city_Sakata,0
-cat__city_Sakarya,0
-cat__city_Sakaka,0
-cat__city_Sakaide,0
-cat__city_Sakai,0
-cat__city_Saitama,0
-cat__city_Saint-Étienne,0
-cat__city_Saint-Nazaire,0
-cat__city_Saint-Denis,0
-cat__city_Saint Petersburg,0
-cat__city_Saint Catherine,0
-cat__city_Saidpur,0
-cat__city_Sahiwal,0
-cat__city_Sagay,0
-cat__city_Samut Prakan,0
-cat__city_Samtah,0
-cat__city_Samsun,0
-cat__city_Samcheok,0
-cat__city_Sambalpur,0
-cat__city_Samara,0
-cat__city_Samalut,0
-cat__city_Salzgitter,0
-cat__city_Salvador,0
-cat__city_Saltillo,0
-cat__city_Salt Lake City,0
-cat__city_Salina Cruz,0
-cat__city_Salem,0
-cat__city_Sale,0
-cat__city_Saldanha,0
-cat__city_Salatiga,0
-cat__city_San Pedro,0
-cat__city_San Nicolás de los Garza,0
-cat__city_San Luis Potosí,0
-cat__city_San Juan del Río,0
-cat__city_San Juan,0
-cat__city_San Jose del Monte,0
-cat__city_San Jose,0
-cat__city_San Francisco,0
-cat__city_San Fernando (Pampanga),0
-cat__city_San Fernando (La Union),0
-cat__city_San Diego,0
-cat__city_San Cristóbal de las Casas,0
-cat__city_San Carlos (Negros Occidental),0
-cat__city_San Carlos,0
-cat__city_San Antonio,0
-cat__city_Samut Sakhon,0
-cat__city_Sasebo,0
-cat__city_Sargodha,0
-cat__city_Saratov,0
-cat__city_Sarat Ubaida,0
-cat__city_Saraburi,0
-cat__city_Sapporo,0
-cat__city_Sanya,0
-cat__state_Iwate,0
-cat__city_Santiago,0
-cat__city_Santarém,0
-cat__city_Santana,0
-cat__city_Santa Rosa,0
-cat__city_Santa Fe,0
-cat__city_Sanliurfa,0
-cat__city_Sangju,0
-cat__city_Sanghar,0
-cat__city_Seoul,0
-cat__state_Islamabad Capital Territory,0
-cat__city_Seongnam,0
-cat__city_Seogwipo,0
-cat__city_Sendai,0
-cat__city_Semera,0
-cat__city_Semarang,0
-cat__city_Secunda,0
-cat__city_Sebeta,0
-cat__city_Seattle,0
-cat__city_Science City of Munoz,0
-cat__city_Sawla,0
-cat__city_Savar,0
-cat__city_Savannah,0
-cat__city_Satkhira,0
-cat__city_Sasolburg,0
-cat__city_Sheikh Zuweid,0
-cat__city_Sheikh Zayed,0
-cat__city_Sheffield,0
-cat__city_Shashamane,0
-cat__city_Sharurah,0
-cat__city_Sharm El Sheikh,0
-cat__city_Shariatpur,0
-cat__city_Shaqra,0
-cat__city_Shaoxing,0
-cat__city_Shangrao,0
-cat__city_Shanghai-Pudong,0
-cat__city_Shanghai-Minhang,0
-cat__city_Shanghai-Huangpu,0
-cat__city_Shanghai-Baoshan,0
-cat__city_Setagaya,0
-cat__city_Serra,0
-cat__city_Shinjuku,0
-cat__city_Shinile,0
-cat__city_Shimonoseki,0
-cat__city_Shimla,0
-cat__city_Shimanto,0
-cat__city_Shillong,0
-cat__city_Shikarpur,0
-cat__city_Shijiazhuang,0
-cat__city_Shigatse,0
-cat__state_Ishikawa,0
-cat__state_Iowa,0
-cat__city_Sherpur,0
-cat__city_Shepparton,0
-cat__city_Shenzhen,0
-cat__city_Shenyang,0
-cat__city_Sheikhupura,0
-cat__state_Indiana,0
-cat__city_Silvassa,0
-cat__city_Siliguri,0
-cat__city_Silchar,0
-cat__city_Silay,0
-cat__city_Siirt,0
-cat__city_Siheung,0
-cat__city_Sidoarjo,0
-cat__city_Sibi,0
-cat__city_Sialkot,0
-cat__city_Shubra El Kheima,0
-cat__city_Shreveport,0
-cat__city_Shorouk,0
-cat__city_Shizuoka,0
-cat__city_Shizuishan,0
-cat__city_Shire,0
-cat__city_Sobral,0
-cat__city_Smolensk,0
-cat__city_Slough,0
-cat__city_Skardu,0
-cat__city_Siwa,0
-cat__city_Sivas,0
-cat__city_Sitakunda,0
-cat__city_Sisaket,0
-cat__city_Sirnak,0
-cat__city_Sirajganj,0
-cat__city_Siping,0
-cat__city_Sipalay,0
-cat__city_Sioux Falls,0
-cat__city_Sinop,0
-cat__state_Imo,0
-cat__city_Singaraja,0
-cat__city_Southampton,0
-cat__city_South Burlington,0
-cat__city_South Bend,0
-cat__city_Sorsogon City,0
-cat__city_Sorong,0
-cat__state_Illinois,0
-cat__city_Songkhla,0
-cat__city_Song Cau,0
-cat__city_Son Tay,0
-cat__city_Son La,0
-cat__city_Solan,0
-cat__city_Sokoto,0
-cat__city_Sokcho,0
-cat__city_Sohag,0
-cat__city_Sochi,0
-cat__city_Soc Trang,0
-cat__city_Stoke-on-Trent,0
-cat__city_Stockport,0
-cat__city_Stellenbosch,0
-cat__city_Stavropol,0
-cat__city_Standerton,0
-cat__city_Stamford,0
-cat__city_St. Paul,0
-cat__city_St. Louis,0
-cat__state_Kochi,0
-cat__city_Sreemangal,0
-cat__city_Springs,0
-cat__city_Springfield,0
-cat__city_Spokane,0
-cat__city_Soweto,0
-cat__city_Southend-on-Sea,0
-cat__city_Southaven,0
-cat__city_Surabaya,0
-cat__city_Suphan Buri,0
-cat__city_Sunshine Coast,0
-cat__city_Sunderland,0
-cat__city_Suncheon,0
-cat__city_Sunbury,0
-cat__city_Sunamganj,0
-cat__city_Sumedang,0
-cat__city_Suleja,0
-cat__city_Sukkur,0
-cat__city_Sukhothai,0
-cat__city_Sukabumi,0
-cat__city_Suez,0
-cat__city_Subang,0
-cat__city_Stuttgart,0
-cat__city_Strasbourg,0
-cat__state_Khyber Pakhtunkhwa,0
-cat__city_Sylhet,0
-cat__city_Syktyvkar,0
-cat__city_Sydney,0
-cat__city_Swindon,0
-cat__city_Swansea,0
-cat__city_Swabi,0
-cat__city_Suzuka,0
-cat__city_Suzhou,0
-cat__city_Suwon,0
-cat__city_Surin,0
-cat__city_Surigao City,0
-cat__city_Surgut,0
-cat__city_Surat Thani,0
-cat__city_Surat,0
-cat__city_Surakarta,0
-cat__city_Tagum,0
-cat__city_Taguig,0
-cat__city_Taguatinga,0
-cat__city_Tagbilaran,0
-cat__state_Kentucky,0
-cat__city_Taganrog,0
-cat__city_Taebaek,0
-cat__city_Tacurong,0
-cat__city_Tacoma,0
-cat__city_Tacloban,0
-cat__city_Tabuk,0
-cat__city_Tabaco,0
-cat__state_Kebbi,0
-cat__city_São Luís,0
-cat__city_São Gonçalo,0
-cat__city_São Bernardo do Campo,0
-cat__city_Tampa,0
-cat__city_Tamiya,0
-cat__city_Tambuwal,0
-cat__city_Tam Ky,0
-cat__city_Tam Diep,0
-cat__city_Tallahassee,0
-cat__city_Talkha,0
-cat__city_Talisay (Cebu),0
-cat__city_Takasaki,0
-cat__city_Takaoka,0
-cat__city_Takamatsu,0
-cat__city_Tak,0
-cat__city_Taiyuan,0
-cat__city_Taipa,0
-cat__city_Taif,0
-cat__city_Tahta,0
-cat__city_Tarlac City,0
-cat__city_Tarakan,0
-cat__city_Tapachula,0
-cat__city_Tanta,0
-cat__state_Katsina,0
-cat__city_Tanjung Pinang,0
-cat__city_Tanjay,0
-cat__state_Kansas,0
-cat__city_Tangail,0
-cat__city_Tando Allahyar,0
-cat__city_Tandag,0
-cat__city_Tanauan,0
-cat__city_Tanabe,0
-cat__city_Tan An,0
-cat__city_Tamworth,0
-cat__city_Tampico,0
-cat__city_Thanh Hoa,0
-cat__city_Thakurgaon,0
-cat__city_Thai Nguyen,0
-cat__city_Thai Binh,0
-cat__city_Thadiq,0
-cat__city_Teresina,0
-cat__city_Tepic,0
-cat__city_Tepi,0
-cat__city_Teknaf,0
-cat__city_Tekirdag,0
-cat__city_Tehuacán,0
-cat__city_Tegal,0
-cat__city_Tayma,0
-cat__city_Tay Ninh,0
-cat__city_Tathleeth,0
-cat__city_Tasikmalaya,0
-cat__city_Tirupati,0
-cat__city_Tiruchirappalli,0
-cat__city_Timon,0
-cat__state_Kagoshima,0
-cat__city_Tijuana,0
-cat__city_Tianshui,0
-cat__city_Tianjin-Nankai,0
-cat__city_Tianjin-Heping,0
-cat__city_Tianjin-Binhai,0
-cat__city_Thuan An,0
-cat__city_Thu Dau Mot,0
-cat__city_Thrissur,0
-cat__city_Thoubal,0
-cat__city_Thohoyandou,0
-cat__city_Thiruvananthapuram,0
-cat__city_Thatta,0
-cat__city_Toowoomba,0
-cat__city_Tongyeong,0
-cat__city_Tongi,0
-cat__city_Tonghua,0
-cat__city_Tonalá,0
-cat__city_Tomsk,0
-cat__city_Tolyatti,0
-cat__city_Toluca,0
-cat__city_Toledo,0
-cat__city_Tokushima,0
-cat__city_Tokorozawa,0
-cat__city_Tokat,0
-cat__state_Kafr El Sheikh,0
-cat__city_Tlaxcala,0
-cat__city_Tlaquepaque,0
-cat__city_Tlalnepantla,0
-cat__city_Traralgon,0
-cat__city_Trang,0
-cat__city_Trabzon,0
-cat__city_Tra Vinh,0
-cat__city_Toyota,0
-cat__city_Toyonaka,0
-cat__city_Toyama,0
-cat__city_Townsville,0
-cat__city_Tours,0
-cat__city_Tourcoing,0
-cat__city_Toulouse,0
-cat__city_Toulon,0
-cat__city_Tottori,0
-cat__city_Tosu,0
-cat__city_Torreón,0
-cat__city_Topeka,0
-cat__city_Tulsa,0
-cat__city_Tulancingo,0
-cat__city_Tula,0
-cat__city_Tucson,0
-cat__city_Tuban,0
-cat__city_Tsuyama,0
-cat__city_Tsuruoka,0
-cat__city_Tsukuba,0
-cat__city_Tsuen Wan,0
-cat__city_Tsu,0
-cat__city_Três Lagoas,0
-cat__city_Troyes,0
-cat__city_Trishal,0
-cat__city_Trier,0
-cat__city_Trece Martires,0
-cat__city_Trat,0
-cat__city_Ueda,0
-cat__city_Udon Thani,0
-cat__city_Udaipur,0
-cat__city_Ubon Ratchathani,0
-cat__city_Uberlândia,0
-cat__city_Ube,0
-cat__city_Tzaneen,0
-cat__city_Tyumen,0
-cat__city_Tver,0
-cat__city_Tuyen Quang,0
-cat__city_Tuy Hoa,0
-cat__city_Tuxtla Gutiérrez,0
-cat__city_Turbat,0
-cat__city_Turaif,0
-cat__city_Turabah,0
-cat__city_Tura,0
-cat__city_Urumqi,0
-cat__city_Uruapan,0
-cat__city_Upington,0
-cat__city_Uong Bi,0
-cat__city_Unaizah,0
-cat__city_Umuahia,0
-cat__city_Umluj,0
-cat__city_Umerkot,0
-cat__city_Ulyanovsk,0
-cat__state_Jilin,0
-cat__city_Ulm,0
-cat__city_Ulan-Ude,0
-cat__city_Ujjain,0
-cat__city_Uji,0
-cat__city_Uijeongbu,0
-cat__city_Ufa,0
-cat__state_Akwa Ibom,0
-cat__state_Akita,0
-cat__state_Jigawa,0
-cat__state_Maine,0
-cat__state_Aegean,0
-cat__state_Adamawa,0
-cat__state_Acre,0
-cat__state_Abia,0
-cat__country_Vietnam,0
-cat__country_Turkey,0
-cat__state_Luxor,0
-cat__city_Uyo,0
-cat__city_Uttaradit,0
-cat__city_Utsunomiya,0
-cat__city_Uthai Thani,0
-cat__city_Usak,0
-cat__city_Vi Thanh,0
-cat__city_Vereeniging,0
-cat__city_Veracruz,0
-cat__city_Veliky Novgorod,0
-cat__city_Vehari,0
-cat__city_Vasco da Gama,0
-cat__city_Varanasi,0
-cat__city_Vannes,0
-cat__city_Vanderbijlpark,0
-cat__city_Vancouver,0
-cat__city_Van,0
-cat__city_Valenciennes,0
-cat__city_Valencia,0
-cat__city_Valence,0
-cat__city_Vadodara,0
-cat__state_Al Jawf Province,0
-cat__city_Vitória,0
-cat__city_Vitry-sur-Seine,0
-cat__city_Visakhapatnam,0
-cat__city_Virginia Beach,0
-cat__city_Virginia,0
-cat__city_Vinh Phuc,0
-cat__city_Vinh Long,0
-cat__city_Vinh,0
-cat__city_Villeurbanne,0
-cat__city_Villeneuve-d'Ascq,0
-cat__city_Villahermosa,0
-cat__city_Vila Velha,0
-cat__city_Vijayawada,0
-cat__city_Vigan,0
-cat__state_Lower Saxony,0
-cat__city_Victor Harbor,0
-cat__city_Wakefield,0
-cat__city_Wakayama,0
-cat__city_Wah Cantonment,0
-cat__city_Wagga Wagga,0
-cat__city_Wadi ad-Dawasir,0
-cat__city_Vénissieux,0
-cat__city_Várzea Grande,0
-cat__city_Vung Tau,0
-cat__city_Voronezh,0
-cat__city_Volzhsky,0
-cat__city_Vologda,0
-cat__city_Volgograd,0
-cat__city_Vladivostok,0
-cat__city_Vladimir,0
-cat__city_Vladikavkaz,0
-cat__city_Vitória da Conquista,0
-cat__city_Welkom,0
-cat__city_Welkite,0
-cat__city_Weinan,0
-cat__city_Weimar,0
-cat__city_Weifang,0
-cat__city_Watford,0
-cat__city_Washington,0
-cat__city_Warwick,0
-cat__city_Warrnambool,0
-cat__city_Warrington,0
-cat__city_Warri,0
-cat__city_Warren,0
-cat__city_Wardar,0
-cat__city_Warangal,0
-cat__city_Wanju,0
-cat__city_Walsall,0
-cat__city_Wonju,0
-cat__city_Wolverhampton,0
-cat__city_Wollongong,0
-cat__city_Wolfsburg,0
-cat__city_Woldiya,0
-cat__city_Wodonga,0
-cat__state_Louisiana,0
-cat__city_Wilmington,0
-cat__city_Wiesbaden,0
-cat__city_Wichita,0
-cat__city_Westminster,0
-cat__city_West Valley City,0
-cat__city_Wenzhou,0
-cat__city_Wenchang,0
-cat__city_Wellington,0
-num__country_city_freq,0
-cat__city_Xianyang,0
-cat__city_Xiangyang,0
-cat__city_Xiangtan,0
-cat__city_Xiamen,0
-cat__city_Xi'an,0
-cat__city_Xalapa,0
-cat__city_Wuzhong,0
-cat__city_Wuxi,0
-cat__city_Wurzburg,0
-cat__city_Wuppertal,0
-cat__city_Wuhu,0
-cat__city_Wuhan,0
-cat__city_Wudil,0
-cat__city_Wrexham,0
-cat__city_Worcester,0
-cat__city_Worabe,0
-cat__city_Yatsushiro,0
-cat__city_Yaroslavl,0
-cat__city_Yantai,0
-cat__city_Yangsan,0
-cat__city_Yangju,0
-cat__city_Yanbu,0
-cat__city_Yan'an,0
-cat__city_Yamaguchi,0
-cat__city_Yamagata,0
-cat__city_Yalova,0
-cat__city_Yala,0
-cat__city_Yakutsk,0
-cat__city_Xuzhou,0
-cat__city_Xinxiang,0
-cat__city_Xining,0
-cat__city_Xingtai,0
-cat__state_Limpopo,0
-cat__city_Yongin,0
-cat__city_Yonago,0
-cat__city_Yola,0
-cat__city_Yokote,0
-cat__city_Yokohama,0
-cat__city_Yokkaichi,0
-cat__city_Yirgalem,0
-cat__city_Yinchuan,0
-cat__city_Yichang,0
-cat__city_Yeosu,0
-cat__city_Yeongju,0
-cat__city_Yeongcheon,0
-cat__city_Yenagoa,0
-cat__city_Yen Bai,0
-cat__city_Yekaterinburg,0
-cat__city_infrequent_sklearn,0
-cat__city_Zhob,0
-cat__city_Zhengzhou,0
-cat__city_Zhangzhou,0
-cat__city_Zaria,0
-cat__city_Zapopan,0
-cat__city_Zamora,0
-cat__city_Zamboanga City,0
-cat__city_Zagazig,0
-cat__city_Zacatecas,0
-cat__city_Yuzhno-Sakhalinsk,0
-cat__city_Yuxi,0
-cat__city_Yuncheng,0
-cat__city_Yulin,0
-cat__city_Yueyang,0
+cat__city_Imperatriz,0
+cat__city_Imphal,0
 cat__city_Yozgat,0
+cat__city_Incheon,0
+cat__city_Indianapolis,0
+cat__city_Indore,0
+cat__city_Indramayu,0
+cat__city_Ingolstadt,0
+cat__city_Ipswich,0
+cat__city_Irapuato,0
+cat__city_Yulin,0
+cat__city_Yuxi,0
+cat__city_Yuzhno-Sakhalinsk,0
+cat__city_Zacatecas,0
+cat__city_Ishinomaki,0
+cat__city_Islamabad,0
+cat__city_Zagazig,0
+cat__city_Ismailia,0
+cat__city_Isparta,0
+cat__city_Istanbul,0
+cat__city_Itanagar,0
+cat__city_Itang,0
+cat__city_Ivanovo,0
+cat__city_Zamora,0
+cat__city_Izhvesk,0
+cat__city_Izmir,0
+cat__city_Izumo,0
+cat__city_Zapopan,0
+cat__city_Jaboatão dos Guararapes,0
+cat__city_Jackson,0
+cat__city_Jacksonville,0
+cat__city_Zhangzhou,0
+cat__state_Abia,0
+cat__city_Jakarta Barat,0
+cat__state_Adamawa,0
+cat__city_Jakarta Selatan,0
+cat__city_Jakarta Timur,0
+cat__state_Aegean,0
+cat__state_Akwa Ibom,0
+cat__city_Jalingo,0
+cat__state_Al Jawf Province,0
+cat__state_Alabama,0
+cat__city_Jammu,0
+cat__state_Alagoas,0
+cat__city_Jashore,0
+cat__state_Alaska,0
+cat__city_Jazan,0
+cat__city_Jecheon,0
+cat__state_Alexandria,0
+cat__state_Amapá,0
+cat__state_Amhara,0
+cat__city_Jena,0
+cat__city_Jeongeup,0
+cat__state_Anambra,0
+cat__state_Andaman and Nicobar Islands,0
+cat__city_Jersey City,0
+cat__city_Jhalokati,0
+cat__city_Jhang,0
+cat__state_Arkansas,0
+cat__city_Jhenaidah,0
+cat__state_Aswan,0
+cat__city_Jiamusi,0
+cat__city_Jiaxing,0
+cat__state_Asyut,0
+cat__city_Jikawo,0
+cat__state_Bahia,0
+cat__city_Jimma,0
+cat__state_Baja California,0
+cat__city_Jincheon,0
+cat__city_Jingdezhen,0
+cat__city_Jingzhou,0
+cat__city_Jinhua,0
+cat__city_Jinju,0
+cat__city_Jinka,0
+cat__city_Jinzhou,0
+cat__state_Baja California Sur,0
+cat__city_Jiuquan,0
+cat__city_Jiutepec,0
+cat__state_Bangkok Metro,0
+cat__city_Joetsu,0
+cat__city_Johannesburg,0
+cat__city_Joinville,0
+cat__state_Bauchi,0
+cat__state_Bayelsa,0
+cat__city_Jos,0
+cat__city_Jowai,0
+cat__state_Beheira,0
+cat__city_João Pessoa,0
+cat__city_Juazeiro do Norte,0
+cat__state_Beni Suef,0
+cat__state_Benishangul-Gumuz,0
+cat__state_Benue,0
+cat__city_Juneau,0
+cat__state_Black Sea,0
+cat__city_Kaduna,0
+cat__city_Kafr El Dawwar,0
+cat__city_Kafr El Sheikh,0
+cat__city_Kafr El Zayat,0
+cat__city_Kagoshima,0
+cat__city_Kahramanmaras,0
+cat__state_Borno,0
+cat__city_Kailua,0
+cat__city_Kaiserslautern,0
+cat__city_Kakamigahara,0
+cat__city_Kakinada,0
+cat__city_Kalasin,0
+cat__city_Kalat,0
+cat__state_Bourgogne-Franche-Comté,0
+cat__city_Kaliningrad,0
+cat__city_Kaluga,0
+cat__city_Kamashi,0
+cat__city_Kameoka,0
+cat__city_Kamphaeng Phet,0
+cat__state_Brandenburg,0
+cat__city_Kanchanaburi,0
+cat__state_Campeche,0
+cat__city_Kanoya,0
+cat__state_Ceará,0
+cat__city_Kansas City,0
+cat__city_Karabuk,0
+cat__state_Central,0
+cat__city_Karaikal,0
+cat__city_Karak,0
+cat__city_Karaman,0
+cat__city_Karat Konso,0
+cat__city_Karatsu,0
+cat__city_Karawang,0
+cat__state_Central Highlands,0
+cat__city_Kariega,0
+cat__state_Chandigarh,0
+cat__city_Karlsruhe,0
+cat__state_Chiapas,0
+cat__city_Kars,0
+cat__state_Chungbuk,0
+cat__city_Kashihara,0
+cat__state_Coahuila,0
+cat__city_Kassel,0
+cat__city_Kastamonu,0
+cat__state_Colima,0
+cat__state_Connecticut,0
+cat__city_Katsina,0
+cat__city_Kavaratti,0
+cat__state_Cross River,0
+cat__state_Dakahlia,0
+cat__state_Damietta,0
+cat__city_Kayseri,0
+cat__city_Kazan,0
+cat__city_Kebri Dahar,0
+cat__city_Kediri,0
+cat__city_Keffi,0
+cat__city_Kemerovo,0
+cat__city_Kendal,0
+cat__city_Kendari,0
+cat__city_Kenosha,0
+cat__city_Kepulauan Seribu,0
+cat__state_Delaware,0
+cat__city_Khafji,0
+cat__state_Delta,0
+cat__city_Khairpur,0
+cat__city_Khamis Mushait,0
+cat__city_Khammam,0
+cat__city_Khanewal,0
+cat__city_Khanka,0
+cat__city_Kharan,0
+cat__city_Kharga,0
+cat__city_Khasavyurt,0
+cat__city_Khobar,0
+cat__city_Khon Kaen,0
+cat__city_Khulais,0
+cat__city_Khulna,0
+cat__city_Khuzdar,0
+cat__state_Dire Dawa (City),0
+cat__city_Kiel,0
+cat__city_Kilis,0
+cat__city_Kimberley,0
+cat__state_District of Columbia,0
+cat__city_Kirikkale,0
+cat__city_Kirishima,0
+cat__city_Kirklareli,0
+cat__city_Kirov,0
+cat__city_Kirsehir,0
+cat__city_Kiryu,0
+cat__state_Durango,0
+cat__city_Kislovodsk,0
+cat__city_Kitakyushu,0
+cat__city_Klerksdorp,0
+cat__city_Knoxville,0
+cat__state_East Midlands,0
+cat__city_Koblenz,0
+cat__city_Kobo,0
+cat__city_Kocaeli,0
+cat__city_Kochi,0
+cat__city_Kofu,0
+cat__state_East of England,0
+cat__city_Kohima,0
+cat__state_Eastern Anatolia,0
+cat__city_Kollam,0
+cat__city_Kom Ombo,0
+cat__city_Komatsu,0
+cat__city_Kombolcha,0
+cat__city_Komsomolsk-on-Amur,0
+cat__city_Kon Tum,0
+cat__state_Ebonyi,0
+cat__city_Korba,0
+cat__city_Korem,0
+cat__city_Koriyama,0
+cat__state_Edo,0
+cat__city_Koronadal,0
+cat__state_Ekiti,0
+cat__city_Kowloon,0
+cat__city_Kozhikode,0
+cat__city_Krabi,0
+cat__city_Krasnodar,0
+cat__state_Enugu,0
+cat__city_Kroonstad,0
+cat__city_Krugersdorp,0
+cat__city_Kudus,0
+cat__city_Kumamoto,0
+cat__city_Kunming,0
+cat__state_Espírito Santo,0
+cat__state_Florida,0
+cat__city_Kurayoshi,0
+cat__city_Kure,0
+cat__state_Georgia,0
+cat__state_Gharbia,0
+cat__city_Kuruman,0
+cat__state_Gilgit-Baltistan,0
+cat__city_Kusatsu,0
+cat__city_Kushiro,0
+cat__state_Giza,0
+cat__city_Kutahya,0
+cat__city_KwaDukuza,0
+cat__state_Goiás,0
+cat__city_La Carlota,0
+cat__city_La Paz,0
+cat__state_Gombe,0
+cat__state_Guanajuato,0
+cat__city_Ladysmith,0
+cat__city_Lafayette,0
+cat__city_Lafia,0
+cat__city_Lahore,0
+cat__city_Lai Chau,0
+cat__state_Guerrero,0
+cat__city_Lalibela,0
+cat__city_Lalmonirhat,0
+cat__city_Lamitan,0
+cat__city_Lampang,0
+cat__city_Lamphun,0
+cat__city_Lang Son,0
+cat__city_Langfang,0
+cat__city_Lanzhou,0
+cat__city_Lao Cai,0
+cat__city_Laoag,0
+cat__city_Lapu-Lapu,0
+cat__city_Laramie,0
+cat__state_Hail Province,0
+cat__city_Las Cruces,0
+cat__state_Hainan,0
+cat__city_Las Vegas,0
+cat__city_Launceston,0
+cat__city_Le Havre,0
+cat__city_Le Mans,0
+cat__state_Harari,0
+cat__city_Legazpi,0
+cat__state_Hawaii,0
+cat__city_Leicester,0
+cat__state_Hokkaido,0
+cat__city_Leku,0
+cat__city_Lephalale,0
+cat__city_Leshan,0
+cat__city_Lewiston,0
+cat__city_Lexington,0
+cat__city_León,0
+cat__city_Lhasa,0
+cat__city_Lichtenburg,0
+cat__city_Ligao,0
+cat__city_Lijiang,0
+cat__city_Lille,0
+cat__city_Limoges,0
+cat__city_Lincoln,0
+cat__state_Ibaraki,0
+cat__state_Imo,0
+cat__state_Iowa,0
+cat__city_Lipetsk,0
+cat__city_Lisburn,0
+cat__city_Lismore,0
+cat__city_Little Rock,0
+cat__state_Islamabad Capital Territory,0
+cat__city_Liuzhou,0
+cat__city_Liverpool,0
+cat__city_Loei,0
+cat__city_Logia,0
+cat__city_Lokoja,0
+cat__state_Jalisco,0
+cat__city_Londrina,0
+cat__city_Long Khanh,0
+cat__state_Jigawa,0
+cat__city_Lopburi,0
+cat__city_Loralai,0
+cat__state_Kaduna,0
+cat__state_Kafr El Sheikh,0
+cat__city_Los Mochis,0
+cat__city_Louisville,0
+cat__city_Lubeck,0
+cat__state_Kagawa,0
+cat__state_Kagoshima,0
+cat__state_Kansas,0
+cat__city_Ludwigshafen,0
+cat__city_Lunglei,0
+cat__state_Katsina,0
+cat__city_Luton,0
+cat__city_Luxor,0
+cat__state_Kebbi,0
+cat__state_Kochi,0
+cat__city_Ma'anshan,0
+cat__city_Maadi,0
+cat__state_Kogi,0
+cat__city_Macapá,0
+cat__city_Macau Peninsula,0
+cat__city_Maceió,0
+cat__city_Mackay,0
+cat__city_Madaripur,0
+cat__city_Madison,0
+cat__city_Madiun,0
+cat__city_Madurai,0
+cat__city_Mae Hong Son,0
+cat__city_Maebashi,0
+cat__city_Magadan,0
+cat__city_Magdeburg,0
+cat__city_Magelang,0
+cat__city_Maghagha,0
+cat__state_Kwara,0
+cat__city_Magura,0
+cat__city_Maha Sarakham,0
+cat__state_Lakshadweep,0
+cat__city_Mahikeng,0
+cat__city_Maiduguri,0
+cat__city_Mainz,0
+cat__city_Maitland,0
+cat__city_Majardah,0
+cat__city_Maji,0
+cat__city_Majmaah,0
+cat__city_Makassar,0
+cat__state_Limpopo,0
+cat__city_Makhachkala,0
+cat__city_Makhanda,0
+cat__city_Makurdi,0
+cat__city_Malabon,0
+cat__city_Malang,0
+cat__city_Malatya,0
+cat__state_Louisiana,0
+cat__city_Mallawi,0
+cat__state_Lower Saxony,0
+cat__city_Manado,0
+cat__state_Luxor,0
+cat__state_Maine,0
+cat__state_Maranhão,0
+cat__state_Marmara,0
+cat__state_Maryland,0
+cat__state_Mato Grosso do Sul,0
+cat__city_Manfalut,0
+cat__state_Mediterranean,0
+cat__state_Mekong River Delta,0
+cat__state_Michigan,0
+cat__city_Manisa,0
+cat__city_Mannheim,0
+cat__state_Michoacán,0
+cat__state_Minnesota,0
+cat__city_Mansfield,0
+cat__city_Mansoura,0
+cat__city_Manzanillo,0
+cat__state_Mississippi,0
+cat__state_Missouri,0
+cat__city_Marburg,0
+cat__city_Mardan,0
+cat__city_Mardin,0
+cat__city_Margao,0
+cat__state_Miyagi,0
+cat__city_Maringá,0
+cat__city_Marsa Alam,0
+cat__city_Marseille,0
+cat__city_Marugame,0
+cat__state_Montana,0
+cat__state_Monufia,0
+cat__city_Mastung,0
+cat__city_Matamoros,0
+cat__state_Morelos,0
+cat__state_Nagano,0
+cat__city_Matsue,0
+cat__city_Matsumoto,0
+cat__city_Matsuyama,0
+cat__city_Mazatlán,0
+cat__city_Mbombela,0
+cat__state_Najran Province,0
+cat__state_Nara,0
+cat__city_Medina,0
+cat__city_Meerut,0
+cat__city_Meherpur,0
+cat__city_Mekelle,0
+cat__city_Melbourne,0
+cat__city_Melton,0
+cat__city_Memphis,0
+cat__city_Menouf,0
+cat__state_Nasarawa,0
+cat__city_Meridian,0
+cat__city_Mersa Matruh,0
+cat__city_Mersin,0
+cat__state_Nebraska,0
+cat__city_Metoubes,0
+cat__city_Metz,0
+cat__city_Mexicali,0
+cat__state_New Jersey,0
+cat__state_New Mexico,0
+cat__city_Miami,0
+cat__state_New Valley,0
+cat__city_Mianyang,0
+cat__state_Niger,0
+cat__city_Middlesbrough,0
+cat__city_Mildura,0
+cat__state_Ningxia,0
+cat__city_Milton Keynes,0
+cat__city_Milwaukee,0
+cat__city_Minami-Alps,0
+cat__city_Mingora (Swat),0
+cat__city_Minna,0
+cat__city_Minneapolis,0
+cat__state_North Carolina,0
+cat__city_Minya El Qamh,0
+cat__city_Mirpur Khas,0
+cat__city_Miryang,0
+cat__city_Missoula,0
+cat__city_Mit Ghamr,0
+cat__state_North Central Coast,0
+cat__state_North Dakota,0
+cat__state_North Sinai,0
+cat__city_Mizan Teferi,0
+cat__city_Mobile,0
+cat__city_Mojokerto,0
+cat__state_Northeast,0
+cat__city_Mokopane,0
+cat__city_Mokpo,0
+cat__city_Monclova,0
+cat__city_Mong Cai,0
+cat__city_Montauban,0
+cat__city_Monterrey,0
+cat__city_Montgomery,0
+cat__city_Montpelier,0
+cat__city_Montpellier,0
+cat__state_Northeastern,0
+cat__city_Morelia,0
+cat__city_Morgantown,0
+cat__city_Morioka,0
+cat__city_Morwell,0
+cat__city_Moscow,0
+cat__city_Mossel Bay,0
+cat__city_Mossoró,0
+cat__city_Moulvibazar,0
+cat__state_Northern Borders,0
+cat__city_Mount Isa,0
+cat__city_Mthatha,0
+cat__city_Muan,0
+cat__city_Mubi,0
+cat__city_Mudanjiang,0
+cat__city_Mugla,0
+cat__city_Muhayil,0
+cat__city_Mulhouse,0
+cat__city_Multan,0
+cat__state_Northern Ireland,0
+cat__state_Northwest,0
+cat__state_Oaxaca,0
+cat__state_Okinawa,0
+cat__city_Munshiganj,0
+cat__city_Munster,0
+cat__state_Oklahoma,0
+cat__city_Murmansk,0
+cat__city_Murray Bridge,0
+cat__city_Mus,0
+cat__city_Musina,0
+cat__city_Muzaffargarh,0
+cat__state_Ondo,0
+cat__city_Muzahmiyya,0
+cat__city_My Tho,0
+cat__city_Mymensingh,0
+cat__state_Oromia,0
+cat__city_Mérida,0
+cat__city_Mérignac,0
+cat__city_Naberezhnye Chelny,0
+cat__state_Osun,0
+cat__state_Oyo,0
+cat__city_Naga Hammadi,0
+cat__city_Nagahama,0
+cat__city_Nagano,0
+cat__city_Nagaoka,0
+cat__city_Nagasaki,0
+cat__state_Paraíba,0
+cat__state_Pernambuco,0
+cat__city_Naha,0
+cat__city_Naharlagun,0
+cat__city_Nainital,0
+cat__city_Najran,0
+cat__city_Naju,0
+cat__state_Piauí,0
+cat__city_Nakhon Nayok,0
+cat__city_Nakhon Pathom,0
+cat__city_Nakhon Ratchasima,0
+cat__city_Nakhon Sawan,0
+cat__city_Nakhon Si Thammarat,0
+cat__city_Nalchik,0
+cat__city_Nam Dinh,0
+cat__state_Plateau,0
+cat__city_Nampa,0
+cat__state_Puducherry,0
+cat__city_Namyangju,0
+cat__city_Nan,0
+cat__city_Nanchang,0
+cat__city_Nanchong,0
+cat__state_Qena,0
+cat__city_Nanjing,0
+cat__city_Nankoku,0
+cat__city_Nanning,0
+cat__city_Nanterre,0
+cat__state_Querétaro,0
+cat__city_Nantong,0
+cat__state_Quintana Roo,0
+cat__city_Naogaon,0
+cat__city_Naperville,0
+cat__city_Nara,0
+cat__state_Red Sea,0
+cat__city_Narathiwat,0
+cat__state_Rhineland-Palatinate,0
+cat__city_Narbonne,0
+cat__city_Nariyah,0
+cat__state_Rio Grande do Norte,0
+cat__state_San Luis Potosí,0
+cat__city_Naruto,0
+cat__state_Santa Catarina,0
+cat__city_Nashua,0
+cat__city_Nashville,0
+cat__city_Natal,0
+cat__city_Natore,0
+cat__city_Natori,0
+cat__city_Naucalpan,0
+cat__state_Sergipe,0
+cat__state_Sharkia,0
+cat__city_Nekemte,0
+cat__state_Shimane,0
+cat__state_Sidama,0
+cat__city_Neumunster,0
+cat__city_Nevsehir,0
+cat__state_Sinaloa,0
+cat__city_New Damietta,0
+cat__state_Sohag,0
+cat__city_New Haven,0
+cat__city_New Orleans,0
+cat__city_New York City,0
+cat__city_Newark,0
+cat__city_Newcastle,0
+cat__state_Sokoto,0
+cat__city_Newman,0
+cat__city_Newport,0
+cat__city_Newtownabbey,0
+cat__city_Nezahualcóyotl,0
+cat__state_Sonora,0
+cat__city_Nice,0
+cat__city_Nigde,0
+cat__city_Niigata,0
+cat__state_South Carolina,0
+cat__state_South Central Coast,0
+cat__state_South Dakota,0
+cat__city_Ninh Binh,0
+cat__city_Niort,0
+cat__city_Nishinomiya,0
+cat__city_Niterói,0
+cat__city_Nizamabad,0
+cat__city_Nizhnevartovsk,0
+cat__city_Nizhny Novgorod,0
+cat__state_South Sinai,0
+cat__city_Nnewi,0
+cat__state_South West,0
+cat__city_Nobeoka,0
+cat__city_Nogales,0
+cat__state_Southeast,0
+cat__city_Nong Bua Lamphu,0
+cat__city_Nong Khai,0
+cat__state_Southeastern Anatolia,0
+cat__city_Nonthaburi,0
+cat__city_Norfolk,0
+cat__state_Southern,0
+cat__city_Norman,0
+cat__city_North Charleston,0
+cat__city_Northampton,0
+cat__city_Norwich,0
+cat__city_Nossa Senhora do Socorro,0
+cat__city_Nottingham,0
+cat__state_Southwest Ethiopia,0
+cat__state_Tamaulipas,0
+cat__city_Novorossiysk,0
+cat__state_Taraba,0
+cat__city_Nowra,0
+cat__state_Tennessee,0
+cat__city_Nsukka,0
+cat__city_Nuevo Laredo,0
+cat__state_Thuringia,0
+cat__state_Tigray,0
+cat__city_Nuremberg,0
+cat__city_Nushki,0
+cat__city_Nuweiba,0
+cat__city_Nîmes,0
+cat__state_Tochigi,0
+cat__city_Oaxaca,0
+cat__city_Obihiro,0
+cat__state_Tokushima,0
+cat__city_Obour,0
+cat__city_Offa,0
+cat__city_Offenbach,0
+cat__state_Tottori,0
+cat__city_Ogbomosho,0
+cat__city_Oita,0
+cat__city_Okara,0
+cat__city_Okayama,0
+cat__state_Veracruz,0
+cat__city_Okene,0
+cat__city_Okigwe,0
+cat__city_Okinawa City,0
+cat__city_Oklahoma City,0
+cat__city_Oldenburg,0
+cat__city_Olinda,0
+cat__state_Vermont,0
+cat__city_Omaha,0
+cat__state_Virginia,0
+cat__city_Ondo City,0
+cat__state_Wakayama,0
+cat__city_Orange,0
+cat__state_Wales,0
+cat__city_Ordu,0
+cat__state_West Virginia,0
+cat__city_Orenburg,0
+cat__city_Orlando,0
+cat__city_Orléans,0
+cat__state_Western Cape,0
+cat__city_Oroquieta,0
+cat__city_Oryol,0
+cat__state_Wisconsin,0
+cat__state_Wyoming,0
+cat__city_Oshu,0
+cat__city_Osmaniye,0
+cat__city_Osnabruck,0
+cat__city_Osogbo,0
+cat__state_Yamaguchi,0
+cat__city_Otsu,0
+cat__city_Oudtshoorn,0
+cat__city_Overland Park,0
+cat__city_Owerri,0
+cat__city_Oxford,0
+cat__state_Yamanashi,0
+cat__city_Ozamiz,0
+cat__city_Paarl,0
+cat__city_Pabna,0
+cat__state_Yobe,0
+cat__state_Zacatecas,0
+cat__city_Pagadian,0
+cat__city_Paisley,0
+cat__city_Paju,0
+cat__city_Pakenham,0
+cat__city_Pakpattan,0
+cat__state_Zamfara,0
+cat__city_10th of Ramadan,0
+cat__city_6th of October,0
+cat__city_Aba,0
+cat__city_Abakaliki,0
+cat__city_Palopo,0
+cat__city_Palu,0
+cat__city_Abakan,0
+cat__city_Panaji,0
+cat__city_Panchagarh,0
+cat__city_Abbottabad,0
+cat__city_Abeokuta,0
+cat__city_Pankshin,0
+cat__city_Aberdeen,0
+cat__city_Parepare,0
+cat__city_Abobo,0
+cat__city_Abu Arish,0
+cat__city_Parnamirim,0
+cat__city_Parnaíba,0
+cat__city_Abu Hummus,0
+cat__city_Abu Qir,0
+cat__city_Pasighat,0
+cat__city_Abu Simbel,0
+cat__city_Abuja,0
+cat__city_Abutig,0
+cat__city_Acapulco,0
+cat__city_Ad Darb,0
+cat__city_Pati,0
+cat__city_Adama (Nazret),0
+cat__city_Patna,0
+cat__city_Pattani,0
+cat__city_Patuakhali,0
+cat__city_Pau,0
+cat__city_Adana,0
+cat__city_Adelaide,0
+cat__city_Pelotas,0
+cat__city_Penza,0
+cat__city_Perm,0
+cat__city_Perpignan,0
+cat__city_Adigrat,0
+cat__city_Adiyaman,0
+cat__city_Pessac,0
+cat__city_Peterborough,0
+cat__city_Petropavlovsk-Kamchatsky,0
+cat__city_Petrozavodsk,0
+cat__city_Pforzheim,0
+cat__city_Phan Rang,0
+cat__city_Phan Thiet,0
+cat__city_Phang Nga,0
+cat__city_Phatthalung,0
+cat__city_Phayao,0
+cat__city_Phetchabun,0
+cat__city_Phetchaburi,0
+cat__city_Phichit,0
+cat__city_Ado Ekiti,0
+cat__city_Phitsanulok,0
+cat__city_Phoenix,0
+cat__city_Phrae,0
+cat__city_Phu Tho,0
+cat__city_Phuc Yen,0
+cat__city_Phuket,0
+cat__city_Phuthaditjhaba,0
+cat__city_Piedras Negras,0
+cat__city_Piet Retief,0
+cat__city_Pietermaritzburg,0
+cat__city_Pirojpur,0
+cat__city_Pishin,0
+cat__city_Adwa,0
+cat__city_Plauen,0
+cat__city_Playa del Carmen,0
+cat__city_Pleiku,0
+cat__city_Plymouth,0
+cat__city_Afif,0
+cat__city_Poitiers,0
+cat__city_Polokwane,0
+cat__city_Ponta Grossa,0
+cat__city_Afyonkarahisar,0
+cat__city_Aga,0
+cat__city_Port Blair,0
+cat__city_Port Fouad,0
+cat__city_Agami,0
+cat__city_Port Hedland,0
+cat__city_Port Lincoln,0
+cat__city_Port Macquarie,0
+cat__city_Port Pirie,0
+cat__city_Port Said,0
+cat__city_Port Shepstone,0
+cat__city_Portland,0
+cat__city_Porto Alegre,0
+cat__city_Agartala,0
+cat__city_Portsmouth,0
+cat__city_Potchefstroom,0
+cat__city_Potsdam,0
+cat__city_Poza Rica,0
+cat__city_Prachin Buri,0
+cat__city_Prachuap Khiri Khan,0
+cat__city_Preston,0
+cat__city_Pretoria,0
+cat__city_Agri,0
+cat__city_Providence,0
+cat__city_Aix-en-Provence,0
+cat__city_Pskov,0
+cat__city_Puducherry,0
+cat__city_Aizawl,0
+cat__city_Puerto Princesa,0
+cat__city_Puerto Vallarta,0
+cat__city_Aizuwakamatsu,0
+cat__city_Puri,0
+cat__city_Ajmer,0
+cat__city_Putian,0
+cat__city_Pyatigorsk,0
+cat__city_Akhmim,0
+cat__city_Qalyub,0
+cat__city_Qantara,0
+cat__city_Qatif,0
+cat__city_Qena,0
+cat__city_Akita,0
+cat__city_Qiqihar,0
+cat__city_Quang Ninh,0
+cat__city_Quanzhou,0
+cat__city_Queenstown,0
+cat__city_Querétaro,0
+cat__city_Quetta,0
+cat__city_Akron,0
+cat__city_Quimper,0
+cat__city_Qujing,0
+cat__city_Qurayyat,0
+cat__city_Qus,0
+cat__city_Quy Nhon,0
+cat__city_Aksaray,0
+cat__city_Akure,0
+cat__city_Rach Gia,0
+cat__city_Rafah,0
+cat__city_Al Badai,0
+cat__city_Rahim Yar Khan,0
+cat__city_Al Bukayriyah,0
+cat__city_Rajbari,0
+cat__city_Al Ghazalah,0
+cat__city_Al Kharj,0
+cat__city_Raleigh,0
+cat__city_Al Lith,0
+cat__city_Rangamati,0
+cat__city_Rangpur,0
+cat__city_Ranyah,0
+cat__city_Rapid City,0
+cat__city_Ras El Bar,0
+cat__city_Ras Gharib,0
+cat__city_Ras Tanura,0
+cat__city_Rashid,0
+cat__city_Ratchaburi,0
+cat__city_Rawalpindi,0
+cat__city_Rayong,0
+cat__city_Reading,0
+cat__city_Recife,0
+cat__city_Regensburg,0
+cat__city_Reims,0
+cat__city_Al Qunfudhah,0
+cat__city_Rennes,0
+cat__city_Al Quwayiyah,0
+cat__city_Reynosa,0
+cat__city_Al Ula,0
+cat__city_Richards Bay,0
+cat__city_Richmond,0
+cat__city_Al Wajh,0
+cat__city_Rio Rancho,0
+cat__city_Al Wasta,0
+cat__city_Alamata,0
+cat__city_Alaminos,0
+cat__city_Rize,0
+cat__city_Rochester,0
+cat__city_Rockhampton,0
+cat__city_Albany,0
+cat__city_Roi Et,0
+cat__city_Albi,0
+cat__city_Roodepoort,0
+cat__city_Albuquerque,0
+cat__city_Rostov-on-Don,0
+cat__city_Roubaix,0
+cat__city_Rouen,0
+cat__city_Albury,0
+cat__city_Aleta Wendo,0
+cat__city_Alexandria,0
+cat__city_Rutland,0
+cat__city_Ryazan,0
+cat__city_Sa Kaeo,0
+cat__city_Sabae,0
+cat__city_Sabya,0
+cat__city_Aliwal North,0
+cat__city_Allahabad,0
+cat__city_Sadat City,0
+cat__city_Safaga,0
+cat__city_Allentown,0
+cat__city_Saga,0
+cat__city_Sagamihara,0
+cat__city_Amanzimtoti,0
+cat__city_Sahiwal,0
+cat__city_Saidpur,0
+cat__city_Saint Catherine,0
+cat__city_Saint Petersburg,0
+cat__city_Saint-Denis,0
+cat__city_Saint-Nazaire,0
+cat__city_Saint-Étienne,0
+cat__city_Amasya,0
+cat__city_Ambo,0
+cat__city_Sakaide,0
+cat__city_Sakaka,0
+cat__city_Sakarya,0
+cat__city_Sakata,0
+cat__city_Sakon Nakhon,0
+cat__city_Salamanca,0
+cat__city_Amtali,0
+cat__city_Saldanha,0
+cat__city_Sale,0
+cat__city_Anan,0
+cat__city_Salina Cruz,0
+cat__city_Anantnag,0
+cat__city_Saltillo,0
+cat__city_Salvador,0
+cat__city_Salzgitter,0
+cat__city_Samalut,0
+cat__city_Samara,0
+cat__city_Anchorage,0
+cat__city_Andong,0
+cat__city_Ang Thong,0
+cat__city_Samsun,0
+cat__city_Samtah,0
+cat__city_Samut Prakan,0
+cat__city_Samut Sakhon,0
+cat__city_San Antonio,0
+cat__city_San Carlos,0
+cat__city_San Carlos (Negros Occidental),0
+cat__city_San Cristóbal de las Casas,0
+cat__city_Angers,0
+cat__city_Ankara,0
+cat__city_San Fernando (Pampanga),0
+cat__city_Ann Arbor,0
+cat__city_San Jose,0
+cat__city_Annapolis,0
+cat__city_Anshun,0
+cat__city_Antalya,0
+cat__city_Antibes,0
+cat__city_San Luis Potosí,0
+cat__city_San Nicolás de los Garza,0
+cat__city_Anápolis,0
+cat__city_Aomori,0
+cat__city_Sanghar,0
+cat__city_Sangju,0
+cat__city_Sanliurfa,0
+cat__city_Santa Fe,0
+cat__city_Santa Rosa,0
+cat__city_Santana,0
+cat__city_Aparecida de Goiânia,0
+cat__city_Apizaco,0
+cat__city_Apodaca,0
+cat__city_Sanya,0
+cat__city_Sapporo,0
+cat__city_Saraburi,0
+cat__city_Sarat Ubaida,0
+cat__city_Saratov,0
+cat__city_Sargodha,0
+cat__city_Sasebo,0
+cat__city_Ar Rass,0
+cat__city_Aracaju,0
+cat__city_Savannah,0
+cat__city_Savar,0
+cat__city_Sawla,0
+cat__city_Arao,0
+cat__city_Arapiraca,0
+cat__city_Sebeta,0
+cat__city_Arar,0
+cat__city_Semarang,0
+cat__city_Argenteuil,0
+cat__city_Sendai,0
+cat__city_Seogwipo,0
+cat__city_Seongnam,0
+cat__city_Arish,0
+cat__city_Arkhangelsk,0
+cat__city_Serra,0
+cat__city_Armant,0
+cat__city_Shanghai-Baoshan,0
+cat__city_Shanghai-Huangpu,0
+cat__city_Shanghai-Minhang,0
+cat__city_Shanghai-Pudong,0
+cat__city_Armavir,0
+cat__city_Shaoxing,0
+cat__city_Artvin,0
+cat__city_Shariatpur,0
+cat__city_Sharm El Sheikh,0
+cat__city_Sharurah,0
+cat__city_Shashamane,0
+cat__city_Asahikawa,0
+cat__city_Sheikh Zayed,0
+cat__city_Sheikh Zuweid,0
+cat__city_Sheikhupura,0
+cat__city_Asan,0
+cat__city_Shenzhen,0
+cat__city_Shepparton,0
+cat__city_Sherpur,0
+cat__city_Asayita,0
+cat__city_Asella,0
+cat__city_Shigatse,0
+cat__city_Ashikaga,0
+cat__city_Shikarpur,0
+cat__city_Ashmoun,0
+cat__city_Shimanto,0
+cat__city_Shimla,0
+cat__city_Shimonoseki,0
+cat__city_Ashulia,0
+cat__city_Asnières-sur-Seine,0
+cat__city_Shire,0
+cat__city_Asosa,0
+cat__city_Aswan,0
+cat__city_Shorouk,0
+cat__city_Shreveport,0
+cat__city_Asyut,0
+cat__city_Sialkot,0
+cat__city_Sibi,0
+cat__city_Atlanta,0
+cat__city_Siheung,0
+cat__city_Siirt,0
+cat__city_Silay,0
+cat__city_Silchar,0
+cat__city_Auchi,0
+cat__city_Silvassa,0
+cat__city_Augsburg,0
+cat__city_Augusta,0
+cat__city_Aurangabad,0
+cat__city_Aurora,0
+cat__city_Sioux Falls,0
+cat__city_Avignon,0
+cat__city_Siping,0
+cat__city_Sirajganj,0
+cat__city_Awash,0
+cat__city_Sisaket,0
+cat__city_Sitakunda,0
+cat__city_Sivas,0
+cat__city_Awka,0
+cat__city_Skardu,0
+cat__city_Axum,0
+cat__city_Smolensk,0
+cat__city_Sobral,0
+cat__city_Soc Trang,0
+cat__city_Sochi,0
+cat__city_Sohag,0
+cat__city_Sokcho,0
+cat__city_Sokoto,0
+cat__city_Solan,0
+cat__city_Son La,0
+cat__city_Son Tay,0
+cat__city_Song Cau,0
+cat__city_Songkhla,0
+cat__city_Aydin,0
+cat__city_Azare,0
+cat__city_Sorsogon City,0
+cat__city_South Bend,0
+cat__city_South Burlington,0
+cat__city_Southampton,0
+cat__city_Southaven,0
+cat__city_Southend-on-Sea,0
+cat__city_Soweto,0
+cat__city_Spokane,0
+cat__city_Springfield,0
+cat__city_Springs,0
+cat__city_Sreemangal,0
+cat__city_Srinagar,0
+cat__city_St. Louis,0
+cat__city_St. Paul,0
+cat__city_Stamford,0
+cat__city_Bac Giang,0
+cat__city_Stavropol,0
+cat__city_Bac Kan,0
+cat__city_Bac Lieu,0
+cat__city_Stoke-on-Trent,0
+cat__city_Bader,0
+cat__city_Badin,0
+cat__city_Subang,0
+cat__city_Suez,0
+cat__city_Badr,0
+cat__city_Sukabumi,0
+cat__city_Sukhothai,0
+cat__city_Sukkur,0
+cat__city_Suleja,0
+cat__city_Sumedang,0
+cat__city_Sunamganj,0
+cat__city_Sunbury,0
+cat__city_Suncheon,0
+cat__city_Bagerhat,0
+cat__city_Sunshine Coast,0
+cat__city_Suphan Buri,0
+cat__city_Surabaya,0
+cat__city_Surakarta,0
+cat__city_Bago,0
+cat__city_Surat Thani,0
+cat__city_Bahawalpur,0
+cat__city_Bahir Dar,0
+cat__city_Surin,0
+cat__city_Suwon,0
+cat__city_Baiyin,0
+cat__city_Balanga,0
+cat__city_Bale Robe,0
+cat__city_Swansea,0
+cat__city_Swindon,0
+cat__city_Sydney,0
+cat__city_Syktyvkar,0
+cat__city_Sylhet,0
+cat__city_Balikesir,0
+cat__city_Ballarat,0
+cat__city_Baltim,0
+cat__city_São Luís,0
+cat__city_Baltimore,0
+cat__city_Tabaco,0
+cat__city_Tabuk,0
+cat__city_Bama,0
+cat__city_Tacoma,0
+cat__city_Tacurong,0
+cat__city_Taebaek,0
+cat__city_Taganrog,0
+cat__city_Bambasi,0
+cat__city_Bandarban,0
+cat__city_Taguatinga,0
+cat__city_Taguig,0
+cat__city_Tagum,0
+cat__city_Tahta,0
+cat__city_Bandung,0
+cat__city_Taipa,0
+cat__city_Bangkok,0
+cat__city_Tak,0
+cat__city_Takamatsu,0
+cat__city_Takaoka,0
+cat__city_Bangor,0
+cat__city_Banha,0
+cat__city_Talkha,0
+cat__city_Tallahassee,0
+cat__city_Tam Diep,0
+cat__city_Tam Ky,0
+cat__city_Tambuwal,0
+cat__city_Tamiya,0
+cat__city_Tampa,0
+cat__city_Tampico,0
+cat__city_Tamworth,0
+cat__city_Tan An,0
+cat__city_Tanabe,0
+cat__city_Bannu,0
+cat__city_Tandag,0
+cat__city_Banyuwangi,0
+cat__city_Tangail,0
+cat__city_Bao Loc,0
+cat__city_Baoji,0
+cat__city_Baqaa,0
+cat__city_Barguna,0
+cat__city_Baris,0
+cat__city_Tanta,0
+cat__city_Tapachula,0
+cat__city_Barishal,0
+cat__city_Tarlac City,0
+cat__city_Tasikmalaya,0
+cat__city_Tathleeth,0
+cat__city_Tay Ninh,0
+cat__city_Tayma,0
+cat__city_Tegal,0
+cat__city_Barnaul,0
+cat__city_Tekirdag,0
+cat__city_Teknaf,0
+cat__city_Tepi,0
+cat__city_Tepic,0
+cat__city_Teresina,0
+cat__city_Ternate,0
+cat__city_Thadiq,0
+cat__city_Thai Binh,0
+cat__city_Thai Nguyen,0
+cat__city_Thakurgaon,0
+cat__city_Thanh Hoa,0
+cat__city_Thatta,0
+cat__city_Thiruvananthapuram,0
+cat__city_Thohoyandou,0
+cat__city_Thoubal,0
+cat__city_Thrissur,0
+cat__city_Thu Dau Mot,0
+cat__city_Thuan An,0
+cat__city_Tianjin-Binhai,0
+cat__city_Tianjin-Heping,0
+cat__city_Tianjin-Nankai,0
+cat__city_Tianshui,0
+cat__city_Tijuana,0
+cat__city_Barry,0
+cat__city_Timon,0
+cat__city_Tiruchirappalli,0
+cat__city_Tirupati,0
+cat__city_Tlalnepantla,0
+cat__city_Tlaquepaque,0
+cat__city_Bartin,0
+cat__city_Toba Tek Singh,0
+cat__city_Tokat,0
+cat__city_Bathurst,0
+cat__city_Tokushima,0
+cat__city_Bati,0
+cat__city_Baton Rouge,0
+cat__city_Tolyatti,0
+cat__city_Tomsk,0
+cat__city_Tonalá,0
+cat__city_Batu,0
+cat__city_Tongi,0
+cat__city_Baubau,0
+cat__city_Bauchi,0
+cat__city_Topeka,0
+cat__city_Torreón,0
+cat__city_Tosu,0
+cat__city_Tottori,0
+cat__city_Toulon,0
+cat__city_Baybay,0
+cat__city_Tourcoing,0
+cat__city_Tours,0
+cat__city_Townsville,0
+cat__city_Toyama,0
+cat__city_Beanibazar,0
+cat__city_Toyota,0
+cat__city_Tra Vinh,0
+cat__city_Trabzon,0
+cat__city_Trang,0
+cat__city_Traralgon,0
+cat__city_Trat,0
+cat__city_Beihai,0
+cat__city_Trier,0
+cat__city_Trishal,0
+cat__city_Troyes,0
+cat__city_Três Lagoas,0
+cat__city_Beijing-Haidian,0
+cat__city_Tsuen Wan,0
+cat__city_Tsukuba,0
+cat__city_Tsuruoka,0
+cat__city_Beijing-Tongzhou,0
+cat__city_Tuban,0
+cat__city_Tucson,0
+cat__city_Tuguegarao,0
+cat__city_Tula,0
+cat__city_Tulancingo,0
+cat__city_Tulsa,0
+cat__city_Tura,0
+cat__city_Turabah,0
+cat__city_Turaif,0
+cat__city_Turbat,0
+cat__city_Tuxtla Gutiérrez,0
+cat__city_Tuy Hoa,0
+cat__city_Tuyen Quang,0
+cat__city_Tver,0
+cat__city_Bekasi,0
+cat__city_Tzaneen,0
+cat__city_Ube,0
+cat__city_Bela-Bela,0
+cat__city_Ubon Ratchathani,0
+cat__city_Udaipur,0
+cat__city_Udon Thani,0
+cat__city_Ueda,0
+cat__city_Ufa,0
+cat__city_Belfast,0
+cat__city_Uji,0
+cat__city_Ujjain,0
+cat__city_Ulan-Ude,0
+cat__city_Ulm,0
+cat__city_Belfort,0
+cat__city_Ulyanovsk,0
+cat__city_Umerkot,0
+cat__city_Umluj,0
+cat__city_Umuahia,0
+cat__city_Unaizah,0
+cat__city_Uong Bi,0
+cat__city_Upington,0
+cat__city_Uruapan,0
+cat__city_Belgaum,0
+cat__city_Belgorod,0
+cat__city_Uthai Thani,0
+cat__city_Utsunomiya,0
+cat__city_Uttaradit,0
+cat__city_Uyo,0
+cat__city_Belo Horizonte,0
+cat__city_Valence,0
+cat__city_Ben Tre,0
+cat__city_Valenciennes,0
+cat__city_Bend,0
+cat__city_Van,0
+cat__city_Bendigo,0
+cat__city_Bengaluru,0
+cat__city_Vannes,0
+cat__city_Beni Suef,0
+cat__city_Vasco da Gama,0
+cat__city_Vehari,0
+cat__city_Veliky Novgorod,0
+cat__city_Veracruz,0
+cat__city_Benin City,0
+cat__city_Vi Thanh,0
+cat__city_Victor Harbor,0
+cat__city_Benoni,0
+cat__city_Bensa,0
+cat__city_Beppu,0
+cat__city_Vila Velha,0
+cat__city_Villahermosa,0
+cat__city_Villeneuve-d'Ascq,0
+cat__city_Besançon,0
+cat__city_Vinh,0
+cat__city_Vinh Long,0
+cat__city_Vinh Phuc,0
+cat__city_Virginia,0
+cat__city_Virginia Beach,0
+cat__city_Visakhapatnam,0
+cat__city_Vitry-sur-Seine,0
+cat__city_Vitória,0
+cat__city_Vitória da Conquista,0
+cat__city_Vladikavkaz,0
+cat__city_Vladimir,0
+cat__city_Vladivostok,0
+cat__city_Volgograd,0
+cat__city_Vologda,0
+cat__city_Volzhsky,0
+cat__city_Voronezh,0
+cat__city_Vung Tau,0
+cat__city_Bethlehem,0
+cat__city_Betim,0
+cat__city_Wadi ad-Dawasir,0
+cat__city_Bhaluka,0
+cat__city_Wah Cantonment,0
+cat__city_Wakayama,0
+cat__city_Wakefield,0
+cat__city_Walsall,0
+cat__city_Bhola,0
+cat__city_Bhopal,0
+cat__city_Biba,0
+cat__city_Warren,0
+cat__city_Warri,0
+cat__city_Warrington,0
+cat__city_Warrnambool,0
+cat__city_Warwick,0
+cat__city_Washington,0
+cat__city_Watford,0
+cat__city_Bielefeld,0
+cat__city_Weimar,0
+cat__city_Weinan,0
+cat__city_Welkite,0
+cat__city_Welkom,0
+cat__city_Wellington,0
+cat__city_Wenchang,0
+cat__city_Wenzhou,0
+cat__city_Bien Hoa,0
+cat__city_Westminster,0
+cat__city_Bilaspur,0
+cat__city_Wichita,0
+cat__city_Wiesbaden,0
+cat__city_Wilmington,0
+cat__city_Wittenberg,0
+cat__city_Bilbeis,0
+cat__city_Woldiya,0
+cat__city_Wolfsburg,0
+cat__city_Wollongong,0
+cat__city_Wolverhampton,0
+cat__city_Wonju,0
+cat__city_Worabe,0
+cat__city_Worcester,0
+cat__city_Wrexham,0
+cat__city_Billings,0
+cat__city_Bima,0
+cat__city_Wuhu,0
+cat__city_Wuppertal,0
+cat__city_Wurzburg,0
+cat__city_Bingol,0
+cat__city_Birnin Kebbi,0
+cat__city_Xalapa,0
+cat__city_Xi'an,0
+cat__city_Xiamen,0
+cat__city_Bisha,0
+cat__city_Bishoftu,0
+cat__city_Xianyang,0
+cat__city_Bislig,0
+cat__city_Xining,0
+cat__city_Bismarck,0
+cat__city_Xuzhou,0
+cat__city_Yakutsk,0
+cat__city_Yala,0
+cat__city_Yalova,0
+cat__city_Yamagata,0
+cat__city_Yamaguchi,0
+cat__city_Yan'an,0
+cat__city_Bitlis,0
+cat__city_Yangju,0
+cat__city_Bitung,0
+cat__city_Blackpool,0
+cat__city_Yaroslavl,0
+cat__city_Yatsushiro,0
+cat__city_Yekaterinburg,0
+cat__city_Yen Bai,0
+cat__city_Yenagoa,0
+cat__city_Yeongcheon,0
+cat__city_Yeongju,0
+cat__city_Blagoveshchensk,0
+cat__city_Blitar,0
+cat__city_Yinchuan,0
+cat__city_Yirgalem,0
+cat__city_Yokkaichi,0
+cat__city_Yokohama,0
+cat__city_Yokote,0
+cat__city_Yola,0
+cat__city_Yonago,0
+cat__city_Yongin,0
+cat__city_Bloemfontein,0
+cat__city_Zhuhai,0
+cat__city_Zhuzhou,0
+cat__city_Zibo,0
+cat__city_Zifta,0
+cat__city_Blumenau,0
+cat__city_Zonguldak,0
+cat__city_Zulfi,0
+cat__city_Zunyi,0
+cat__city_Zwickau,0
+cat__city_Bogor,0
+cat__city_Évreux,0
+cat__city_Boise,0
+cat__city_Bojonegoro,0
+cat__city_Boksburg,0
+cat__city_Bolton,0
+cat__city_Bonga,0
+cat__city_Bonn,0
+cat__city_Bordeaux,0
+cat__city_Borg El Arab,0
+cat__city_Boryeong,0
+cat__city_Boston,0
+cat__city_Botshabelo,0
+cat__city_Boulogne-Billancourt,0
+cat__city_Bourges,0
+cat__city_Bournemouth,0
+cat__city_Bowling Green,0
+cat__city_Bozeman,0
+cat__city_Bradford,0
+cat__city_Brahmanbaria,0
+cat__city_Brandenburg an der Havel,0
+cat__city_Zhob,0

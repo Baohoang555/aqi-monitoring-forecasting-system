@@ -82,4 +82,12 @@ ph05_classification/models/stacking_ensemble_transformed.pkl
 
 # Optional cache/temp files
 __pycache__/
+
 *.pyc
+*.pkl
+*.joblib
+*.parquet
+outputs/ph03/processed_airglobal_features.pkl
+outputs/ph03/processed_airglobal_features.csv
+models/*.pkl
+models/*.joblib
