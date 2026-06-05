@@ -1,5 +1,5 @@
-from .connection import engine, SessionLocal
-from .session import get_session
-from .models import Base, AqiHistory, OlapCubeFact, ModelEvaluation
-
+from .connection import engine
+from .session import SessionLocal
+# Thay thế các class cũ bằng các class Star Schema mới của bạn
+from .models import Base, FactAqiReading, DimTime, DimLocation, DimPollutant, CubeCitySeason, ModelEvaluation
 __all__ = ["engine", "SessionLocal", "get_session", "Base", "AqiHistory", "OlapCubeFact", "ModelEvaluation"]

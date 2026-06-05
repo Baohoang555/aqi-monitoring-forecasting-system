@@ -6,7 +6,7 @@ Cài đặt:
     pip install streamlit pymysql sqlalchemy pandas plotly
 
 Chạy:
-    streamlit run dashboard/olap_dashboard.py
+    streamlit run olap_dashboard.py
 """
 
 import pandas as pd

@@ -2,104 +2,105 @@ from typing import Optional
 from sqlalchemy import select, func
 from sqlalchemy.orm import Session
 
-from database.models import AqiHistory
+# Import bảng Cube vật hóa đã được Bảo tối ưu bằng BUC
+from database.models import CubeCitySeason
 
 class CubeRepository:
     def __init__(self, session: Session):
         self.session = session
 
-    def _apply_filters(self, stmt, city: Optional[str], district: Optional[str], year: Optional[int], season: Optional[str], month: Optional[int]):
+    def _apply_filters(self, stmt, city: Optional[str], district: Optional[str], season: Optional[str], hour: Optional[int]):
+        """Áp dụng bộ lọc trực tiếp trên các chiều của bảng Iceberg Cube"""
         if city:
-            stmt = stmt.where(AqiHistory.city.ilike(f"%{city}%"))
+            stmt = stmt.where(CubeCitySeason.city.ilike(f"%{city}%"))
         if district:
-            stmt = stmt.where(AqiHistory.district.ilike(f"%{district}%"))
-        if year:
-            stmt = stmt.where(AqiHistory.year == year)
+            stmt = stmt.where(CubeCitySeason.district.ilike(f"%{district}%"))
         if season:
-            stmt = stmt.where(AqiHistory.season.ilike(f"%{season}%"))
-        if month:
-            stmt = stmt.where(AqiHistory.month == month)
+            stmt = stmt.where(CubeCitySeason.season.ilike(f"%{season}%"))
+        if hour is not None:
+            stmt = stmt.where(CubeCitySeason.hour == hour)
         return stmt
 
-    def slice(self, city: Optional[str] = None, season: Optional[str] = None, year: Optional[int] = None) -> list[dict]:
+    def slice(self, city: Optional[str] = None, season: Optional[str] = None) -> list[dict]:
+        """OLAP Slice: Cắt lát dữ liệu (ví dụ: Xem toàn bộ dữ liệu thuộc về riêng 'Mùa khô')"""
         stmt = select(
-            AqiHistory.city,
-            AqiHistory.year,
-            AqiHistory.season,
-            AqiHistory.month,
-            func.avg(AqiHistory.aqi).label("average_aqi"),
-            func.count(AqiHistory.id).label("records"),
-        ).group_by(AqiHistory.city, AqiHistory.year, AqiHistory.season, AqiHistory.month)
-        stmt = self._apply_filters(stmt, city, None, year, season, None)
-        rows = self.session.execute(stmt).all()
-        return [
-            {
-                "city": row.city,
-                "year": row.year,
-                "season": row.season,
-                "month": row.month,
-                "average_aqi": float(row.average_aqi) if row.average_aqi is not None else None,
-                "records": row.records,
-            }
-            for row in rows
-        ]
-
-    def dice(self, city: Optional[str] = None, year: Optional[int] = None, season: Optional[str] = None, district: Optional[str] = None) -> list[dict]:
-        stmt = select(
-            AqiHistory.city,
-            AqiHistory.district,
-            AqiHistory.year,
-            AqiHistory.season,
-            func.avg(AqiHistory.aqi).label("average_aqi"),
-            func.count(AqiHistory.id).label("records"),
-        ).group_by(AqiHistory.city, AqiHistory.district, AqiHistory.year, AqiHistory.season)
-        stmt = self._apply_filters(stmt, city, district, year, season, None)
+            CubeCitySeason.city,
+            CubeCitySeason.district,
+            CubeCitySeason.hour,
+            CubeCitySeason.season,
+            CubeCitySeason.avg_aqi,
+            CubeCitySeason.reading_count.label("records")
+        )
+        stmt = self._apply_filters(stmt, city, None, season, None)
         rows = self.session.execute(stmt).all()
         return [
             {
                 "city": row.city,
                 "district": row.district,
-                "year": row.year,
+                "hour": row.hour,
                 "season": row.season,
-                "average_aqi": float(row.average_aqi) if row.average_aqi is not None else None,
+                "average_aqi": row.avg_aqi,
                 "records": row.records,
             }
             for row in rows
         ]
 
-    def drilldown(self, dimensions: list[str], city: Optional[str] = None, year: Optional[int] = None, season: Optional[str] = None) -> list[dict]:
-        valid_dimensions = []
-        columns = []
-        for dim in dimensions:
-            if hasattr(AqiHistory, dim):
-                valid_dimensions.append(dim)
-                columns.append(getattr(AqiHistory, dim))
-        if not valid_dimensions:
-            return []
-        stmt = select(*columns, func.avg(AqiHistory.aqi).label("average_aqi"), func.count(AqiHistory.id).label("records"))
-        stmt = stmt.group_by(*columns).order_by(*columns)
-        stmt = self._apply_filters(stmt, city, None, year, season, None)
+    def dice(self, city: Optional[str] = None, district: Optional[str] = None, season: Optional[str] = None, hour: Optional[int] = None) -> list[dict]:
+        """OLAP Dice: Lọc đồng thời trên nhiều chiều để tạo khối con (Sub-cube)"""
+        stmt = select(
+            CubeCitySeason.city,
+            CubeCitySeason.district,
+            CubeCitySeason.hour,
+            CubeCitySeason.season,
+            CubeCitySeason.avg_aqi,
+            CubeCitySeason.reading_count.label("records")
+        )
+        stmt = self._apply_filters(stmt, city, district, season, hour)
         rows = self.session.execute(stmt).all()
-        results = []
-        for row in rows:
-            entry = {dim: getattr(row, dim) for dim in valid_dimensions}
-            entry.update({"average_aqi": float(row.average_aqi) if row.average_aqi is not None else None, "records": row.records})
-            results.append(entry)
-        return results
+        return [
+            {
+                "city": row.city,
+                "district": row.district,
+                "hour": row.hour,
+                "season": row.season,
+                "average_aqi": row.avg_aqi,
+                "records": row.records,
+            }
+            for row in rows
+        ]
 
-    def rollup(self, dimensions: list[str], city: Optional[str] = None, year: Optional[int] = None, season: Optional[str] = None) -> list[dict]:
+    def drilldown(self, dimensions: list[str], city: Optional[str] = None, season: Optional[str] = None) -> list[dict]:
+        """OLAP Drill-down: Khoan sâu dữ liệu từ mức tổng quan xuống mức chi tiết hơn 
+        (Dựa trên các chiều có sẵn trong Cube vật hóa: city -> district -> hour)"""
+        return self.rollup(dimensions, city, season)
+
+    def rollup(self, dimensions: list[str], city: Optional[str] = None, season: Optional[str] = None) -> list[dict]:
+        """OLAP Roll-up: Thu nhỏ dữ liệu, gộp các chiều chi tiết thành chiều tổng quan hơn"""
         if not dimensions:
             return []
-        columns = [getattr(AqiHistory, dim) for dim in dimensions if hasattr(AqiHistory, dim)]
+            
+        # Lấy danh sách các cột hợp lệ từ bảng Cube vật hóa
+        columns = [getattr(CubeCitySeason, dim) for dim in dimensions if hasattr(CubeCitySeason, dim)]
         if not columns:
             return []
-        stmt = select(*columns, func.avg(AqiHistory.aqi).label("average_aqi"), func.count(AqiHistory.id).label("records"))
+            
+        # Tính toán lại hàm gom cụm (Aggregate) dựa trên dữ liệu đã được tổng hợp sơ bộ của Cube
+        # Tránh được việc phải quét lại bảng Fact gốc 10.7 triệu dòng
+        stmt = select(
+            *columns, 
+            func.avg(CubeCitySeason.avg_aqi).label("average_aqi"), 
+            func.sum(CubeCitySeason.reading_count).label("records")
+        )
         stmt = stmt.group_by(*columns).order_by(*columns)
-        stmt = self._apply_filters(stmt, city, None, year, season, None)
+        stmt = self._apply_filters(stmt, city, None, season, None)
+        
         rows = self.session.execute(stmt).all()
         results = []
         for row in rows:
-            entry = {dim: getattr(row, dim) for dim in dimensions if hasattr(AqiHistory, dim)}
-            entry.update({"average_aqi": float(row.average_aqi) if row.average_aqi is not None else None, "records": row.records})
+            entry = {dim: getattr(row, dim) for dim in dimensions if hasattr(CubeCitySeason, dim)}
+            entry.update({
+                "average_aqi": float(row.average_aqi) if row.average_aqi is not None else None, 
+                "records": int(row.records) if row.records is not None else 0
+            })
             results.append(entry)
         return results

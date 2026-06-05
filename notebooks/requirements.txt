@@ -1,0 +1,19 @@
+# Base Data Processing
+pandas==2.2.2
+numpy==1.26.4
+
+# Data Lake File Formats (Parquet Support)
+pyarrow==16.1.0
+fastparquet==2024.5.0
+
+# Database Connectivity (MariaDB / MySQL)
+mysql-connector-python==8.4.0
+pymysql==1.1.1
+
+# Workflow Orchestration (Airflow & Providers)
+# Ghi chú: Airflow sẽ tự động cài kèm theo phiên bản sqlalchemy tương thích phù hợp (<2.0)
+apache-airflow==2.9.1
+apache-airflow-providers-mysql==5.6.2
+
+# Data Validation & Analysis
+scipy==1.13.0
