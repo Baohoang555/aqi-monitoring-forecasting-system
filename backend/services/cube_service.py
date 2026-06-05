@@ -27,3 +27,9 @@ class CubeService:
         with get_session() as session:
             repository = CubeRepository(session)
             return repository.rollup(dimensions=dimensions, city=city, year=year, season=season)
+    
+    @staticmethod
+    def slice_by_year(city: Optional[str] = None, season: Optional[str] = None) -> list[dict]:
+        with get_session() as session:
+            repository = CubeRepository(session)
+            return repository.slice_by_year(city=city, season=season)

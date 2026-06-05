@@ -7,6 +7,8 @@ from core.logging_config import setup_logging
 from services import model_service
 from api import predict, current, health, model_info, warehouse
 from api import historical, olap, dashboard
+from api import admin
+
 
 # Initialize logging
 setup_logging()
@@ -29,6 +31,8 @@ app.include_router(warehouse.router, tags=["Warehouse"])
 app.include_router(historical.router, tags=["Historical"])
 app.include_router(olap.router, tags=["OLAP"])
 app.include_router(dashboard.router, tags=["Dashboard"])
+app.include_router(admin.router, tags=["Admin"])
+
 
 @app.middleware("http")
 async def log_requests(request: Request, call_next):

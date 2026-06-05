@@ -48,3 +48,11 @@ def olap_rollup(
         raise HTTPException(status_code=400, detail="At least one dimension is required for rollup")
     data = CubeService.rollup(dimensions=dimensions, city=city, year=year, season=season)
     return ApiResponse(success=True, data=data)
+
+@router.get("/olap/slice-by-year", response_model=ApiResponse[list[OlapRecord]])
+def olap_slice_by_year(
+    city: str | None = Query(None),
+    season: str | None = Query(None),
+):
+    data = CubeService.slice_by_year(city=city, season=season)
+    return ApiResponse(success=True, data=data)

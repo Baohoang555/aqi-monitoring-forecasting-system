@@ -15,7 +15,7 @@ import streamlit as st
 from sqlalchemy import create_engine, text
 
 # ─── Kết nối ─────────────────────────────────────────────────────────────
-DB_URL = "mysql+pymysql://root:130225@localhost:3306/aqi_dw?charset=utf8mb4"
+DB_URL = "mysql+pymysql://root:123@localhost:3306/aqi_dw?charset=utf8mb4"
 
 
 @st.cache_resource

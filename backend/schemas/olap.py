@@ -10,10 +10,17 @@ class OlapQuery(BaseModel):
     dimensions: Optional[List[str]] = Field(None, description="Dimensions to drilldown or rollup")
 
 class OlapRecord(BaseModel):
-    city: Optional[str]
-    district: Optional[str]
-    year: Optional[int]
-    season: Optional[str]
-    month: Optional[int]
-    average_aqi: Optional[float]
-    records: int
+    city: Optional[str] = None
+    district: Optional[str] = None
+    year: Optional[int] = None
+    season: Optional[str] = None
+    month: Optional[int] = None
+    hour: Optional[int] = None
+    average_aqi: Optional[float] = None
+    records: Optional[int] = None
+    # Thêm các field này:
+    country: Optional[str] = None
+    pollutant_code: Optional[str] = None
+    max_aqi: Optional[float] = None
+    avg_conc: Optional[float] = None
+    unhealthy_cnt: Optional[int] = None

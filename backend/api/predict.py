@@ -45,20 +45,31 @@ def predict(payload: PredictionRequest):
         logger.error(f"Prediction failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+    raw = prediction.get("predicted_aqi")
+
+    if isinstance(raw, str):
+        predicted_aqi_num = None
+        category = prediction.get("category") or raw
+    else:
+        predicted_aqi_num = float(raw) if raw is not None else None
+        category = prediction.get("category") or ""
+
+    input_features = payload.features or {
+        k: v for k, v in {
+            "pm25": payload.pm25,
+            "pm10": payload.pm10,
+            "no2": payload.no2,
+            "o3": payload.o3,
+            "temperature": payload.temperature,
+            "humidity": payload.humidity,
+        }.items() if v is not None
+    }
+
     details = PredictionDetails(
-        predicted_aqi=prediction.get("predicted_aqi"),
-        category=prediction.get("category"),
-        model_type=prediction.get("model_type"),
-        input_features=payload.features or {
-            k: v for k, v in {
-                "pm25": payload.pm25,
-                "pm10": payload.pm10,
-                "no2": payload.no2,
-                "o3": payload.o3,
-                "temperature": payload.temperature,
-                "humidity": payload.humidity,
-            }.items() if v is not None
-        },
+        predicted_aqi=predicted_aqi_num,
+        category=category,
+        model_type=prediction.get("model_type", "unknown"),
+        input_features=input_features,
     )
 
     cache_service.set("predict", cache_key, details.model_dump(), ttl=cache_service.PREDICT_TTL)

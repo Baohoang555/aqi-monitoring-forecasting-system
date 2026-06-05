@@ -81,17 +81,18 @@ class FactAqiReading(Base):
 # ==========================================
 
 class CubeCitySeason(Base):
-    """Thay thế hoàn toàn bảng 'olap_cube' cũ của Thọ bằng khối 
-    vật hóa từ thuật toán BUC của Bảo (Đã tối ưu min_sup = 100)"""
     __tablename__ = "cube_city_season"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    city = Column(String(255), index=True)
-    district = Column(String(255), index=True) # Nếu phân tách sâu hơn trong cube
-    hour = Column(Integer, index=True)
-    season = Column(String(50), index=True)
-    avg_aqi = Column(Float)                    # Giá trị tính toán sẵn
-    reading_count = Column(Integer)            # Thỏa mãn ngưỡng min_sup >= 100
+    city = Column(String(100), index=True)
+    country = Column(String(100))
+    season = Column(String(10), index=True)
+    pollutant_code = Column(String(20))
+    reading_count = Column(Integer)
+    avg_aqi = Column(Float)
+    max_aqi = Column(Integer)
+    avg_conc = Column(Float)
+    unhealthy_cnt = Column(Integer)
 
 
 # ==========================================

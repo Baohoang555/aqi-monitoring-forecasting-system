@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, text
 
-DB_URL = "mysql+pymysql://root:130225@localhost:3306/aqi_dw?charset=utf8mb4"
+DB_URL = "mysql+pymysql://root:123@localhost:3306/aqi_dw?charset=utf8mb4"
 engine = create_engine(DB_URL, pool_pre_ping=True)
 MIN_SUP = 100
 

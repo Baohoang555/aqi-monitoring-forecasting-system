@@ -3,12 +3,14 @@ import Dashboard from "./pages/Dashboard"
 import MapAQI from "./pages/MapAQI"
 import OLAPViewer from "./pages/OLAPViewer"
 import Admin from "./pages/Admin"
+import Visualization from "./pages/Visualization"
 
 const MENU = [
   { key: "dashboard", label: "Dashboard" },
-  { key: "map",       label: "Bản đồ AQI" },
-  { key: "olap",      label: "OLAP Viewer" },
-  { key: "admin",     label: "Admin" },
+  { key: "map", label: "Bản đồ AQI" },
+  { key: "olap", label: "OLAP Viewer" },
+  { key: "visualization", label: "Trực quan hóa" },
+  { key: "admin", label: "Admin" },
 ]
 
 export default function App() {
@@ -19,6 +21,7 @@ export default function App() {
     if (page === "map")       return <MapAQI />
     if (page === "olap")      return <OLAPViewer />
     if (page === "admin")     return <Admin />
+    if (page === "visualization") return <Visualization />
   }
 
   return (

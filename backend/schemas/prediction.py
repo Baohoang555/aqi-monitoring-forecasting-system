@@ -12,7 +12,7 @@ class PredictionRequest(BaseModel):
     features: Optional[Dict[str, float]] = Field(None, description="Optional full feature vector for model inference")
 
 class PredictionDetails(BaseModel):
-    predicted_aqi: Optional[float]
+    predicted_aqi: Optional[float] = None
     category: str
     model_type: str
     input_features: Dict[str, float]
