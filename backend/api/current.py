@@ -282,3 +282,18 @@ def get_all_stations_aqi(db: Session = Depends(get_session)):
         }
     except Exception as e:
         return {"success": False, "detail": str(e)}
+    
+@router.get("/model-evaluation")
+def get_model_evaluation(db: Session = Depends(get_session)):
+    try:
+        from database.models import ModelEvaluation
+        rows = db.query(ModelEvaluation).all()
+        return {
+            "success": True,
+            "data": [
+                {"model_name": r.model_name, "metric": r.metric, "value": r.value}
+                for r in rows
+            ]
+        }
+    except Exception as e:
+        return {"success": False, "detail": str(e)}
