@@ -3,15 +3,16 @@ from sqlalchemy import select, func
 from sqlalchemy.orm import Session
 
 # Import cấu trúc Star Schema mới của Bảo
-from database.models import FactAqiReading, DimLocation, DimTime
+from database.models import FactAqiReading, DimLocation, DimTime, CubeCitySeason
 
 class FactRepository:
     def __init__(self, session: Session):
         self.session = session
 
     def list_cities(self) -> list[str]:
-        # Thay vì chọn từ bảng phẳng, chọn distinct(city) từ bảng chiều DimLocation
-        stmt = select(DimLocation.city).distinct().order_by(DimLocation.city)
+        # Trả về danh sách thành phố hiện có dữ liệu trong khối cube,
+        # để frontend chỉ vẽ những trạm thực sự có dữ liệu current.
+        stmt = select(CubeCitySeason.city).distinct().order_by(CubeCitySeason.city)
         return [city for city, in self.session.execute(stmt).all()]
 
     def _apply_filters(self, stmt, city: Optional[str], district: Optional[str], year: Optional[int], month: Optional[int], season: Optional[str]):
