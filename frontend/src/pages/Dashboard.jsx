@@ -155,26 +155,6 @@ export default function Dashboard() {
     }).then(r => setPrediction(r.data?.data || null))
       .catch(() => setPrediction(null))
       .finally(() => setPredLoading(false))
-
-    if (cityInfo.lat && cityInfo.lon) {
-      axios.get(`https://api.open-meteo.com/v1/forecast`, {
-        params: {
-          latitude: cityInfo.lat,
-          longitude: cityInfo.lon,
-          current: "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m,weather_code",
-          timezone: "auto",
-        }
-      }).then(r => {
-        const c = r.data?.current
-        if (c) setWeather({
-          temp: c.temperature_2m,
-          humidity: c.relative_humidity_2m,
-          precip: c.precipitation,
-          wind: c.wind_speed_10m,
-          code: c.weather_code,
-        })
-      }).catch(() => setWeather(null))
-    }
   }, [selected, cityData])
 
   const current = cityData[selected] ?? null
