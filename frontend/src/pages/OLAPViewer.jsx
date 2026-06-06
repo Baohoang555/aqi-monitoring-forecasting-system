@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import axios from "axios"
 
 const API = "http://localhost:8000"
@@ -31,6 +31,10 @@ export default function OLAPViewer() {
       .catch(() => setData([]))
       .finally(() => setLoading(false))
   }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16, height: "calc(100vh - 48px)" }}>

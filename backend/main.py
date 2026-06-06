@@ -9,7 +9,6 @@ from api import predict, current, health, model_info, warehouse
 from api import historical, olap, dashboard
 from api import admin
 
-
 # Initialize logging
 setup_logging()
 logger = logging.getLogger(__name__)
