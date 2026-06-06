@@ -141,10 +141,12 @@ def get_current_aqi(city: str, db: Session = Depends(get_session)):
     try:
         # Lấy dữ liệu pollutant thực tế từ khối cube hiện tại.
         sql = text("""
-            SELECT pollutant_code, AVG(avg_aqi) as avg_aqi
-            FROM cube_city_season
-            WHERE city = :city
-            GROUP BY pollutant_code
+            SELECT p.pollutant_code, AVG(f.concentration) as avg_concentration
+            FROM fact_aqi_reading f
+            JOIN dim_location l ON f.location_key = l.location_key
+            JOIN dim_pollutant p ON f.pollutant_key = p.pollutant_key
+            WHERE l.city = :city
+            GROUP BY p.pollutant_code
         """)
         result = db.execute(sql, {"city": city}).fetchall()
         
@@ -199,12 +201,15 @@ def get_all_stations_aqi(db: Session = Depends(get_session)):
         # Bước A: Lấy dữ liệu pollutant-specific từ cube, để frontend được giá trị PM2.5 / PM10 / NO2 chính xác.
         sql = text("""
             SELECT
-                city,
-                AVG(CASE WHEN pollutant_code IN ('PM2.5','PM25') THEN avg_aqi END) AS pm25,
-                AVG(CASE WHEN pollutant_code = 'PM10' THEN avg_aqi END) AS pm10,
-                AVG(CASE WHEN pollutant_code = 'NO2' THEN avg_aqi END) AS no2
-            FROM cube_city_season
-            GROUP BY city
+                l.city,
+                AVG(CASE WHEN p.pollutant_code IN ('PM2.5','PM25') THEN f.concentration END) AS pm25,
+                AVG(CASE WHEN p.pollutant_code = 'PM10' THEN f.concentration END) AS pm10,
+                AVG(CASE WHEN p.pollutant_code = 'NO2' THEN f.concentration END) AS no2
+            FROM fact_aqi_reading f
+            JOIN dim_location l ON f.location_key = l.location_key
+            JOIN dim_pollutant p ON f.pollutant_key = p.pollutant_key
+            GROUP BY l.city
+            LIMIT 500
         """)
         rows = db.execute(sql).fetchall()
         
