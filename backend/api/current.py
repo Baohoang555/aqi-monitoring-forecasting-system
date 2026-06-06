@@ -209,7 +209,6 @@ def get_all_stations_aqi(db: Session = Depends(get_session)):
             JOIN dim_location l ON f.location_key = l.location_key
             JOIN dim_pollutant p ON f.pollutant_key = p.pollutant_key
             GROUP BY l.city
-            LIMIT 500
         """)
         rows = db.execute(sql).fetchall()
         
@@ -263,18 +262,35 @@ def get_all_stations_aqi(db: Session = Depends(get_session)):
         geo_cache = load_city_geo_cache()
         for city_name, station in station_map.items():
             if station["lat"] is None or station["lon"] is None:
-                countries = station.get("countries") or []
-                keys_to_try = []
-                for country in countries:
-                    keys_to_try.append(normalize_city_key(city_name, country))
-                keys_to_try.append(normalize_city_key(city_name, "Unknown"))
-                keys_to_try.append(normalize_city_key(city_name, None))
+                countries = list(station.get("countries") or [])
+                found = False
 
-                for key in keys_to_try:
+                # Thử "City,Country"
+                for country in countries:
+                    key = f"{city_name},{country}"
                     cache_entry = geo_cache.get(key)
-                    if cache_entry and cache_entry.get("lat") is not None and cache_entry.get("lon") is not None:
-                        station["lat"], station["lon"] = cache_entry["lat"], cache_entry["lon"]
+                    if cache_entry and cache_entry.get("lat") is not None:
+                        station["lat"] = cache_entry["lat"]
+                        station["lon"] = cache_entry["lon"]
+                        found = True
                         break
+
+                # Thử tìm bất kỳ key nào bắt đầu bằng "City,"
+                if not found:
+                    for key, cache_entry in geo_cache.items():
+                        if key.startswith(f"{city_name},") and cache_entry.get("lat") is not None:
+                            station["lat"] = cache_entry["lat"]
+                            station["lon"] = cache_entry["lon"]
+                            found = True
+                            break
+
+                # Thử key chỉ có city name (không có country)
+                if not found:
+                    cache_entry = geo_cache.get(city_name)
+                    if cache_entry and cache_entry.get("lat") is not None:
+                        station["lat"] = cache_entry["lat"]
+                        station["lon"] = cache_entry["lon"]
+
             station.pop("countries", None)
 
         blacklist = {"10Th Of Ramadan", "6Th Of October"}
