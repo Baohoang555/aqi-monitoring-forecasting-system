@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
 
-const API = "http://localhost:8000"
+const API = "https://2870w5x1-8000.asse.devtunnels.ms/"
 
 const F1_PERFORMANCE_DATA = [
   { date: '01/05', f1: 0.82 },

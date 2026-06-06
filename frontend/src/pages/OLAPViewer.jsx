@@ -1,7 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 
-const API = "http://localhost:8000"
+const API = import.meta.env.VITE_API_URL || "https://2870w5x1-8000.asse.devtunnels.ms/"
 
 export default function OLAPViewer() {
   const [data, setData] = useState(null)

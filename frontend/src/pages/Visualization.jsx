@@ -15,7 +15,7 @@ import {
   Cell,
 } from "recharts"
 
-const API = "http://localhost:8000"
+const API = import.meta.env.VITE_API_URL || "https://2870w5x1-8000.asse.devtunnels.ms/"
 
 const Card = ({ title, children, style }) => (
   <div style={{

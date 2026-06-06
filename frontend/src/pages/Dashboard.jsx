@@ -5,7 +5,7 @@ import {
   Tooltip as RechartsTooltip, Legend, ResponsiveContainer
 } from "recharts"
 
-const API = "http://localhost:8000"
+const API = "https://2870w5x1-8000.asse.devtunnels.ms"
 const FALLBACK_CITIES = ["Hanoi", "Ho Chi Minh City", "Da Nang"]
 
 const KPICard = ({ label, value, color }) => (

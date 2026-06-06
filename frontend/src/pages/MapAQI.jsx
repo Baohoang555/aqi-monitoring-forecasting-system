@@ -3,7 +3,7 @@ import axios from "axios"
 import { MapContainer, TileLayer, CircleMarker, Popup } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 
-const API = "http://localhost:8000"
+const API = import.meta.env.VITE_API_URL || "https://2870w5x1-8000.asse.devtunnels.ms/"
 
 export default function MapAQI() {
   const [cities, setCities] = useState([])   
