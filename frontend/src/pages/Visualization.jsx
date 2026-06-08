@@ -91,6 +91,7 @@ const fetchSliceByYear = async (city) => {
 
 const normalizeRows = (rows) =>
   (Array.isArray(rows) ? rows : [])
+    .filter(row => row.pollutant_code === "PM2.5" || row.pollutant_code === "PM25") // ← thêm dòng này
     .map((row) => ({
       city: row.city ?? "Unknown",
       season: row.season ?? "Unknown",
@@ -101,7 +102,7 @@ const normalizeRows = (rows) =>
       max_aqi: toNumber(row.max_aqi),
       avg_conc: toNumber(row.avg_conc),
       unhealthy_cnt: toNumber(row.unhealthy_cnt),
-      year: toNumber(row.year),  // ← thêm dòng này
+      year: toNumber(row.year),
     }))
     .filter((row) => row.average_aqi != null)
 
@@ -388,66 +389,6 @@ export default function Visualization() {
         </div>
         )}
       </Card>
-
-      {/* Summary Table */}
-      <Card title="📋 Bảng tổng hợp OLAP">
-        <div style={{
-          height: 420,
-          overflowY: "auto",
-          borderRadius: 10,
-          border: "1px solid #2A2D3A",
-          scrollbarWidth: "thin",
-          scrollbarColor: "#3A3D4A #0F1117",
-        }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
-            <thead>
-              <tr style={{
-                position: "sticky", top: 0,
-                background: "#0F1117",
-                borderBottom: "2px solid #2A2D3A",
-                zIndex: 1,
-              }}>
-                {["Thành phố", "Quốc gia", "Mùa", "AQI trung bình", "Số bản ghi"].map((h) => (
-                  <th key={h} style={{
-                    textAlign: "left", padding: "12px 16px",
-                    color: "#8B8FA8", fontWeight: 600,
-                    fontSize: 12, textTransform: "uppercase", letterSpacing: 0.8,
-                  }}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {summaryTable.map((row, idx) => (
-                <tr key={idx}
-                  style={{ borderBottom: "1px solid #1F2230", transition: "background 0.15s" }}
-                  onMouseEnter={(e) => e.currentTarget.style.background = "#1A1D2F"}
-                  onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
-                >
-                  <td style={{ padding: "11px 16px", fontWeight: 600 }}>{row.city}</td>
-                  <td style={{ padding: "11px 16px", color: "#A0A4B8" }}>{row.country || "-"}</td>
-                  <td style={{ padding: "11px 16px" }}>
-                    <span style={{
-                      background: row.season === "dry" ? "#FF8E5320" : "#4F8EF720",
-                      color: row.season === "dry" ? "#FF8E53" : "#4F8EF7",
-                      padding: "3px 10px", borderRadius: 20,
-                      fontSize: 12, fontWeight: 600,
-                    }}>
-                      {row.season === "dry" ? "🌤 dry" : "🌧 rainy"}
-                    </span>
-                  </td>
-                  <td style={{ padding: "11px 16px", fontWeight: 700, color: "#E2E4F0" }}>
-                    {formatAQI(row.average_aqi)}
-                  </td>
-                  <td style={{ padding: "11px 16px", color: "#8B8FA8" }}>
-                    {(row.records || 0).toLocaleString("en-US")}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Card>
-
     </div>
   )
 }

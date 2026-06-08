@@ -70,8 +70,8 @@ export default function App() {
       {/* Main content */}
       <div style={{
         flex: 1,
-        padding: 24,
-        overflowY: "auto",
+        padding: page === "map" ? 0 : 24,
+        overflowY: page === "map" ? "hidden" : "auto",
       }}>
         {renderPage()}
       </div>
